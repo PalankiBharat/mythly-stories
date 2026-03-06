@@ -1,0 +1,5 @@
+.DS_Store
+.omc/
+*.pyc
+__pycache__/
+node_modules/

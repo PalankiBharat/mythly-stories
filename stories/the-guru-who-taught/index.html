@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Guru Who Taught His Student by Climbing on His Back</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="Brahmin scholar bent on all fours on a city street with old man sitting on his back teaching, royal elephant procession in background"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Vishnu Purana &middot; Book 2</div>
+            <h1 class="hero-title">The Guru Who Taught His Student by Climbing on His Back</h1>
+            <div class="hero-meta">
+                <span>Ribhu &amp; Nidagha</span>
+                <span>Chapters 15&ndash;16</span>
+                <span>Non-Duality (Advaita)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Long ago, Brahma had a son named Ribhu. Ribhu was wise from birth &mdash; he understood the deepest truth of existence: that all of reality is one, and there is no real difference between one being and another. Everything is Vasudeva &mdash; the Supreme Spirit.</p>
+
+            <p>Ribhu had a devoted student named Nidagha, the son of sage Pulastya. They lived together near the city of Viranagara, on the banks of the river Devika. Ribhu taught Nidagha everything about the oneness of all existence. When the teaching was complete, Ribhu believed his student had understood.</p>
+
+            <p>But Nidagha went back to his city life. He became busy with rituals, ceremonies, and the outward forms of religion. He still saw the world as full of separate things &mdash; this is good food, that is bad food; this person is high, that person is low. The knowledge of oneness had not truly sunk in.</p>
+
+            <p>A thousand divine years passed. Ribhu decided to visit his old student. He arrived at Nidagha's house in disguise, just as Nidagha was finishing a ritual. Nidagha did not recognize him and offered him a meal.</p>
+
+            <p>According to the Vishnu Purana, when Ribhu asked what food was available, Nidagha listed various types &mdash; cakes, rice, barley, pulse &mdash; and asked his guest which he preferred. Ribhu then asked for sweeter, finer food. After the meal, Ribhu asked:</p>
+
+            <div class="dialogue">
+                <span class="speaker">Ribhu (Disguised)</span>
+                &ldquo;Are you satisfied? Where does satisfaction come from &mdash; from the food, or from the one who eats it?&rdquo;
+            </div>
+
+            <p>Then he taught Nidagha that there is no real difference between sweet food and plain food &mdash; they are all made of the same earth, the same atoms. The person who sees differences everywhere is still trapped in illusion. Nidagha was shaken. He realized this stranger was no ordinary man and begged him to reveal himself. Ribhu told him who he was, taught him to see all things as one undivided reality, and departed.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Two men sitting on a mat sharing a meal in a simple house, one teaching with finger raised"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Ribhu in disguise teaches Nidagha that all food &mdash; sweet or plain &mdash; is made of the same earth</div>
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Another thousand divine years passed. Ribhu came again. This time, he found Nidagha standing outside the city, watching a grand royal procession from a distance. He was keeping away from the crowd.</p>
+
+            <p>Ribhu, again in disguise as a simple villager, approached and asked: What is happening here?</p>
+
+            <p>Nidagha said: The king is going in a procession.</p>
+
+            <p>Ribhu asked: Which one is the king?</p>
+
+            <p>Nidagha pointed: The one sitting on the elephant.</p>
+
+            <p>Ribhu asked: You have shown me two together. But which one is the king and which is the elephant?</p>
+
+            <p>Nidagha, getting annoyed, said: The one above is the king. The one below is the elephant. How can you not know this?</p>
+
+            <p>Ribhu asked innocently: What does &ldquo;above&rdquo; mean? What does &ldquo;below&rdquo; mean?</p>
+
+            <p>Nidagha, frustrated, jumped onto Ribhu's back and said: Look! I am above, like the king. You are below, like the elephant. Now do you understand?</p>
+
+            <div class="dialogue">
+                <span class="speaker">Ribhu</span>
+                &ldquo;You are like the king and I am like the elephant. But tell me &mdash; which one is &lsquo;you&rsquo; and which one is &lsquo;me&rsquo;?&rdquo;
+            </div>
+
+            <p>The moment Nidagha heard those words, everything became clear. He jumped down, fell at his teacher's feet, and said: Only my guru Ribhu could ask such a question. No one else has a mind so clean and so sharp.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Nidagha falling at Ribhu's feet on a dusty street with royal procession in the distance"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">&ldquo;Which one is &lsquo;you&rsquo; and which one is &lsquo;me&rsquo;?&rdquo; &mdash; the question that shattered all illusion</div>
+            </div>
+
+            <p>According to the Vishnu Purana, Ribhu then told Nidagha: The essence of the highest truth is that there is no duality in anything. Know this whole universe to be the one undivided nature of the Supreme Spirit, called Vasudeva.</p>
+
+            <p>Then Ribhu departed. And Nidagha, finally understanding, saw the same divine Self in all beings without any difference. He merged into the Supreme Brahman and attained liberation.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>We spend our lives sorting the world into boxes &mdash; rich and poor, above and below, yours and mine, good and bad. Nidagha knew the philosophy of oneness. He could recite it. But he still lived in duality &mdash; judging food, avoiding crowds, separating king from elephant. It took one question from his guru to shatter all those walls: &ldquo;Which one is you and which one is me?&rdquo; The question is &mdash; do you only understand oneness in theory, or do you actually live it?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>This story was not told for its own sake. In the Vishnu Purana, it is told by Bharata &mdash; the great king who gave up his throne, was reborn as a deer due to attachment, and was reborn again as the seemingly dull Jadabharata. It was Jadabharata who told this story to the king of Souvira, to wake him up from the same illusion Nidagha suffered from. The tale of how a king became a deer and then a silent madman &mdash; that is one of the most remarkable stories in the Vishnu Purana's second book.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Ribhu (son of Brahma, the guru), Nidagha (son of Pulastya, the student), Bharata (the narrator within the Purana, also known as Jadabharata)</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Non-Duality (Advaita), True Knowledge vs. Ritual Knowledge, The Guru&ndash;Disciple Bond</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Vishnu Purana, Book 2 (Amsha 2), Chapters 15&ndash;16. Chapter 15 covers Ribhu's first visit and the food dialogue. Chapter 16 covers the second visit with the royal procession and the &ldquo;above and below&rdquo; teaching. The story is framed as a narration by Bharata (Jadabharata) to the king of Souvira.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>
