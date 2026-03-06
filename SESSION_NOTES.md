@@ -7,13 +7,14 @@ A collection of Indian mythology stories rendered as beautifully styled standalo
 
 ## What's Built So Far
 
-### Stories (3 total)
+### Stories (4 total)
 
 | # | Story | Folder | Source | Images |
 |---|-------|--------|--------|--------|
 | 1 | The Starving Sage Who Was Offered Heaven — And Said No | `the-starving-sage/` | Mahabharata, Vana Parva, Ch 257–261 | ✅ All 3 added |
 | 2 | The Thief Who Accidentally Became the God of Wealth | `the-thief-who-became-kubera/` | Shiva Purana, Rudra Samhita, Ch 17–20 | ❌ Needs 3 images |
 | 3 | The Guru Who Taught His Student by Climbing on His Back | `the-guru-who-taught/` | Vishnu Purana, Book 2, Ch 15–16 | ❌ Needs 3 images |
+| 4 | Why Even Hanuman Could Not Show His True Size | `hanuman-and-bhima/` | Mahabharata, Vana Parva, Ch 146–150 | ❌ Needs 3 images |
 
 ### Duplicate Removed
 - "The Sage Who Was Offered Heaven — and Said No" was a retelling of Story 1 (Mudgala). Deleted to avoid duplication. Original (more concise version) kept.
@@ -129,6 +130,7 @@ User provides stories in this markdown format:
 ### Immediate
 - [ ] Add images to `the-thief-who-became-kubera/images/` (featured.png, img1.png, img2.png)
 - [ ] Add images to `the-guru-who-taught/images/` (featured.png, img1.png, img2.png)
+- [ ] Add images to `hanuman-and-bhima/images/` (featured.png, img1.png, img2.png)
 - [ ] Fix image generation pipeline (get GEMINI_API_KEY or use alternative)
 
 ### Future Ideas

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Even Hanuman Could Not Show His True Size &mdash; And What He Told Bhima About the End of the World</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="Colossal golden-furred Hanuman towering over a Himalayan banana grove while tiny Bhima stands at his feet shielding his eyes"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Vana Parva</div>
+            <h1 class="hero-title">Why Even Hanuman Could Not Show His True Size &mdash; And What He Told Bhima About the End of the World</h1>
+            <div class="hero-meta">
+                <span>Bhima&ndash;Hanuman Samvada</span>
+                <span>Chapters 146&ndash;150</span>
+                <span>Time &amp; Brotherhood</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Most people know that Bhima once met Hanuman in a forest and could not lift his tail. That part is famous. But what happened after the tail &mdash; the long conversation between two brothers &mdash; is one of the most extraordinary and forgotten teachings in the entire Mahabharata.</p>
+
+            <p>It began with a flower.</p>
+
+            <p>During the Pandavas&rsquo; exile, while they camped near the Gandhamadana mountains, a breeze from the northeast carried a golden, thousand-petaled lotus called the Saugandhika. It landed near Draupadi. She was enchanted by its beauty and its scent. She turned to Bhima and asked him to bring her more of these flowers.</p>
+
+            <p>Bhima, eager to please her, grabbed his mace and charged into the forest. He crashed through trees, frightened lions and elephants, and pushed his way up a steep mountain path &mdash; until he found a massive old monkey lying right across the trail, its tail blocking his way.</p>
+
+            <div class="dialogue">
+                <span class="speaker">The Old Monkey</span>
+                &ldquo;I am too old and weak to move. If you are in a hurry, simply move my tail aside and pass.&rdquo;
+            </div>
+
+            <p>Bhima, who could uproot trees with one hand, bent down and tried to lift the tail. He could not move it even a hair&rsquo;s width. He tried with both hands. With all his strength. He failed.</p>
+
+            <p>In that moment, Bhima understood. This was no ordinary monkey. He folded his hands and asked who this being was.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Hanuman</span>
+                &ldquo;I am Hanuman, the son of Vayu. You too are a son of Vayu. We are brothers.&rdquo;
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>What followed is the part most people have never heard.</p>
+
+            <p>Bhima, overwhelmed with joy, asked Hanuman to show him the form in which he had leapt across the ocean to Lanka &mdash; his original, immense, divine form from the Treta Yuga.</p>
+
+            <p>According to the Mahabharata, Hanuman showed Bhima a partial vision. He grew to an enormous size &mdash; as tall as the Vindhya mountain. His body covered the entire banana grove. His eyes were like copper suns. His tail lashed in all directions. Bhima had to close his eyes &mdash; he could not bear to look.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Hanuman and Bhima sitting face to face on a flat rock in a Himalayan banana grove, Hanuman teaching with one hand raised"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png &mdash; Hanuman teaching Bhima</div>'"
+                >
+                <div class="caption">Two sons of Vayu &mdash; brothers from different ages &mdash; share a teaching on a Himalayan mountainside</div>
+            </div>
+
+            <p>But then Hanuman said something no one expected.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Hanuman</span>
+                &ldquo;You are able to see my size only up to this extent. But the form I had in the Treta Yuga &mdash; that form does not exist now. In the Krita age, the state of things was one way. In the Treta, another. In the Dwapara, still another. Diminishing is going on in this age. The ground, the rivers, the plants, the rocks, the gods, and the celestial sages &mdash; all conform to Time, in harmony with the state of things in the different Yugas. Therefore, do not wish to see my former shape. I too am conforming to the tendency of this age. Truly, Time is irresistible.&rdquo;
+            </div>
+
+            <p>Then Bhima asked him to explain the Yugas. And Hanuman gave him a teaching that spans the full chapters 148 and 149 of the Vana Parva.</p>
+
+            <p>He described the Krita Yuga &mdash; when there was one eternal dharma, no disease, no buying or selling, no Vedas because no one needed them, no manual labor because needs were fulfilled by thought alone. He described the Treta Yuga &mdash; when dharma lost one quarter, when sacrifice and austerity began because perfection was no longer natural. He described the Dwapara Yuga &mdash; when dharma was split in half, when the single Veda was divided into four, when some men knew all the Vedas and some knew none. And he described the Kali Yuga &mdash; when dharma stands on one leg, when disease and deception and greed eat away at everything.</p>
+
+            <p>And the deepest part of his teaching was this: Even I, Hanuman, the one who leapt across the ocean, the one blessed by Brahma, Indra, Agni, and Vayu &mdash; even I cannot escape the power of Time. My body has shrunk. My form has diminished. Not because I have grown weak &mdash; but because the age itself has diminished, and all beings, even gods and immortals, must conform.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Split image showing young blazing Hanuman leaping across the ocean on the left and older silver-furred Hanuman meditating quietly on the right"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png &mdash; Hanuman across the ages</div>'"
+                >
+                <div class="caption">The same soul across two ages &mdash; diminished not by weakness, but by Time itself</div>
+            </div>
+
+            <p>After this, Hanuman embraced Bhima, blessed him with strength for the battle to come, and told him:</p>
+
+            <div class="dialogue">
+                <span class="speaker">Hanuman</span>
+                &ldquo;When you roar like a lion on the battlefield, my voice shall join yours and strike terror into the hearts of your enemies. I shall be present on the flag of your brother Arjuna&rsquo;s chariot. You will be victorious.&rdquo;
+            </div>
+
+            <p>Then the two sons of the wind god parted. Bhima continued toward the Saugandhika garden. Hanuman returned to his solitude. Two brothers from two different ages, meeting for one afternoon on a mountain &mdash; and sharing a truth about Time that applies to every age, including ours.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Even Hanuman &mdash; blessed by every god, immune to every weapon, capable of leaping oceans &mdash; looked at his own body and said: I too must conform to Time. If the mightiest being in scripture can accept that the world diminishes around him without bitterness or resistance, what does that say to us? We live in an age where everything feels like it is getting worse. Hanuman&rsquo;s teaching is not despair. It is acceptance. Do your dharma within the age you are given. Don&rsquo;t waste your life wishing you were born in a better one. The question is &mdash; can you be like Hanuman, and give everything you have in the age you are in, even when the age itself is less than perfect?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Hanuman&rsquo;s promise to Bhima &mdash; &ldquo;my voice shall join yours on the battlefield&rdquo; &mdash; was not an empty blessing. In the Bhishma Parva and later war chapters of the Mahabharata, Arjuna&rsquo;s chariot carries a flag with an ape emblem. The Kaurava army is described as trembling at the sight of that flag. And at the very end of the war, after Krishna and Hanuman both step off the chariot, the scripture says it immediately burst into flames &mdash; because only the presence of those two divine beings had been protecting it from the celestial weapons that had struck it throughout the war. That moment is described in the Shalya Parva of the Mahabharata.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Hanuman (son of Vayu, chiranjeevi from the Treta Yuga), Bhima (son of Vayu, Pandava warrior of the Dwapara Yuga), Draupadi (who asked for the Saugandhika flower)</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">The Power of Time &middot; Humility Before the Inevitable &middot; Brotherhood Across Ages &middot; Dharma Within Imperfect Conditions</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Vana Parva (Book 3), Chapters 146&ndash;150. Chapter 146 covers Bhima&rsquo;s quest for the Saugandhika flower and the tail-lifting episode. Chapter 147 covers the conversation and Hanuman&rsquo;s brief retelling of Rama&rsquo;s story. Chapter 148 covers Hanuman&rsquo;s teaching on the four Yugas. Chapter 149 covers the cosmic form vision and Hanuman&rsquo;s promise to be on Arjuna&rsquo;s flag. Chapter 150 covers Hanuman&rsquo;s blessing and parting. (Chapter numbers follow the Ganguli translation; BORI Critical Edition numbers may differ slightly.)</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>
