@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Demon Who Accused the Goddess of Cheating &mdash; And Her Answer That Silenced the Universe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="The Devi standing calm on the battlefield as Shumbha points an accusing finger at her, fallen demons around them"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- IMAGE PROMPT (featured.png): A powerful golden-skinned goddess with multiple arms standing tall on a battlefield strewn with fallen demon warriors, she holds a trident, sword, conch shell, and discus in her many hands, wearing a red silk sari with gold borders and a crown of gold with rubies, her expression calm and unmoved, facing a muscular demon king in black iron armor with a heavy crown who stands alone pointing an accusing finger at her, broken weapons and fallen demon bodies scattered across the dusty battlefield, distant burning fortress in the background, dramatic sunset sky in deep orange and crimson, Indian mythological painting style inspired by Raja Ravi Varma with rich oil-painting texture, warm golden hour lighting from behind the goddess creating a divine silhouette effect, strong contrast between the goddess's serene golden glow and the demon's dark angry form, mood of supreme power meeting desperate pride, 4K detail, cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Devi Mahatmya &middot; Markandeya Purana &middot; Chapters 8&ndash;10</div>
+            <h1 class="hero-title">The Demon Who Accused the Goddess of Cheating &mdash; And Her Answer That Silenced the Universe</h1>
+            <div class="hero-meta">
+                <span>Shumbha &amp; the Devi</span>
+                <span>Devi Mahatmya, Ch 10</span>
+                <span>Pride vs. Unity</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>What would you do if you conquered the entire universe &mdash; heaven, earth, and the underworld &mdash; and then a single woman destroyed everything you built? Would you question yourself? Or would you blame her for fighting unfairly?</p>
+
+            <p>This is the story of Shumbha, one of the most powerful demon kings ever described in scripture. He and his brother Nishumbha had defeated Indra and taken control of all three worlds. The gods lost their kingdoms. They lost their homes. They lost everything. According to the Devi Mahatmya, Shumbha took over all the powers and duties of the sun, the moon, Kubera, Yama, Varuna, Vayu, and Agni. The gods were thrown out and wandered the earth like beggars.</p>
+
+            <p>With nowhere else to turn, the gods went to the Himalayas and prayed to the great goddess, reminding her of her promise to help them in times of trouble.</p>
+
+            <p>While they prayed, Parvati came to bathe in the waters of the Ganga. She asked the gods who they were praying to. And from the sheath of Parvati&rsquo;s own body, a beautiful goddess emerged. The Devi Mahatmya calls her Ambika, also known as Kaushiki. Because she came forth from Parvati&rsquo;s bodily sheath (kosha), she was called Kaushiki. After she emerged, Parvati herself turned dark and became known as Kalika.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>When Shumbha&rsquo;s servants Chanda and Munda saw Ambika sitting on the Himalayas, they reported her beauty to Shumbha. The demon king sent a messenger to bring her to him, declaring that all the gems of the three worlds belonged to him, and she, being a jewel among women, should come to him.</p>
+
+            <p>The Devi refused. She told the messenger that she had made a foolish vow long ago &mdash; that she would only marry someone who could defeat her in battle. She told Shumbha to come and fight her if he wanted her.</p>
+
+            <p>What followed was a long and terrible war. Shumbha sent army after army. First came the general Dhumralochana, whom the Devi burned to ash with a single sound &mdash; the syllable &ldquo;Hum.&rdquo; Then Chanda and Munda attacked. The goddess Kali, dark and terrifying, sprang from the Devi&rsquo;s forehead and killed them both. From that act, the Devi earned the name Chamunda.</p>
+
+            <p>Then came the demon Raktabija, who had a fearsome boon &mdash; every drop of his blood that fell on the ground would create a new copy of himself. The battlefield filled with hundreds of Raktabijas. To stop this, Kali spread her tongue across the battlefield and drank every drop of blood before it could touch the earth. Raktabija fell.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Kali on the battlefield drinking Raktabija's blood, surrounded by collapsing demon clones"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: A fierce dark-skinned goddess Kali with wild black hair flying outward, red tongue stretched wide, wearing a garland of skulls around her neck, crouching on a blood-soaked battlefield, one hand holding a severed demon head by the hair, the other holding a curved sword dripping with blood, dozens of identical muscular red-skinned demon warriors (Raktabija clones) collapsing around her as she drinks the blood before it hits the ground, dust and chaos everywhere, broken chariots and weapons scattered, dark stormy sky with flashes of red lightning, ancient Indian temple mural art style with bold black outlines and vivid primary colors in the Kalighat painting tradition, dramatic low-angle composition looking up at Kali, harsh red and orange battlefield lighting contrasting with Kali's dark form, mood of unstoppable divine fury. Aspect ratio 1:1, square format. -->
+                <div class="caption">Kali drank every drop before it could touch the earth</div>
+            </div>
+
+            <p>Nishumbha charged in next. After a fierce fight, the Devi killed him too. Shumbha watched his brother die. He watched his generals fall one by one. His entire army was gone.</p>
+
+            <p>And then Shumbha said something that no one expected.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Shumbha</span>
+                &ldquo;O Durga, you are filled with pride. Do not be so proud. You fight depending on the strength of others.&rdquo;
+            </div>
+
+            <p>Think about this for a moment. His entire army had been destroyed. His brother was dead. Every general he had was gone. And instead of accepting what had happened, Shumbha&rsquo;s pride found one last thing to cling to: the idea that the Devi had not really beaten him. In his mind, she had cheated &mdash; because she used Kali, Chamunda, and the other goddesses to do her fighting.</p>
+
+            <p>The Devi&rsquo;s answer is one of the most important lines in all of Hindu scripture.</p>
+
+            <div class="dialogue">
+                <span class="speaker">The Devi</span>
+                &ldquo;I am alone in this world. Who else is there besides me? See, O wicked one, that these are but my own powers entering back into me.&rdquo;
+            </div>
+
+            <p>And as she spoke, Kali, Chamunda, and every other goddess merged back into the Devi&rsquo;s body. They were never separate beings. They had always been her &mdash; her own shakti, her own power, taking different forms for different tasks. The Devi stood alone on the battlefield. One goddess. One power. One reality.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="The Devi standing alone as all the goddesses merge back into her body, Shumbha watching in silence"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: A radiant golden goddess standing alone in the center of a vast empty battlefield, her arms spread wide, multiple translucent goddess forms (dark Kali, fierce lion-riding Chamunda, and other warrior goddesses) shown as glowing ethereal figures flowing back into her body like streams of light being absorbed, her expression serene and absolute, wearing a red and gold sari with a magnificent crown, the demon king Shumbha standing at a distance watching in stunned silence with his sword lowered, wide-angle composition showing the vast scale of the empty battlefield with only these two figures, soft divine white-gold light radiating outward from the goddess, Indian mythological painting style inspired by Mysore traditional painting with gold leaf details, ethereal glowing atmosphere, mood of cosmic truth being revealed. Aspect ratio 1:1, square format. -->
+                <div class="caption">They were never separate &mdash; they had always been her</div>
+            </div>
+
+            <p>Then they fought &mdash; just the two of them. Shumbha and the Devi, one on one, exactly as he had demanded. The Devi Mahatmya describes how they battled in the sky, fighting with weapons and with their bare hands. The gods watched in fear. The oceans shook.</p>
+
+            <p>In the end, the Devi struck Shumbha in the chest with her spear. He fell to the earth. He was dead.</p>
+
+            <p>And the universe breathed again. The Devi Mahatmya says the sky cleared, the rivers flowed peacefully, and the gods got back everything they had lost.</p>
+
+            <p>But the real lesson of this story is not the battle. It is the moment before the battle &mdash; when a demon who had lost everything still could not accept that he had been beaten by something greater than himself. His pride was so deep that even in his final moments, he looked for excuses instead of truth.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Shumbha could not see the truth even when it stood right in front of him. He thought the universe was made of separate parts that he could divide, conquer, and control. The Devi showed him that everything is one &mdash; all power, all forms, all of existence flows from the same source. Pride is the illusion that you are separate from the whole. The question is: how many times have you blamed others for your failures instead of seeing the larger truth?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Before Shumbha&rsquo;s final stand, there was the problem of Raktabija &mdash; the demon whose every drop of spilled blood created a new warrior. Imagine fighting an enemy who gets stronger every time you wound him. How the Devi solved this impossible puzzle is one of the most creative battle strategies in all of Hindu scripture &mdash; and it gave birth to the most fearsome form of the goddess the world has ever seen.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Shumbha &mdash; demon king who conquered the three worlds. Nishumbha &mdash; his brother. The Devi (Ambika/Kaushiki) &mdash; the supreme goddess. Kali &mdash; who emerged from the Devi&rsquo;s forehead. Chanda &amp; Munda &mdash; demon generals. Raktabija &mdash; the demon whose blood spawned clones. Dhumralochana &mdash; demon general.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Pride vs. Unity &mdash; the illusion of separateness is the root of all arrogance. True power is recognizing that everything is connected.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Devi Mahatmya (also called Durga Saptashati or Chandi), found within the Markandeya Purana, Chapters 81&ndash;93. This story covers the &ldquo;Third Episode&rdquo; (Uttama Charitra) of the Devi Mahatmya, Chapters 5&ndash;11 (of the 13-chapter Devi Mahatmya text). Shumbha and Nishumbha&rsquo;s oppression: Ch 5. The Devi&rsquo;s emergence from Parvati: Ch 5 (verses 33&ndash;38). Dhumralochana&rsquo;s death: Ch 6. Chanda-Munda killed and the Chamunda name: Ch 7. Raktabija&rsquo;s destruction: Ch 8. Nishumbha&rsquo;s death: Ch 9. Shumbha&rsquo;s accusation and the Devi&rsquo;s answer about the goddesses merging back: Ch 10 (verses 2&ndash;8). Shumbha&rsquo;s death: Ch 10 (verses 9&ndash;31).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Devi Mahatmya is one of the most widely published and commented-upon texts in Hinduism. This episode can be verified in multiple editions: the Gita Press Gorakhpur edition of the Markandeya Purana, Swami Jagadiswarananda&rsquo;s translation (Ramakrishna Math), and Devadatta Kali&rsquo;s scholarly translation &ldquo;In Praise of the Goddess&rdquo; (2003). The key philosophical exchange &mdash; Shumbha accusing the Devi of relying on others and the Devi declaring all forms are herself alone &mdash; is found in Devi Mahatmya Chapter 10, verses 3&ndash;5. The &ldquo;But Wait&rdquo; teaser refers to the Raktabija episode in Devi Mahatmya Chapter 8.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

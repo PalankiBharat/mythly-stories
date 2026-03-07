@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Woman Who Stood in Fire for Love &mdash; and Made Even Shiva Come to Her</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT: A young Indian goddess Parvati standing on one leg on a flat stone in the middle of a blazing ring of fire (Panchagni tapas), her arms raised above her head, palms joined in prayer, her eyes closed with calm focus, wearing only a rough bark-cloth garment and rudraksha beads, her dark hair matted and wild from years of austerity, her body thin but radiating inner strength, the skin glowing with golden tapas-fire from within, around her four ritual fires burning at the cardinal points and the summer sun blazing overhead as the fifth fire, the setting is a rocky Himalayan clearing with sparse trees and distant snow peaks, ancient Indian mythological painting style inspired by Raja Ravi Varma with Tanjore painting gold-leaf accents on the fire and divine glow, warm amber and saffron lighting from the surrounding flames, mood of fierce determination and sacred suffering, 4K cinematic detail, shallow depth of field on her face and raised hands. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Parvati performing extreme tapas, standing on one leg amid five fires in a Himalayan clearing, arms raised in prayer, face calm with fierce determination"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Shiva Purana &middot; Rudra Samhita, Parvati Khanda</div>
+            <h1 class="hero-title">The Woman Who Stood in Fire for Love &mdash; and Made Even Shiva Come to Her</h1>
+            <div class="hero-meta">
+                <span>Parvati, Shiva &amp; Himavan</span>
+                <span>Parvati Khanda, Chapters 20&ndash;40</span>
+                <span>Determination &amp; Devotion</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>When the god of love, Kamadeva, shot his flower arrow at Shiva, Shiva&rsquo;s third eye opened and burned Kama to ash. His wife Rati would wait ages to find him again. But there was another woman who was watching that day &mdash; Parvati. For one brief moment before the fire, Shiva&rsquo;s eyes had opened. He had seen her. And then he walked away, back into his meditation, as if she did not exist.</p>
+
+            <p>Most people would have given up. Parvati did not.</p>
+
+            <p>She was the daughter of Himavan, king of the mountains, and his wife Mena. Even before Kamadeva&rsquo;s failed mission, Parvati had been serving Shiva at his meditation site &mdash; bringing flowers, cleaning the area, sitting nearby in quiet devotion. Her father had sent her there on the advice of the sage Narada, who told Himavan that Parvati was destined to marry Shiva. But destiny, it turned out, was not going to be handed to her. She would have to earn it.</p>
+
+            <p>After Shiva rejected her presence and left, Parvati made a decision. She would not chase him. She would not send another god to trick him. She would do tapas &mdash; austerities so extreme that Shiva himself would have no choice but to notice.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>She went into the forest alone. At first, her tapas was gentle &mdash; she ate only fruits and roots, slept on the ground, and meditated on Shiva. But as months passed, she made it harder. She gave up fruits and ate only leaves that had fallen to the ground. Then she gave up even the fallen leaves.</p>
+
+            <p>It was this act that gave her a new name. Her mother Mena, hearing that Parvati had stopped eating even leaves, cried out in anguish:</p>
+
+            <div class="dialogue">
+                <span class="speaker">Mena</span>
+                &ldquo;U-ma! &mdash; Oh, do not do this!&rdquo;
+            </div>
+
+            <p>From that cry, Parvati came to be known as Uma. And because she gave up even leaves (parna), she became known as Aparna &mdash; &ldquo;she who does not eat even a leaf.&rdquo;</p>
+
+            <p>But she did not stop there. According to the Shiva Purana, she performed the Panchagni tapas &mdash; she sat surrounded by four blazing fires with the summer sun overhead as the fifth fire. This same detail is corroborated by Kalidasa in the Kumara Sambhava (Canto 5), which draws on the same ancient tradition. In the rainy season, she sat unprotected in the open, drenched by storms. In winter, she stood in freezing water. She did this not for weeks or months, but for years.</p>
+
+            <p>Her father Himavan came to her, begging her to stop. He could not bear to see his daughter suffer. But Parvati would not move.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: An old Indian mountain king Himavan with a silver beard and white royal robes, kneeling before his young daughter Parvati in a forest clearing, his hands folded in pleading, his face showing deep fatherly anguish, Parvati sitting cross-legged on bare rock in rough bark cloth, her body thin from fasting, her matted hair piled high, her expression gentle but absolutely unmovable, around them a sparse Himalayan forest with tall deodars and patches of snow on the ground, soft diffused winter light filtering through the trees, Indian mythological painting style with realistic emotional expressions, warm earth tones with cool blue-grey shadows, mood of a father's helpless love meeting a daughter's iron will, 4K detail. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="King Himavan kneeling before his daughter Parvati in a forest clearing, pleading with her to stop her austerities, Parvati unmoved in her resolve"
+                    onerror="this.outerHTML='<div class=\'img-placeholder portrait\'>Add img1.png</div>'"
+                >
+                <div class="caption">Himavan begs his daughter to stop &mdash; but Parvati will not move</div>
+            </div>
+
+            <p>Then came the test.</p>
+
+            <p>One day, a young brahmin arrived at her tapas site. He was charming and well-spoken. He praised Parvati&rsquo;s devotion and asked her why she was doing all this. When she told him she wanted Shiva as her husband, the brahmin laughed.</p>
+
+            <p>He began to mock Shiva. He told Parvati that Shiva was not fit to be anyone&rsquo;s husband. According to the Shiva Purana, the brahmin listed Shiva&rsquo;s faults one by one: he has no home, he wanders in cremation grounds, he smears his body with ash from funeral pyres, he wears snakes around his neck, he rides a bull, he has no family or lineage that anyone knows, he keeps company with ghosts and goblins, and no one even knows where he comes from. The brahmin told Parvati she was the daughter of the mountain king &mdash; beautiful, royal, worthy of any god &mdash; and she was throwing herself away on a beggar.</p>
+
+            <p>Parvati listened quietly. Then her patience broke.</p>
+
+            <p>She told the brahmin to stop. According to the text, she defended Shiva with fierce words. She said that the brahmin was a fool who saw only the surface of things. Shiva&rsquo;s ash was sacred. His cremation ground was the place where all worldly attachments end. His snakes showed his mastery over fear. His lack of possessions showed that he was above all desire. She said that only someone with no understanding would look at the lord of the universe and see a beggar.</p>
+
+            <p>She told the brahmin that her mind was decided and nothing in the three worlds would change it. If Shiva did not accept her, she would continue her tapas until her body turned to dust. But she would never choose another.</p>
+
+            <p>Then she turned to leave.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>The brahmin dropped his disguise.</p>
+
+            <p>It was Shiva himself. He had come in the form of a brahmin to test whether Parvati&rsquo;s devotion was real &mdash; whether it would hold even when everything about him was criticized to her face.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up of the moment of revelation &mdash; a young brahmin figure mid-transformation into Lord Shiva, one half of his face is a clean-shaven smiling young brahmin with a sacred thread, the other half is Shiva with matted locks, third eye, crescent moon, and ash-smeared skin, his expression now tender and full of admiration, standing before Parvati who has turned back with wide eyes and parted lips showing shock and dawning recognition, her thin hands still raised in a gesture of refusal from the argument, warm golden divine light radiating from the transforming figure, forest ashram background with a simple fire pit and bark hut, Indian mythological oil painting style inspired by Raja Ravi Varma, dramatic chiaroscuro lighting with the golden glow as the main light source, mood of the sacred moment when testing ends and truth is revealed, 4K detail, tight two-shot composition. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="The brahmin revealing himself as Shiva, half his face transformed, Parvati turning back in shock and recognition"
+                    onerror="this.outerHTML='<div class=\'img-placeholder portrait\'>Add img2.png</div>'"
+                >
+                <div class="caption">The disguise falls away &mdash; Shiva reveals himself to Parvati</div>
+            </div>
+
+            <p>It had held.</p>
+
+            <p>Shiva told Parvati that he was pleased. Her tapas had moved him. Her devotion was not blind &mdash; it was fierce and knowing. She did not love an idea of him. She loved him as he truly was, cremation-ash and all. According to the Shiva Purana, Shiva then went to Himavan and formally asked for Parvati&rsquo;s hand in marriage. The mountain king agreed with great joy.</p>
+
+            <p>The woman who had stood in fire, starved herself until she earned the name &ldquo;Aparna,&rdquo; and refused to break even when a god mocked her choice to her face &mdash; did not win Shiva by changing who he was. She won him by refusing to change who she was.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Parvati did not get what she wanted by wishing for it. She paid for it &mdash; with hunger, with pain, with years of her life, and with the willingness to be tested and mocked and still not bend. The real question this story asks is not whether you want something deeply enough. It is whether you are willing to pay what it costs &mdash; and keep paying even when no one promises it will work.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Shiva agreed to marry Parvati. But the wedding itself was anything but ordinary. When the groom&rsquo;s procession arrived at Himavan&rsquo;s palace, Shiva came riding his bull Nandi, smeared in ash, wearing snakes, accompanied by ghosts, goblins, and every strange being of the cremation ground. Parvati&rsquo;s mother Mena took one look at the groom and fainted. The story of Shiva and Parvati&rsquo;s wedding &mdash; told in the very next chapters of the Parvati Khanda &mdash; is one of the most vivid and surprising scenes in the entire Shiva Purana.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Parvati (Uma, Aparna) &mdash; daughter of Himavan; performed extreme tapas to win Shiva. Shiva (Mahadeva) &mdash; the great ascetic; tested Parvati in the guise of a brahmin. Himavan &mdash; king of the mountains; Parvati&rsquo;s father. Mena &mdash; Parvati&rsquo;s mother; cried &ldquo;U-ma&rdquo; in anguish. Narada &mdash; the divine sage who advised Himavan that Parvati was destined for Shiva.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Determination &amp; Devotion &mdash; the willingness to endure extreme hardship for what you believe in, and the refusal to compromise even when tested</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Shiva Purana, Rudra Samhita, Parvati Khanda, Chapters approximately 20&ndash;40. Parvati&rsquo;s tapas and the brahmin&rsquo;s test (Shiva in disguise) are narrated across these chapters. The name &ldquo;Aparna&rdquo; and Mena&rsquo;s cry &ldquo;U-ma&rdquo; are explained in this section. The Panchagni tapas (five-fire austerity) is described in the Shiva Purana and independently attested in Kalidasa&rsquo;s Kumara Sambhava, Canto 5, which draws on the same ancient tradition. The wedding procession teased in &ldquo;But Wait&rdquo; occurs in Parvati Khanda, Chapters approximately 41&ndash;52.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Demon Born from Shiva&rsquo;s Own Fire &mdash; Whom Only Betrayal Could Kill</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A powerful dark-skinned demon king with a massive muscular build, wearing a golden crown studded with dark gems and heavy gold armor over a bare torso, standing waist-deep in a churning ocean, the water around him glowing orange-red with the fire of his birth, his eyes blazing like molten lava, one hand raised with fingers spread showing raw power, his long black hair whipping in a storm wind, massive ocean waves crashing behind him, the sky dark and turbulent with red lightning, the ocean god Samudra visible as a translucent blue figure kneeling at the edge of the water looking up at the newborn demon with awe and fear, Indian mythological painting style inspired by Raja Ravi Varma with dramatic chiaroscuro lighting, rich oil-painting texture, warm volcanic orange light from below contrasting with cold storm-dark sky above, mood of terrifying power and divine origin, intricate gold jewelry with rubies, 4K detail, cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Jalandhar rising from the ocean, born from Shiva's third-eye fire, the ocean god Samudra watching in awe"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Shiva Purana &middot; Rudra Samhita, Yuddha Khanda</div>
+            <h1 class="hero-title">The Demon Born from Shiva&rsquo;s Own Fire &mdash; Whom Only Betrayal Could Kill</h1>
+            <div class="hero-meta">
+                <span>Jalandhar, Vrinda, Shiva &amp; Vishnu</span>
+                <span>Rudra Samhita, Yuddha Khanda</span>
+                <span>Means vs. Ends &amp; The Cost of Victory</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>What happens when a god creates a demon so powerful that even he cannot destroy it? This is the story of Jalandhar &mdash; a demon who was born from Shiva&rsquo;s own anger, who conquered all three worlds, and whose death required something far worse than any weapon. It required the breaking of an innocent woman&rsquo;s trust.</p>
+
+            <p>It began with Indra. The king of the gods had insulted Sage Brihaspati, his own guru, through arrogance. Brihaspati left heaven in anger. Without their guru&rsquo;s guidance, the gods grew weak. Taking advantage of this, the demons attacked. The gods went to Shiva for help. But when Indra stood before Shiva, the Lord saw the deep arrogance still sitting in Indra&rsquo;s heart. Shiva&rsquo;s third eye opened, and a terrible fire shot out from it.</p>
+
+            <p>Shiva did not aim this fire at anyone. The blazing energy flew through the sky and fell into the ocean. The moment the fire struck the water, the entire ocean shook. From that meeting of divine fire and salt water, a baby was born &mdash; screaming so loud that the three worlds trembled.</p>
+
+            <p>The ocean god, Samudra, picked up the child. He named him Jalandhar &mdash; &ldquo;born from water.&rdquo; Brahma himself came to see this child and gave him a blessing: no god would be able to kill him.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Jalandhar grew up fast. He became the king of the demons. He married Vrinda, the daughter of the demon Kalanemi. Vrinda was no ordinary wife. She was completely devoted to her husband. Her loyalty to him was so pure, so total, that it created a kind of spiritual shield around Jalandhar. As long as Vrinda&rsquo;s chastity remained unbroken, no one in the universe &mdash; not even Shiva &mdash; could kill him.</p>
+
+            <p>Jalandhar knew this. And it made him fearless.</p>
+
+            <p>He attacked heaven. Indra and the gods fought back, but they were no match. Jalandhar defeated them all. He took over Indra&rsquo;s throne, seized the treasures of heaven, and ruled all three worlds. The gods fled and hid.</p>
+
+            <p>But that was not enough for Jalandhar. He sent a messenger to Mount Kailash &mdash; to Shiva himself &mdash; demanding that Shiva hand over his wife Parvati. The message said that Shiva, who lived like a beggar covered in ash and snakes, did not deserve such a beautiful wife.</p>
+
+            <p>Shiva was furious. He created a terrifying being, the Sudarshana-like chakra (some texts say it was a blazing discus born from his toe), and sent it against Jalandhar. But in battle after battle, Jalandhar could not be killed. Every weapon that struck him healed. Every wound closed. Vrinda&rsquo;s devotion kept him alive.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A massive battlefield scene on the slopes of Mount Kailash, Lord Shiva with matted locks flying and his trident raised, his skin ash-white with a crescent moon on his head and a serpent around his neck, facing the towering demon king Jalandhar who wears golden battle armor and a crown, both locked in fierce combat, Shiva's trident clashing against Jalandhar's massive mace creating sparks of divine energy, snow-covered peaks of Kailash in the background, storm clouds swirling above, armies of ganas (Shiva's attendants) and demon soldiers clashing in the background, ancient Indian temple mural art style with Tanjore painting gold leaf details on armor and weapons, dramatic side-lighting from a fiery sunset, mood of cosmic war between creator and creation, 4K detail. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Shiva and Jalandhar locked in fierce combat on the slopes of Mount Kailash, trident clashing against mace"
+                    onerror="this.outerHTML='<div class=\'img-placeholder\'>Add img1.png</div>'"
+                >
+                <div class="caption">Creator against creation &mdash; Shiva battles the demon born from his own fire</div>
+            </div>
+
+            <p>The gods were desperate. They went to Vishnu and begged him to find a way. Vishnu knew the truth: as long as Vrinda&rsquo;s devotion held, Jalandhar was immortal. The only way to kill him was to break that devotion.</p>
+
+            <p>So Vishnu did something that the scriptures themselves call morally painful.</p>
+
+            <p>While Jalandhar was away fighting Shiva, Vishnu went to Vrinda. He used his power of illusion to take on the exact form of Jalandhar. He appeared before Vrinda looking exactly like her husband &mdash; returning from battle, weary but alive. Vrinda, overjoyed to see her husband safe, welcomed him. She embraced Vishnu, believing him to be Jalandhar.</p>
+
+            <p>In that moment, her chastity was broken. Not by her choice. Not by her fault. But by a god&rsquo;s deception.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Far away on the battlefield, the invisible shield around Jalandhar vanished. Shiva felt it. He raised his trident and, according to the Shiva Purana, used a blazing discus (or Sudarshana-like weapon) to cut off Jalandhar&rsquo;s head. The demon who had conquered all three worlds fell dead at last.</p>
+
+            <p>But the real tragedy was not on the battlefield. It was with Vrinda.</p>
+
+            <p>When Vrinda realized the truth &mdash; that the man she had embraced was not her husband but Vishnu in disguise &mdash; her grief turned into rage. According to the Shiva Purana, she cursed Vishnu directly.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Vrinda</span>
+                &ldquo;You destroyed my honour through deception. For this, you will be turned to stone.&rdquo;
+            </div>
+
+            <p>Vishnu accepted the curse without argument. The scriptures say that this is the origin of the Shaligrama stone &mdash; the black sacred stone worshipped as a form of Vishnu. Some texts in the Padma Purana also say Vishnu told Vrinda that in a future birth, she would be reunited with him as his own beloved.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up emotional scene of Vrinda, a beautiful Indian woman with long black hair loose and disheveled, wearing a torn red and gold silk sari, her face showing a mix of grief and burning anger, tears streaming down her cheeks, one hand raised pointing accusingly at Lord Vishnu who stands before her in his true four-armed blue-skinned form with golden crown and yellow silk dhoti, Vishnu's expression showing quiet sorrow and acceptance, his head slightly bowed, set in a simple ashram courtyard with a tulsi plant growing nearby and oil lamps flickering, soft warm lamplight illuminating Vrinda's tear-streaked face, Indian mythological painting style inspired by Raja Ravi Varma, rich emotional realism, close framing on both faces to capture the intensity of the confrontation, mood of devastating betrayal and painful acceptance. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Vrinda cursing Vishnu with grief and rage after discovering the deception, Vishnu accepting the curse with sorrow"
+                    onerror="this.outerHTML='<div class=\'img-placeholder\'>Add img2.png</div>'"
+                >
+                <div class="caption">Vrinda curses Vishnu &mdash; the price of victory was paid by the innocent</div>
+            </div>
+
+            <p>Then Vrinda, consumed by grief, gave up her life. She entered a fire. And from the place where she burned, the Tulsi plant grew &mdash; the sacred basil that is worshipped in every Hindu home to this day. The most faithful wife in the scriptures became the holiest plant in the tradition.</p>
+
+            <p>The gods won. Jalandhar was dead. Heaven was saved. But the question the Shiva Purana leaves in the reader&rsquo;s mind is not about victory. It is about what victory cost &mdash; and who paid the price.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Sometimes the &ldquo;right side&rdquo; wins through methods that are not right at all. Vrinda did nothing wrong. Her loyalty was her strength &mdash; and it was used against her. This story does not give easy answers. It asks hard questions: Can a just cause excuse an unjust act? When the powerful deceive the innocent to win, is it still a victory? And in your own life &mdash; have you ever been the one who paid the cost for someone else&rsquo;s victory?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Vrinda burned herself in grief &mdash; and a small green plant grew from her ashes. That plant was Tulsi. But why is it that no puja of Vishnu is considered complete without a Tulsi leaf? Why does every Hindu home keep a Tulsi plant in the courtyard? The Padma Purana says that Vrinda, reborn as Tulsi, was eventually reunited with Vishnu &mdash; not as a victim, but as his most cherished devotee. That story turns this tragedy into something unexpected.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Jalandhar &mdash; demon king, born from Shiva&rsquo;s fire and the ocean. Vrinda &mdash; Jalandhar&rsquo;s devoted wife. Lord Shiva &mdash; who created and ultimately destroyed Jalandhar. Lord Vishnu &mdash; who used deception to break Vrinda&rsquo;s chastity. Indra &mdash; king of gods, whose arrogance started the chain of events. Samudra &mdash; the ocean god, who raised Jalandhar.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Means vs. Ends &amp; The Cost of Victory &mdash; when righteous goals are achieved through deception, the moral cost falls on the innocent</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Shiva Purana, Rudra Samhita, Yuddha Khanda (the &ldquo;War Section&rdquo; of the Rudra Samhita). This section covers Jalandhar&rsquo;s birth from Shiva&rsquo;s fire falling into the ocean, his conquest of heaven, his war with Shiva, Vishnu&rsquo;s deception of Vrinda, and Jalandhar&rsquo;s death. The full arc spans approximately Chapters 9&ndash;30 in the Motilal Banarsidass critical edition (translated under J.L. Shastri); exact chapter numbers vary between editions. Note: the details of Vrinda&rsquo;s transformation into the Tulsi plant and the origin of the Shaligrama stone from her curse are drawn primarily from the Padma Purana, Uttara Khanda &mdash; these details are alluded to in the Shiva Purana but given their fullest treatment in the Padma Purana. The Gita Press Gorakhpur edition of the Shiva Purana contains the complete Jalandhar narrative.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

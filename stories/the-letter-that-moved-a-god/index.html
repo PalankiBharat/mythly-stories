@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Letter That Moved a God &mdash; How a Princess Proposed to Krishna Before He Ever Saw Her</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="Princess Rukmini writing a secret letter on a palm leaf by lamplight in her palace chamber, her face showing quiet courage and determination"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- IMAGE PROMPT (featured.png): A beautiful Indian princess with dark eyes and gold jewelry, seated alone in a dimly lit royal chamber at night, writing on a palm leaf manuscript with a thin reed stylus, her face showing intense focus and quiet courage, wearing a deep red silk saree with gold border and elaborate bridal meenakari jewelry on her arms and neck, a single oil lamp casting warm amber light on the palm leaf and her face, the rest of the ornate palace room falling into shadow, carved stone pillars and silk curtains visible in the dark background, scattered flower garlands on the floor suggesting wedding preparations, Indian mythological painting style inspired by Raja Ravi Varma, rich oil-painting texture, warm golden lamplight from the single flame, mood of secret determination and love expressed through written word. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Bhagavata Purana &middot; Skandha 10</div>
+            <h1 class="hero-title">The Letter That Moved a God &mdash; How a Princess Proposed to Krishna Before He Ever Saw Her</h1>
+            <div class="hero-meta">
+                <span>Rukmini &amp; Krishna</span>
+                <span>Chapters 52&ndash;54</span>
+                <span>Courage to Choose</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Long before she ever saw him, Rukmini had already chosen Krishna. She was the princess of Vidarbha, daughter of King Bhishmaka. She had heard about Krishna from people who had visited her father&rsquo;s court &mdash; travelers, sages, and those who had seen him in person. They spoke of his qualities, his character, his deeds. And something settled inside her heart. According to the Bhagavata Purana, she decided that Krishna alone was a worthy husband for her.</p>
+
+            <p>But her elder brother Rukmi had other plans. Rukmi hated Krishna. He had arranged Rukmini&rsquo;s marriage to Shishupala, the king of Chedi &mdash; a man who was an open enemy of Krishna. The wedding date was set. Shishupala and his allies, including Jarasandha and Shalva, had already arrived in the city of Kundina for the ceremony.</p>
+
+            <p>Rukmini had no say in this. Her father, though kind, did not oppose Rukmi&rsquo;s decision. She was trapped.</p>
+
+            <p>So she did something remarkable. She wrote a letter.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>She chose a trusted brahmin and sent him to Dwaraka with a private message for Krishna. The brahmin traveled to Krishna&rsquo;s city and delivered the letter directly to him.</p>
+
+            <p>Rukmini&rsquo;s letter, as recorded in the Bhagavata Purana, is one of the most famous passages in the entire scripture. In it, she told Krishna plainly that she had heard of his qualities and that her heart had chosen him. She said that she considered him alone fit to be her husband. She explained that her brother had arranged her marriage to Shishupala against her wishes.</p>
+
+            <p>Then she laid out a plan. She told Krishna that on the day before the wedding, it was custom for the bride to visit the temple of Goddess Ambika (Girija) outside the city walls. That would be the one moment when she would be briefly accessible, away from the heavy guard of Shishupala&rsquo;s army. She asked Krishna to come and take her from there.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Rukmini &mdash; from her letter (Bhagavata Purana 10.52.37&ndash;43, paraphrased)</span>
+                &ldquo;O Krishna, I have chosen you as my husband. Come and take my hand. Do not let Shishupala touch what belongs to you, like a jackal seizing what belongs to a lion. If I have done enough dharma in past lives, then let you be the one to hold my hand.&rdquo;
+            </div>
+
+            <p>She ended the letter with a vow: if Krishna did not come, she would give up her vital force through severe penance. She would renounce this life rather than marry someone she had not chosen.</p>
+
+            <p>This was not a timid request. This was a princess telling a god: I have chosen you. Come and claim me, or I will die waiting.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A humble brahmin messenger in simple white dhoti with a sacred thread across his chest, standing before blue-skinned Krishna who is seated on a golden throne in the grand court of Dwaraka, the brahmin holding out a small rolled palm-leaf letter with both hands, Krishna leaning forward with keen interest and a gentle smile forming on his face, Dwaraka's ornate palace interior with tall pillars inlaid with gems, other courtiers visible in the background, warm interior lighting with shafts of sunlight coming through arched windows, Indian mythological painting style with Pahari miniature influences, detailed fabric textures on Krishna's yellow silk pitambara, mood of an important private message being delivered. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="The brahmin messenger standing before Krishna in Dwaraka's court, holding out Rukmini's palm-leaf letter as Krishna leans forward with interest"
+                    onerror="this.outerHTML='<div class=\'img-placeholder portrait\'>Add img1.png</div>'"
+                >
+                <div class="caption">A brahmin delivers Rukmini&rsquo;s secret letter to Krishna in Dwaraka</div>
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Krishna listened to the brahmin read the letter. According to the Bhagavata Purana, he smiled, held the brahmin&rsquo;s hand, and said that his own mind was equally drawn to Rukmini. He immediately ordered his chariot. He and the brahmin rode together from Dwaraka toward Vidarbha.</p>
+
+            <p>Meanwhile, Rukmini waited. She did not know if the brahmin had reached Dwaraka. She did not know if Krishna had read her words. She did not know if he would come. The Bhagavata Purana describes her standing at the temple of Goddess Ambika on the appointed day, having completed her worship, walking out slowly, waiting &mdash; hoping.</p>
+
+            <p>Then she saw his chariot.</p>
+
+            <p>Krishna arrived at the temple. As Rukmini emerged from her worship, he swept her onto his chariot in full view of the assembled kings. She stepped onto his chariot willingly &mdash; this was no kidnapping. She had called him. He had answered.</p>
+
+            <p>The armies of Shishupala, Jarasandha, and Shalva gave chase. A battle broke out. Krishna&rsquo;s own forces, led by Balarama, who had arrived with the Yadava army, fought them off. Shishupala&rsquo;s side was defeated.</p>
+
+            <p>But there was one more moment.</p>
+
+            <p>Rukmi, Rukmini&rsquo;s own brother, chased after them alone, full of anger, swearing he would not return to Kundina without bringing his sister back. He fought Krishna and was defeated. Krishna was about to punish him severely &mdash; he had already bound him and humiliated him by shaving parts of his head and beard.</p>
+
+            <p>Rukmini fell at Krishna&rsquo;s feet and begged for her brother&rsquo;s life.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up emotional scene — a beautiful Indian woman in a red bridal saree with tear-filled eyes and gold jewelry, kneeling and grasping the feet of blue-skinned Krishna who stands above her holding a sword, her hands clasped around his ankles in desperate pleading, behind them a defeated warrior (Rukmi) lies on the ground with his hair partially shorn, battlefield dust in the air, a golden chariot visible in the background, late afternoon light casting long shadows, Indian mythological oil painting style inspired by Raja Ravi Varma, extreme emotional intensity on the woman's face, Krishna's expression shifting from anger to compassion, mood of mercy being asked between love and family. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Rukmini kneeling at Krishna's feet pleading for her brother Rukmi's life, tears in her eyes, as the defeated Rukmi lies on the ground behind them"
+                    onerror="this.outerHTML='<div class=\'img-placeholder portrait\'>Add img2.png</div>'"
+                >
+                <div class="caption">Rukmini begs Krishna to spare her brother&rsquo;s life</div>
+            </div>
+
+            <p>Krishna let Rukmi go. He did not kill him &mdash; because Rukmini asked.</p>
+
+            <p>The woman who had been bold enough to write to a god was also brave enough to stand between that god and her own brother. She did not stop loving her family just because her family had tried to give her away against her will.</p>
+
+            <p>Krishna and Rukmini returned to Dwaraka. They were married. She became his chief queen. And it all began with a letter &mdash; written by a woman who refused to let her life be decided by someone else.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Rukmini did not sit and weep over her fate. She did not wait to be rescued. She wrote the letter. She made the plan. She named the place and the time. The bravest thing she ever did was not refusing the wrong marriage &mdash; it was asking for the right one. How many of us stay silent about what we truly want, hoping someone will just know?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Rukmi never forgave Krishna. He carried that humiliation for years. And when, a generation later, Rukmi&rsquo;s grandson played a game of dice with Balarama, it ended in blood. The grudge that began on the day of Rukmini&rsquo;s wedding finally reached its violent conclusion &mdash; at another celebration, in another city. That story is in Bhagavata Purana, Skandha 10, Chapters 61 and 78.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Rukmini &mdash; princess of Vidarbha, daughter of King Bhishmaka. Krishna &mdash; king of Dwaraka. Rukmi &mdash; Rukmini&rsquo;s elder brother, who arranged her marriage to Shishupala. Shishupala &mdash; king of Chedi, intended groom. The Brahmin Messenger &mdash; unnamed, trusted by Rukmini to carry her letter. Balarama &mdash; Krishna&rsquo;s elder brother, who arrived with the Yadava army.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Courage to Choose &mdash; love that acts, the bravery to ask for what your heart knows is right</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Bhagavata Purana, Skandha 10, Chapters 52&ndash;54. Rukmini&rsquo;s letter is in Chapter 52, verses 37&ndash;43 (approximately). Krishna&rsquo;s arrival and the abduction at the temple is in Chapter 53. Rukmi&rsquo;s pursuit and defeat is in Chapter 54. Also referenced in Vishnu Purana, Book 5, Chapters 26&ndash;27.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode is one of the most well-documented narratives in the Bhagavata Purana. It can be verified in the Gita Press Gorakhpur edition of Srimad Bhagavatam, Skandha 10 (Uttarardha), Chapters 52&ndash;54. Also found in Bibek Debroy&rsquo;s English translation of the Bhagavata Purana (Volume 3). The Vishnu Purana account (H.H. Wilson translation, Book 5) provides a parallel version. Rukmini&rsquo;s letter (Rukmini Sandesh) is one of the most studied and recited passages in Bhagavata literature.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

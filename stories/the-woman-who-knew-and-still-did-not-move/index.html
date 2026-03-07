@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Woman Who Knew It Was Not Her Husband &mdash; And Still Did Not Move</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\2753';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="A woman barely visible among dust and ash in an abandoned hermitage, as a young prince enters through the doorway with golden light behind him"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- FEATURE IMAGE PROMPT: A hauntingly beautiful scene inside an ancient abandoned Indian forest hermitage (ashram), overgrown with creepers and covered in dust, in the center of the frame lies a woman's form that is almost invisible — she is grey and still like stone, lying on the bare earth among ashes, her sari is faded and dust-covered, her eyes are closed, her face shows centuries of silent penance, she is barely distinguishable from the earth around her, near the edge of the frame the bare foot of a young prince (Rama) is about to step onto the ground close to her, only the foot and lower leg are visible wearing a simple wooden sandal, the hermitage has crumbling clay walls and dried leaf thatch, shafts of pale golden morning light filtering through gaps in the roof illuminating the dust particles in the air, Indian mythological painting style inspired by Raja Ravi Varma with muted earthy tones of ash grey ochre and dust brown, the only warm color is the golden light falling near Rama's foot, mood of profound stillness mystery and anticipation of something about to change after centuries of waiting, 4K detail cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Valmiki Ramayana &middot; Bala Kanda &middot; Sargas 48&ndash;49</div>
+            <h1 class="hero-title">The Woman Who Knew It Was Not Her Husband &mdash; And Still Did Not Move</h1>
+            <div class="hero-meta">
+                <span>Ahalya, Gautama, Indra &amp; Rama</span>
+                <span>Valmiki Ramayana</span>
+                <span>Guilt, Punishment &amp; Grace</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Here is a story that the scriptures do not let you feel comfortable about. It is a story where every character &mdash; the god, the sage, the woman &mdash; does something that raises questions. And the text, written thousands of years ago, does not try to give you easy answers. It simply tells you what happened and leaves you to sit with it.</p>
+
+            <p>This is the story Vishvamitra told Rama as they walked through a strange, abandoned forest hermitage. The ashram was empty. No birds sang there. No animals moved. The trees stood still. Vishvamitra told Rama that this was the ashram of the great sage Gautama, and that Gautama had once lived here with his wife, Ahalya.</p>
+
+            <p>Ahalya was said to be the most beautiful woman in creation. Brahma himself had crafted her with care. She was given in marriage to the sage Gautama, and the two of them lived in this ashram, performing tapas and rituals for many ages.</p>
+
+            <p>One day, Indra &mdash; the king of the gods &mdash; came to the ashram. He had been watching. He knew Gautama&rsquo;s daily routine. He waited until the sage left early in the morning for his ritual bath. Then Indra disguised himself as Gautama &mdash; took the sage&rsquo;s exact form &mdash; and entered the ashram.</p>
+
+            <p>He approached Ahalya and expressed his desire for her.</p>
+
+            <p>Now here is the part the Valmiki Ramayana does not hide. The text says clearly: Ahalya recognized him. She knew this was not her husband. She knew it was Indra, the king of the gods, in disguise. The text uses words that indicate she knew him to be Indra &mdash; and yet she consented. The Ramayana says she was curious about the king of the gods.</p>
+
+            <p>This is what makes this story so uncomfortable. She was not simply tricked. The text says she had &ldquo;bad intent&rdquo; &mdash; that she wanted to know what the king of the gods was like. She agreed.</p>
+
+            <p>Afterward, Ahalya told Indra that his desire was fulfilled and that he should leave quickly, before her husband returned. She said he should protect himself and protect her.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>But Gautama was already coming back. The sage, radiant with the power of his tapas, entered the ashram and saw Indra still there &mdash; still wearing his false form. Gautama saw through the disguise immediately. He was furious.</p>
+
+            <p>He cursed Indra first. The Valmiki Ramayana states the curse plainly: Gautama told Indra that because he had done this foolish and wicked thing, he would lose his testicles. The text says they fell from Indra&rsquo;s body right there. Later, according to the same passage, the gods appealed to the Pitrs (the ancestral spirits), and Indra was given the testicles of a ram as a replacement. This is the original version in the Valmiki Ramayana. The more well-known version where Indra gets a thousand eyes on his body comes from later Puranic retellings.</p>
+
+            <p>Then Gautama turned to Ahalya.</p>
+
+            <p>He told her that she would live in this ashram for thousands of years. She would eat nothing. She would survive on air alone. She would sleep in ashes. She would be invisible to all beings &mdash; no one would be able to see her. She would remain like this, doing tapas in misery, until the day Rama, the son of Dasharatha, entered this hermitage. Only when Rama came into the ashram would she be freed from the curse, purified, and restored to Gautama.</p>
+
+            <p>Having said this, Gautama left the ashram and went to do tapas on a peak of the Himalayas.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Sage Gautama standing in furious anger at the door of his ashram, cursing Indra who cowers before him in a stolen form"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: The great Indian sage Gautama standing at the entrance of his forest hermitage (ashram), an elderly but powerfully built ascetic with matted hair (jata) piled on his head and a long grey beard, wearing bark cloth and rudraksha beads, his right arm is raised pointing at the figure before him as he delivers a curse, his face shows controlled but terrible anger with furrowed brow and blazing eyes, before him cowers Indra the king of gods caught in the act still partially wearing the false form of Gautama, Indra is a golden-skinned muscular deity with ornate armor and crown now looking fearful and ashamed his hands raised in a defensive gesture, the ashram is a simple forest dwelling with thatched roof and clay walls surrounded by tall sal trees, early morning light streaming through the trees casting long dramatic shadows across the scene, Indian mythological painting style inspired by classical Pahari miniature art with rich earth tones and forest greens, mood of righteous fury and terrible consequence, 4K detail. Aspect ratio 1:1, square format. -->
+                <div class="caption">Gautama discovers the deception &mdash; and his anger changes three lives forever</div>
+            </div>
+
+            <p>And so Ahalya stayed. Invisible. Alone. For thousands of years. The text says she performed great tapas in that state, eating nothing, seen by no one, lying in dust and ash.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Then one day, Vishvamitra brought Rama and Lakshmana to that ashram. He told Rama the whole story &mdash; everything above. And then he said to Rama: enter the ashram. Go see Ahalya.</p>
+
+            <p>Rama entered. The moment he stepped into the hermitage, Ahalya became visible. The curse lifted. The Valmiki Ramayana describes the scene: she appeared like a flame hidden by smoke, like the full moon behind clouds, like the sun&rsquo;s reflection in water that suddenly becomes clear. She had been there all along, invisible, and now she could be seen.</p>
+
+            <p>Rama and Lakshmana touched her feet. Ahalya received them with proper hospitality &mdash; water to wash their feet, offerings as was the custom for honored guests. The gods showered flowers from the sky. Celestial drums sounded. The text says the gods and celestial beings praised Ahalya.</p>
+
+            <p>Then Gautama, knowing through his spiritual power that his curse had been fulfilled, returned to the ashram. He received Ahalya back. He resumed his tapas with her by his side.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Ahalya becoming visible as Rama enters the ashram, her form emerging from dust and ash like moonlight breaking through clouds"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: An intimate emotional scene inside the ancient hermitage, a beautiful Indian woman (Ahalya) is becoming visible, she is emerging from invisibility like a figure materializing from dust and light, her lower half still fades into the ashen ground while her upper body and face are becoming clear and solid, she is thin from centuries of penance and her simple white sari is grey with ash, her expression shows overwhelming emotion a mixture of relief and quiet tears, her hands are slowly rising from her sides as if waking from an impossibly long sleep, standing a few steps away in the doorway is the silhouette of a young prince (Rama) with a bow on his shoulder backlit by golden morning sunlight that pours into the dark dusty interior, the light from the doorway falls across Ahalya like a benediction, dust motes float in the golden light beams, the ashram interior is bare earth floor with a few clay pots and dried flowers, Indian mythological painting style with the luminosity of Rembrandt chiaroscuro combined with Ajanta cave painting warmth, mood of liberation after unbearable patience and the first moment of grace after centuries of silence. Aspect ratio 1:1, square format. -->
+                <div class="caption">After thousands of years in ash and silence &mdash; Ahalya sees the light again</div>
+            </div>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Mystery</div>
+            <p>This story does not offer a clean moral. The Valmiki Ramayana does not excuse Ahalya, but it also does not condemn her forever. She knew. She chose. She was punished. She did her penance. And then grace came &mdash; not because she earned it through perfection, but because she endured the consequence of her choice without running from it. The uncomfortable question the text leaves with you is this: Is punishment the end of the story, or is there always a door back? And the even harder question &mdash; what do you do with a person who made a wrong choice, admitted it, suffered for it, and waited? Do they deserve to stay in the ash forever?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Indra did not learn his lesson from Gautama&rsquo;s curse. He later tried to sabotage the tapas of other sages too. One of his most dangerous attempts was against the sage Vishvamitra himself &mdash; the same sage who brought Rama to Ahalya&rsquo;s ashram. That story, also from the Bala Kanda of the Valmiki Ramayana, involves the celestial apsara Menaka, and it nearly destroyed everything Vishvamitra had built over a thousand years of penance.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Ahalya &mdash; wife of Gautama, considered the most beautiful woman in creation, cursed to invisibility for thousands of years. Gautama &mdash; a great rishi whose tapas gave him the power to see through any disguise and whose anger changed the fate of gods and mortals alike. Indra &mdash; king of the gods, who disguised himself as Gautama and suffered a humiliating curse. Rama &mdash; prince of Ayodhya, whose arrival at the ashram freed Ahalya from her centuries of penance. Vishvamitra &mdash; the sage who guided Rama to the ashram and narrated this story.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Guilt, Punishment &amp; Grace &mdash; the disturbing question of whether a wrong choice defines a person forever, or whether penance and time can open a door back to the world</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Valmiki Ramayana, Bala Kanda, Sargas 48&ndash;49 (the Ahalya episode as narrated by Vishvamitra to Rama). Sarga 48 contains Indra&rsquo;s deception, Ahalya&rsquo;s recognition and consent, and Gautama&rsquo;s curse on both Indra and Ahalya. Sarga 49 contains Rama&rsquo;s entry into the ashram and Ahalya&rsquo;s liberation. The detail about Ahalya recognizing Indra and consenting with curiosity is in Sarga 48, verse 19 (Gita Press edition). The key Sanskrit word is &ldquo;vijnaaya&rdquo; (having recognized), and the phrase &ldquo;deva raaja kutuuhalaat&rdquo; indicates she acted out of curiosity or longing for the king of gods &mdash; meaning recognition and consent are both present in the original text. The detail about Indra&rsquo;s castration and the Pitrs providing a ram&rsquo;s replacement is in Sarga 48, verses 28&ndash;30 approximately. Note: the &ldquo;turned to stone&rdquo; version is popularized by later retellings (especially Tulsidas&rsquo;s Ramcharitmanas); in the Valmiki Ramayana, the curse is invisibility and penance in ash, not petrification.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode can be verified in the Gita Press Gorakhpur edition of the Valmiki Ramayana (Bala Kanda, Sargas 48&ndash;49) and in the English translation by Robert P. Goldman (&ldquo;The Ramayana of Valmiki: Balakanda,&rdquo; Princeton University Press, 1984), which includes detailed notes on the textual ambiguity around Ahalya&rsquo;s knowledge and consent. Goldman&rsquo;s translation and commentary specifically discuss the phrase indicating Ahalya recognized Indra. Also available in Bibek Debroy&rsquo;s English translation of the Valmiki Ramayana (Penguin, 2017). The distinction between the Valmiki version (invisibility) and Tulsidas version (stone) is well-documented in scholarly literature.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Slave Who Stole Immortality from Heaven &mdash; Why Serpents Have Forked Tongues</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MYSTERY SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F40D';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        .moral p + p {
+            margin-top: 16px;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A colossal golden eagle-like divine bird (Garuda) with massive outstretched wings spanning the entire frame, golden-brown feathers with intricate patterns, a fierce humanoid face with sharp eyes and a curved beak-like nose, wearing a golden crown, muscular human-like torso with bird talons for feet, clutching a radiant golden pot of glowing amrita nectar in his powerful claws, flying upward through a stormy sky filled with broken divine weapons and scattered arrows falling around him, faint silhouettes of defeated gods tumbling below, clouds parting around his enormous wingspan, feathers catching fire at the tips from his sheer speed and power, Indian mythological painting style inspired by Tanjore painting with gold leaf texture, dramatic upward lighting from the glowing amrita pot illuminating Garuda's chest and face from below, warm golden and amber tones against a dark turbulent sky, mood of unstoppable power and fierce determination, 4K detail, cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="The mighty Garuda flying upward through a stormy sky clutching the pot of amrita, with broken divine weapons falling around him"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Adi Parva &middot; Astika Parva</div>
+            <h1 class="hero-title">The Slave Who Stole Immortality from Heaven &mdash; Why Serpents Have Forked Tongues</h1>
+            <div class="hero-meta">
+                <span>Garuda&rsquo;s Origin</span>
+                <span>Adi Parva, Chapters 14&ndash;34</span>
+                <span>A Mother&rsquo;s Freedom</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Have you ever looked closely at a snake&rsquo;s tongue? It is split right down the middle &mdash; forked into two. The Mahabharata says it knows exactly why. And the reason goes back to a stolen pot of immortality, a rigged bet, and a son who fought every god in heaven to free his enslaved mother.</p>
+
+            <p>The sage Kashyapa had two wives &mdash; Kadru and Vinata. Both wanted children. According to the Adi Parva, Kashyapa granted each a boon. Kadru asked for a thousand serpent sons. Vinata asked for just two sons &mdash; but she wanted them to be more powerful than all of Kadru&rsquo;s children combined.</p>
+
+            <p>In time, Kadru&rsquo;s eggs hatched and produced a thousand serpents &mdash; the Nagas. But Vinata&rsquo;s two eggs took much longer. Impatient, Vinata broke open one egg too early. Inside was Aruna, who was only half-formed. According to the text, Aruna cursed his mother for her impatience, saying she would become a slave. He rose into the sky and became the charioteer of Surya, the sun god. The second egg Vinata left alone. From it, in time, came Garuda.</p>
+
+            <p>But before Garuda was born, the damage was already done.</p>
+
+            <p>One day, Kadru and Vinata saw the divine horse Uchchaihshravas &mdash; the white horse that had appeared during the churning of the ocean. Kadru asked Vinata what color the horse&rsquo;s tail was. Vinata said white. Kadru said it was black. They made a bet: whoever was wrong would become the other&rsquo;s slave.</p>
+
+            <p>The horse&rsquo;s tail was white. But Kadru cheated. She ordered her serpent sons to hang from the horse&rsquo;s tail so it would look black. Many of her sons refused &mdash; and Kadru cursed those who refused, saying they would die in a snake sacrifice. But enough serpents obeyed. When the two women went to look the next day, the tail appeared dark.</p>
+
+            <p>Vinata lost. She became Kadru&rsquo;s slave &mdash; and when Garuda was born, he was born into slavery alongside his mother.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>The Mahabharata describes Garuda&rsquo;s birth as a terrifying event. He burst from his egg with a body so bright that the gods themselves mistook him for Agni, the fire god. His wings spread across the sky. The gods trembled and went to praise him, asking him to reduce his glow, which he did.</p>
+
+            <p>But even with all this power, Garuda was a slave. He had to carry the serpents on his back wherever they wished to go. One day, Garuda asked them what it would take to free himself and his mother.</p>
+
+            <p>The serpents answered: bring us the amrita &mdash; the nectar of immortality &mdash; from heaven. Only then would they release Vinata.</p>
+
+            <p>Garuda went to his mother and asked for her blessing. Vinata told him to eat something first to build his strength for the journey. On Vinata&rsquo;s advice, Garuda flew toward the ocean and ate an enormous number of Nishadas (a tribe of fishermen-hunters) to fill his hunger. But a Brahmana and his wife had been among the group he swallowed, and they burned his throat from inside. Garuda immediately spat them out unharmed. His father Kashyapa then directed him to eat a giant elephant and tortoise instead &mdash; who were actually two feuding brothers cursed into those forms. This gave him the strength he needed.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A massive divine bird (Garuda) with enormous golden-brown wings and a fierce humanoid face wearing a golden crown, battling in the sky against a heavenly army, a spinning fiery discus-like weapon (the chakra guard) made of interlocking sharp golden blades blocking his path with intense flames, Garuda's claws extended forward tearing through the defensive ring, divine soldiers in white armor scattered and falling through clouds below, the glowing golden pot of amrita visible behind the weapon-barrier, heavenly palace architecture faintly visible in the background through swirling clouds, Indian mythological painting style with Tanjore gold leaf aesthetic, dramatic side-lighting with fire from the chakra illuminating Garuda's feathers in orange and gold, dark storm clouds behind, mood of fierce unstoppable combat, 4K detail, dynamic action composition. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Garuda battling past the divine wheel-weapon guarding the amrita in heaven"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Garuda breaks through heaven&rsquo;s defenses &mdash; no weapon could stop him</div>
+            </div>
+
+            <p>Then Garuda flew to heaven. The amrita was guarded by deadly defenses. The Adi Parva describes a spinning wheel with sharp edges, blazing like the sun, that would cut anything that tried to pass through. Beneath it, two enormous serpents with eyes like fire stood guard. Garuda shrank his body, slipped between the spokes of the wheel, blinded the two serpent-guards, and seized the amrita.</p>
+
+            <p>On his way out, he fought Indra himself. Indra struck Garuda with his thunderbolt &mdash; the vajra. Garuda was not hurt, but out of respect for the sage Dadhichi (from whose bones the vajra was made), he shed a single feather. The Adi Parva says that when that one feather fell, all the beings who saw it were amazed by its beauty.</p>
+
+            <p>It was then that Vishnu appeared before Garuda. The Mahabharata says Vishnu was pleased with Garuda&rsquo;s strength and offered him a boon. Garuda asked to always stay above Vishnu &mdash; on his flagstaff &mdash; and to be immortal even without drinking the amrita. Vishnu granted both. In return, Garuda agreed to be Vishnu&rsquo;s mount. This is how Garuda became Vishnu&rsquo;s vahana.</p>
+
+            <p>Then Indra came to Garuda &mdash; no longer as an enemy, but as a friend. The Adi Parva says Indra and Garuda made a pact. Indra asked Garuda to let him take the amrita back after Vinata was freed. Garuda agreed. He also told Indra to snatch the amrita away before the serpents could actually drink it.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: A group of serpents depicted as half-human half-snake beings with human upper bodies and long coiled serpent tails, dark green and black scales, on a flat stone platform in a forest clearing, desperately licking blades of kusha grass on the ground where drops of glowing golden amrita nectar have just been spilled, their tongues pressing hard against the sharp-edged grass, thin lines of blood on their tongues where the grass is cutting them, in the background Indra a muscular figure in white armor and golden crown flying away clutching a glowing golden pot, dust still settling from his departure, dappled forest light filtering through ancient trees, Indian mythological painting style inspired by Pahari miniature art, warm natural lighting with golden glow from the remaining amrita drops on the grass, mood of desperate greed meeting painful consequence, detailed scales and grass textures, 4K detail, medium-wide composition. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="The serpents desperately licking the sharp kusha grass where the amrita was placed, their tongues being split by the blades"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">The serpents lick the kusha grass where the amrita sat &mdash; and their tongues are split forever</div>
+            </div>
+
+            <p>Garuda brought the amrita to the serpents and placed it before them on a bed of kusha grass. He told them: here is the amrita, as promised. Now free my mother. The serpents released Vinata.</p>
+
+            <p>But before the serpents could drink, Garuda told them to purify themselves first with a bath, as was proper ritual. The moment the serpents left to bathe, Indra swooped down and took the amrita back to heaven.</p>
+
+            <p>When the serpents returned and found the amrita gone, they were desperate. They began licking the kusha grass where the pot had sat, hoping to taste even a drop of the nectar. But kusha grass has sharp edges. As they licked it, the grass cut their tongues &mdash; splitting them down the middle.</p>
+
+            <p>According to the Mahabharata, this is why snakes have forked tongues to this day.</p>
+
+        </article>
+
+        <!-- ============ THE MYSTERY ============ -->
+        <div class="moral">
+            <div class="moral-label">The Mystery</div>
+            <p>The serpents got exactly what they asked for. The amrita was placed right in front of them. They had won. But their own greed &mdash; the same greed that made them enslave an innocent woman and her son &mdash; was not enough to let them keep it. They lost the nectar, and the only thing they gained was a split tongue for all their kind, forever.</p>
+            <p>And Garuda, the one born into slavery, ended up higher than any of them &mdash; sitting on the flagstaff of Vishnu himself. The Mahabharata seems to be saying something very specific here: the one who fights for someone else&rsquo;s freedom ends up with more power than the ones who fought only for themselves.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Remember the serpents who refused Kadru&rsquo;s order to cheat &mdash; the ones she cursed to die in a snake sacrifice? That curse came true. Generations later, a king named Janamejaya &mdash; grandson of Arjuna &mdash; held a massive sacrifice to destroy every serpent on earth. The only reason the snakes survived at all was because of a young Brahmana named Astika, who stopped the sacrifice at the last moment. That story is told in the very same Astika Parva of the Mahabharata &mdash; and it is the reason the Garuda story is told in the first place.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Garuda &mdash; the mighty bird, son of Vinata. Vinata &mdash; Garuda&rsquo;s mother, enslaved by Kadru. Kadru &mdash; mother of the serpents. Kashyapa &mdash; sage, father of both Garuda and the Nagas. Aruna &mdash; Garuda&rsquo;s half-formed elder brother. Indra &mdash; king of the gods. Vishnu &mdash; the preserver god. The thousand serpent sons of Kadru.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Devotion to Mother &amp; The Price of Greed &mdash; a son&rsquo;s love conquered heaven, while the cheaters lost everything</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Adi Parva, Astika Parva (also referred to as the Astika sub-parva and the Garuda sub-section within it), Chapters approximately 14&ndash;34 in the Ganguli translation. The bet between Kadru and Vinata (Ch 16&ndash;20), Garuda&rsquo;s birth and power (Ch 23&ndash;24), the quest for amrita (Ch 25&ndash;30), the encounter with Vishnu and Indra (Ch 30&ndash;33), the forked-tongue origin (Ch 34). BORI Critical Edition: Adi Parva, Astika Parva sections, with some chapter numbering differences.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode is one of the major sub-narratives of the Adi Parva, available in K.M. Ganguli&rsquo;s English translation (Adi Parva, Sections XVI&ndash;XXXIV in his numbering) and Bibek Debroy&rsquo;s English translation (Volume 1). The BORI Critical Edition includes the Garuda episode in the Astika Parva section of Adi Parva. The &ldquo;But Wait&rdquo; teaser refers to Janamejaya&rsquo;s Sarpa Satra, which is the framing narrative of the entire Astika Parva &mdash; one of the most well-attested episodes in the Mahabharata.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

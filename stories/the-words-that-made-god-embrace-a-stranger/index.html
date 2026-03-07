@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Words That Made God Embrace a Stranger &mdash; Hanuman&rsquo;s First Meeting with Rama</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- FEATURE IMAGE PROMPT (featured.png): A young vanara (monkey-faced divine being) disguised as a wandering ascetic mendicant, wearing simple ochre robes of a bhikshu with a shaved head, carrying a wooden water pot (kamandalu) and a walking staff, standing on a rocky forest path on the slopes of Rishyamuka mountain, hands joined respectfully in anjali mudra, face showing calm composed bearing with intelligent eyes, behind him dense green tropical forest with tall sal and teak trees, morning mist drifting through the canopy, two tall warrior figures visible in the distance walking uphill carrying bows, Indian mythological painting style inspired by Raja Ravi Varma, warm diffused morning light filtering through trees, mood of quiet tension and careful observation, intricate details on the ochre cloth folds, 4K cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Hanuman disguised as a wandering ascetic standing on Rishyamuka mountain, hands joined in greeting, watching two warrior figures approach through the misty forest"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Valmiki Ramayana &middot; Kishkindha Kanda</div>
+            <h1 class="hero-title">The Words That Made God Embrace a Stranger</h1>
+            <div class="hero-meta">
+                <span>Hanuman&rsquo;s First Meeting with Rama</span>
+                <span>Sargas 3&ndash;4</span>
+                <span>Excellence &amp; Recognition</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Before the burning of Lanka, before the leap across the ocean, before any of the great deeds that would make his name immortal &mdash; Hanuman had to do something far harder. He had to walk up to two strangers and speak.</p>
+
+            <p>Rama and Lakshmana were wandering near Rishyamuka mountain, searching for Sita. They looked like warriors &mdash; tall, strong, carrying great bows, dressed in bark cloth. From his hiding place on the mountain peak, Sugriva, the exiled vanara king, watched them approach and felt afraid. He thought Vali, his powerful brother and enemy, had sent these two to kill him.</p>
+
+            <p>Sugriva turned to his most trusted minister &mdash; Hanuman, the son of Vayu, the wind god.</p>
+
+            <p>The task was simple: go down the mountain, find out who these men are, and learn whether they mean harm. But the task was also dangerous. If they were Vali&rsquo;s agents, approaching them openly could mean death.</p>
+
+            <p>Hanuman did not go as himself. He changed his form and took on the appearance of a wandering ascetic &mdash; a mendicant monk, a bhikshu in simple ochre robes, staff in hand. Then he walked down the slope to meet the two strangers.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>What happened next is one of the most unusual scenes in the entire Ramayana. There is no battle. No curse. No miracle. Just one person speaking &mdash; and another person listening so closely that the words changed everything.</p>
+
+            <p>Hanuman approached Rama and Lakshmana and spoke. He praised them, asked who they were, and offered Sugriva&rsquo;s friendship. But it was not what he said that mattered most. It was how he said it. The Valmiki Ramayana describes his speech in careful detail: every word was placed correctly, his grammar was flawless, his voice was clear and pleasant, he spoke neither too fast nor too slow, and every sentence came from the heart as well as the mind.</p>
+
+            <p>Rama was struck. He turned to Lakshmana and quietly shared what he had noticed about this stranger.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Rama &mdash; to Lakshmana</span>
+                &ldquo;No one can speak this way without having mastered the Rig Veda, the Yajur Veda, and the Sama Veda. He must have studied all of grammar thoroughly, for in his long speech there is not a single error &mdash; not in his face, not in his eyes, not in his forehead, not in his brows, not in any limb. His words rise from the heart and stay in the middle register of the voice. Even an enemy with his sword already raised would have his mind calmed by such speech.&rdquo;
+            </div>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: Close-up dramatic scene of Rama, a tall dark-skinned prince wearing bark cloth and carrying a large ornate bow, leaning slightly toward his brother Lakshmana and speaking quietly with admiration visible on his face, one hand gesturing toward an ochre-robed wandering ascetic mendicant standing before them with a staff (seen from behind, partially visible at the edge of the frame), dense green forest clearing on a mountainside, dappled morning sunlight falling across the scene, Indian mythological oil painting style with rich naturalistic detail, warm golden-green lighting, mood of quiet amazement and recognition of greatness, 4K detail in fabric textures and foliage. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Rama leaning toward Lakshmana speaking quietly with admiration, gesturing toward Hanuman disguised as a wandering ascetic standing before them in a forest clearing"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Rama tells Lakshmana: even an enemy would lower his sword hearing such words</div>
+            </div>
+
+            <p>Think about what Rama is saying. He is not praising Hanuman for his strength, his size, or his divine powers. He is praising the way this stranger talks. He is saying: the way a person uses language tells you everything about who they are. This man has studied deeply. This man thinks clearly. This man can be trusted &mdash; because his words are perfect.</p>
+
+            <p>Rama then told Lakshmana that a king who had such a person as his messenger could accomplish anything in the world.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>After speaking at such length, Hanuman waited. Rama did not embrace him or rush forward. What he did was quieter &mdash; and in its way, more significant. He turned to Lakshmana and instructed him to respond warmly to this messenger. The interaction remained formal, as befits an emissary and a prince meeting for the first time. But Rama&rsquo;s recognition was unmistakable and complete.</p>
+
+            <p>Lakshmana spoke with Hanuman in kind, welcoming words. Hanuman understood that these were not enemies. He set aside his disguise and revealed his true form &mdash; he was Hanuman, son of the wind god, minister of the exiled king Sugriva. He told them that Sugriva also had lost everything and was living in fear, and that perhaps they could help each other.</p>
+
+            <p>Rama was pleased. He told Lakshmana that their search for Sita might find help through Sugriva. Hanuman then carried both brothers on his shoulders up to the mountain peak where Sugriva waited. The deeper bond &mdash; the one that would become legend &mdash; was only beginning to form. But it had started here, in this careful exchange of words.</p>
+
+            <p>And there, on that mountain, an alliance took shape &mdash; not through a miracle or a battle, but through a conversation. Hanuman had walked down the mountain as a stranger. He was carried back up as a trusted friend.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Wide landscape scene of the mighty Hanuman in his true vanara form — a powerful monkey-faced divine being with golden-brown fur — carrying two princes on his shoulders, leaping upward along a steep rocky mountain path surrounded by dense green forest, Rama on one shoulder and Lakshmana on the other both holding their bows, Rishyamuka mountain peak visible above wreathed in clouds, bright morning sky with golden sun breaking through, ancient Indian temple mural art style with bold outlines and saturated colors, dynamic upward movement composition, mood of joyful new alliance and purpose, detailed muscular form and flowing garments on the princes. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Hanuman in his true vanara form carrying Rama and Lakshmana on his shoulders, leaping up the slopes of Rishyamuka mountain toward the clouded peak"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Hanuman carries Rama and Lakshmana up Rishyamuka to meet Sugriva</div>
+            </div>
+
+            <p>This is the scene most people skip. They jump straight to the ocean leap, to the burning tail in Lanka, to the mountain of herbs carried through the sky. But before all of that, there was this: a vanara walking down a hill, disguised as a wandering mendicant, armed with nothing but his words. And those words were enough to win the recognition of God himself.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Hanuman&rsquo;s greatest weapon was never his strength. It was the way he spoke &mdash; clearly, truthfully, with deep learning behind every word. Rama did not ask to see his power. He listened to his speech and knew everything he needed to know. How do you speak? When you open your mouth, do your words reveal depth &mdash; or do they reveal that you have nothing behind them?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>That meeting on Rishyamuka led to a fire. Rama and Sugriva made their alliance &mdash; and to seal it, they circled a sacred fire together as witnesses. But before Sugriva could help Rama find Sita, he needed something first: his own kingdom back from Vali. What followed was one of the most controversial acts Rama ever performed &mdash; shooting Vali from behind a tree. That story raises a question that has troubled scholars for thousands of years.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Hanuman &mdash; son of Vayu, minister of Sugriva, disguised as a wandering ascetic (bhikshu). Rama &mdash; prince of Ayodhya, searching for Sita. Lakshmana &mdash; Rama&rsquo;s brother. Sugriva &mdash; exiled vanara king hiding on Rishyamuka mountain.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Excellence &amp; Recognition &mdash; mastery of speech as the highest form of intelligence, and how true greatness is recognized instantly</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Valmiki Ramayana, Kishkindha Kanda, Sarga 3 (Hanuman&rsquo;s approach and speech to Rama and Lakshmana; Rama&rsquo;s praise of Hanuman&rsquo;s eloquence, approximately verses 28&ndash;32) and Sarga 4 (Hanuman reveals his identity; carries them to Sugriva). Rama&rsquo;s specific praise of Hanuman&rsquo;s mastery of the three Vedas and grammar is in Sarga 3.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode is found in the Valmiki Ramayana, Kishkindha Kanda, Sargas 3&ndash;4. It can be verified in the Baroda Critical Edition of the Valmiki Ramayana, as well as in English translations by Hari Prasad Shastri, Robert Goldman (Princeton/Clay Sanskrit Library), and the Gita Press edition. Rama&rsquo;s specific praise of Hanuman&rsquo;s speech &mdash; including the observation about the Rig Veda, Yajur Veda, Sama Veda, and grammar &mdash; is among the most cited passages from Kishkindha Kanda in Sanskrit literary scholarship.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

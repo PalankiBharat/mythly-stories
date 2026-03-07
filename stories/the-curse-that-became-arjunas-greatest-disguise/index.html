@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Curse That Became Arjuna&rsquo;s Greatest Disguise &mdash; When the Most Beautiful Woman in Heaven Was Rejected</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === MYSTERY SECTION === */
+        .mystery {
+            margin: 48px 0;
+            padding: 36px 32px;
+            background: linear-gradient(135deg, #1a1225 0%, #2a1a35 60%, #1f1528 100%);
+            border-radius: 12px;
+            border: 1px solid rgba(196, 150, 60, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mystery::before {
+            content: '?';
+            position: absolute;
+            top: -30px;
+            right: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 160px;
+            opacity: 0.04;
+            color: var(--gold-light);
+        }
+
+        .mystery-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .mystery p {
+            color: #E0D4C0;
+            font-size: 17px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .mystery p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .mystery { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="Arjuna sitting respectfully with folded hands in a luminous heavenly chamber as the celestial apsara Urvashi stands before him adorned in gold, her expression shifting from desire to anger"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- IMAGE PROMPT (featured.png): A young muscular Indian warrior prince with a simple crown and earrings, seated cross-legged on a jeweled floor with his hands folded respectfully in namaste, his eyes lowered with humility, facing a stunningly beautiful celestial woman standing before him draped in sheer white and gold silk garments with heavy gold anklets bracelets and a jeweled headpiece, her face showing a mix of surprise and rising anger at being refused, the setting is a grand luminous chamber in Indra's heaven Amaravati with translucent crystal pillars glowing with soft inner light, celestial flowers scattered on the floor, moonlight streaming through open arches revealing a sky filled with stars and floating celestial chariots, Indian mythological painting style inspired by Raja Ravi Varma with Pahari miniature influences, soft diffused moonlight mixing with warm golden glow from jeweled lamps, mood of tension between desire and duty, devotion clashing with wounded pride. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Vana Parva</div>
+            <h1 class="hero-title">The Curse That Became Arjuna&rsquo;s Greatest Disguise &mdash; When the Most Beautiful Woman in Heaven Was Rejected</h1>
+            <div class="hero-meta">
+                <span>Arjuna &amp; Urvashi</span>
+                <span>Chapters 44&ndash;46</span>
+                <span>Virtue &amp; Destiny</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>What if the worst thing that ever happened to you turned out to be the one thing that saved your life? This is the story of a curse so humiliating that no warrior would wish it on his enemy &mdash; and yet, without it, the Pandavas would never have survived their thirteenth year of exile.</p>
+
+            <p>After losing everything in the game of dice, the five Pandava brothers were sent into exile for thirteen years. During this time, Arjuna left his brothers to go on a quest for divine weapons. He performed severe tapas and pleased Lord Shiva, who gave him the Pashupatastra. Then Indra &mdash; Arjuna&rsquo;s divine father &mdash; sent his chariot to bring Arjuna up to heaven.</p>
+
+            <p>Arjuna spent time in Indra&rsquo;s celestial city, Amaravati. There he learned the use of divine weapons from Indra himself. He also learned music and dance from the gandharva Chitrasena, who became his friend. Indra was proud of his son and wanted to honor him.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>One day, during a performance of celestial music and dance in Indra&rsquo;s court, the apsara Urvashi saw Arjuna. According to the Mahabharata, Urvashi looked at Arjuna repeatedly during the performance, and Arjuna noticed &mdash; but he looked at her only with respect, the way one looks at an elder.</p>
+
+            <p>That night, Urvashi went to Arjuna&rsquo;s chambers. The Mahabharata describes this clearly: she came to him adorned in her finest ornaments, and she told him directly that she desired him. She said she had been struck by Kama&rsquo;s arrows seeing him in Indra&rsquo;s court and that she wanted to be with him.</p>
+
+            <p>Arjuna was shaken. He shut his eyes, covered his ears, and addressed her with words that the text records plainly. He called her &ldquo;mother.&rdquo;</p>
+
+            <div class="dialogue">
+                <span class="speaker">Arjuna &mdash; (Mahabharata, Vana Parva, Ch 46, paraphrased)</span>
+                &ldquo;O Urvashi, you are equal to a mother for me. You were the wife of Pururavas, who was the founder of our dynasty. You are therefore like a parent to me. I bow my head to you. Please look upon me as your son, not as a husband.&rdquo;
+            </div>
+
+            <p>Urvashi tried to argue. She explained that apsaras are not bound by mortal rules of lineage. She said that she had been with many men of his dynasty before &mdash; and that celestial women are not like mortal wives. Their relationships do not create the same bonds of ancestry.</p>
+
+            <p>But Arjuna would not move. He kept his eyes shut and repeated that he could only see her as a mother figure. No matter what she said, he would not accept her.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A dramatically lit scene showing a young Indian warrior prince standing with his eyes firmly shut and both hands pressed over his ears in a gesture of refusal, his face showing deep discomfort and resolve, wearing a white dhoti and simple gold arm bands, while before him a beautiful celestial apsara in flowing translucent gold-bordered garments stands with her arm outstretched toward him, her face transforming from pleading into fury, her ornate gold jewelry catching the light, the scene set in a luxurious heavenly bedchamber with a low jeweled bed visible behind them and silk curtains billowing in a celestial breeze, cool blue moonlight flooding through tall arched windows contrasting with warm lamp glow inside, Indian mythological painting style with dramatic chiaroscuro lighting, tension between refusal and desire palpable in the composition. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Arjuna standing with his eyes shut and hands over his ears, refusing Urvashi who stands before him with an outstretched hand, her expression turning to fury"
+                    onerror="this.outerHTML='<div class=\'img-placeholder\'>Add img1.png</div>'"
+                >
+                <div class="caption">Arjuna refuses Urvashi, calling her &ldquo;mother&rdquo; &mdash; a word that changed his fate</div>
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Urvashi was furious. No one in all three worlds had ever refused her. According to the Mahabharata, she cursed Arjuna on the spot.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Urvashi &mdash; (Mahabharata, Vana Parva, Ch 46, paraphrased)</span>
+                &ldquo;Since you refuse a woman who has come to you willingly, who is consumed with desire &mdash; you shall spend your time among women as a dancer, stripped of your manhood, seen as a eunuch.&rdquo;
+            </div>
+
+            <p>Then she left.</p>
+
+            <p>Arjuna was disturbed. He went to Chitrasena, his gandharva friend, and told him everything. Chitrasena took Arjuna to Indra. When Indra heard the full story, the Mahabharata says he was pleased with his son. Indra was not angry. In fact, he praised Arjuna for his restraint.</p>
+
+            <p>Then Indra gave him a gift hidden inside the curse: he said the curse would last only one year, and that it would fall during the Pandavas&rsquo; thirteenth year of exile &mdash; the very year they would need their disguises most.</p>
+
+            <p>Arjuna chose wisely. He saved it.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Years later, the Pandavas reached their thirteenth and final year of exile. The rules were clear: they had to live in disguise for one full year. If anyone recognized them, they would be sent back into exile for another twelve years. They needed perfect disguises.</p>
+
+            <p>Arjuna &mdash; the most famous warrior in the world, tall and strong and known across every kingdom &mdash; had the hardest challenge. How do you hide the most recognizable fighter alive?</p>
+
+            <p>He activated Urvashi&rsquo;s curse.</p>
+
+            <p>Arjuna became Brihannala &mdash; a eunuch who taught music and dance to the women of King Virata&rsquo;s palace. He wore bangles. He braided hair. He taught Virata&rsquo;s daughter Uttara the art of dance &mdash; the very skills he had learned from Chitrasena in heaven.</p>
+
+            <p>No one suspected a thing. The greatest archer in the world hid in plain sight &mdash; dressed in cloth, clapping rhythm, teaching young girls to move their feet to the beat.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: A tall graceful figure in women's clothing and bangles with long braided hair, teaching dance to a group of young Indian royal women in an ornate palace courtyard, the figure's hands raised in a classical dance mudra position, the young women following the gesture attentively, the figure's face showing a subtle mix of calm patience and hidden warrior intensity behind gentle eyes, wearing a simple white and red saree with glass bangles on both wrists, the palace courtyard has carved sandstone pillars and a lotus fountain in the background, bright warm afternoon sunlight casting gentle shadows, Rajasthani miniature painting style with detailed textile patterns and architectural elements, the mood is one of graceful concealment — a warrior hidden within a dancer's form. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Brihannala, Arjuna in disguise wearing women's clothing and bangles, teaching classical dance to the young women of King Virata's court"
+                    onerror="this.outerHTML='<div class=\'img-placeholder\'>Add img2.png</div>'"
+                >
+                <div class="caption">Brihannala teaches dance in Virata&rsquo;s palace &mdash; the greatest warrior, perfectly hidden</div>
+            </div>
+
+            <p>The curse that was meant to humiliate Arjuna became the perfect armor for his most dangerous year. Without it, the Pandavas would have been discovered. Without it, the war may never have happened on their terms. The moment of Arjuna&rsquo;s greatest shame became the foundation of his greatest survival.</p>
+
+        </article>
+
+        <!-- ============ MYSTERY ============ -->
+        <div class="mystery">
+            <div class="mystery-label">The Mystery</div>
+            <p>Here is what makes this story strange: Indra himself had sent Urvashi to Arjuna&rsquo;s chambers. The Mahabharata says that after noticing Urvashi&rsquo;s glances at Arjuna during the performance in his court, Indra instructed Urvashi to go to Arjuna. And yet, when Arjuna refused and the curse fell, Indra was pleased &mdash; and he immediately softened the curse into something Arjuna could use.</p>
+            <p>Was this a test of character? Or was it something more? Indra was the king of gods. He knew the Pandavas would need disguises for their thirteenth year. Did he set the whole thing in motion &mdash; knowing his son would refuse, knowing the curse would follow, knowing it would one day save his son&rsquo;s life?</p>
+            <p>The text does not say this directly. But the pieces fit almost too perfectly to be an accident.</p>
+        </div>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Arjuna could have given in. No one would have known. No one would have blamed him &mdash; she was an apsara, he was in heaven, and even the gods would have looked the other way. But he held firm to what he believed was right, even when it cost him something painful. And that painful thing &mdash; the very curse that came from his refusal &mdash; turned into the thing that saved him. Sometimes the hardest &ldquo;no&rdquo; you ever say becomes the greatest protection you ever receive.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>When the year of disguise ended and war finally came to Virata&rsquo;s doorstep, it was Brihannala &mdash; the &ldquo;eunuch dance teacher&rdquo; &mdash; who climbed onto a chariot with young Prince Uttara and single-handedly defeated the entire Kaurava army that had come to raid Virata&rsquo;s cattle. The moment Arjuna picked up the Gandiva bow again, the disguise fell away forever. That battle is in the Mahabharata, Virata Parva, Chapters 33&ndash;67.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Arjuna &mdash; third Pandava prince, son of Indra. Urvashi &mdash; the most celebrated apsara in Indra&rsquo;s heaven, once wife of Pururavas. Indra &mdash; king of the devas and Arjuna&rsquo;s divine father. Chitrasena &mdash; a gandharva, Arjuna&rsquo;s friend and music teacher in heaven.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Virtue &amp; Destiny &mdash; holding firm to what is right even when it costs you, and trusting that the consequence may carry a hidden purpose</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Vana Parva (Aranyaka Parva), Chapters 44&ndash;46 (Ganguli numbering). Arjuna&rsquo;s time in Indra&rsquo;s heaven, the encounter with Urvashi, and the curse are narrated in this section. The Brihannala disguise and the year in Virata&rsquo;s court are in the Virata Parva. In the BORI Critical Edition, this episode appears in the Indralokagamana Parva sub-section of Vana Parva (approximate chapters 45&ndash;46 in BORI).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode can be verified in K.M. Ganguli&rsquo;s English translation of the Mahabharata, Vana Parva, Sections 44&ndash;46 (sometimes labeled &ldquo;Indralokagamana Parva&rdquo;). Also found in Bibek Debroy&rsquo;s translation of the Mahabharata (Volume 3, Vana Parva). The BORI Critical Edition of the Mahabharata includes this episode in the Indralokagamana sub-parva. The Brihannala disguise is one of the most well-known episodes of the Virata Parva and is cross-referenced across commentaries.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

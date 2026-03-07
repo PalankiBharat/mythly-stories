@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hunchbacked Woman Who Gave Krishna Perfume &mdash; and Had Her Entire Body Transformed</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A dark-skinned woman with a pronounced triple spinal curve (hunchback bent at three points) wearing a simple faded yellow cotton saree, standing on a dusty Mathura street holding a brass vessel of fragrant sandalwood paste in both hands, looking up with complete devotion at the young blue-skinned Krishna before her — Krishna is only partially visible at the right edge of the frame, his yellow pitambara silk catching the light — the woman's expression full of pure offering without expectation, ancient Mathura city street behind her with terracotta buildings, dust, crowds of onlookers blurred in the background, Indian mythological oil painting style inspired by Raja Ravi Varma, warm amber midday light, mood of humble grace and unexpected encounter. Aspect ratio 3:4 portrait. -->
+        <img
+            src="images/featured.png"
+            alt="Kubja, the hunchbacked keeper of sandalwood paste, holding a brass vessel with both hands and looking up at Krishna on a dusty Mathura street"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Bhagavata Purana &middot; Skandha 10</div>
+            <h1 class="hero-title">The Hunchbacked Woman Who Gave Krishna Perfume &mdash; and Had Her Entire Body Transformed</h1>
+            <div class="hero-meta">
+                <span>Kubja &amp; Krishna in Mathura</span>
+                <span>Chapters 42 &amp; 48</span>
+                <span>Devotion &amp; Grace</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>On the day Krishna and Balarama walked into Mathura to face Kamsa, they passed through streets full of curious eyes.</p>
+
+            <p>People crowded the road. Some threw flowers. Some stared in silence. Among the crowd was a woman named Kubja &mdash; called Trivakra, the triple-bent one, because her spine curved at three places and her body was folded into itself. She worked as a keeper of sandalwood paste in Kamsa&rsquo;s service, carrying fragrant unguents for the king.</p>
+
+            <p>She was not beautiful. She was not powerful. She had no boon to offer a god.</p>
+
+            <p>But she had sandalwood paste. And she had a heart that recognized something in the two young men walking through her city.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>When Krishna approached her and asked for some of the paste, she did not hesitate. She did not wonder whether her offering was worthy. She did not wait for a better moment. She simply gave &mdash; holding out the fragrant paste with both hands, freely, without expecting anything in return.</p>
+
+            <p>Krishna smiled.</p>
+
+            <p>He pressed his toes gently on her feet to steady her. Then he placed his fingers under her chin and slowly, with a single upward movement, lifted.</p>
+
+            <p>Something shifted.</p>
+
+            <p>The triple bend straightened. The curved spine lengthened. The folded body opened. Kubja stood up &mdash; fully upright, tall, beautiful, transformed &mdash; for the first time in her life.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: The moment of transformation — blue-skinned Krishna with gentle hands places his fingers delicately under the chin of the hunchbacked Kubja, pressing one foot lightly on her feet, her body beginning to straighten upward as golden light flows from his touch, her face showing a mixture of shock, wonder, and tears, her spine visibly elongating and straightening, bystanders in the background stepping back in awe, warm divine golden light emanating from Krishna's hands, Tanjore painting aesthetic with gold leaf accents on Krishna's ornaments, mood of miraculous grace. Aspect ratio 1:1 square. -->
+                <img
+                    src="images/img1.png"
+                    alt="Krishna placing his fingers under Kubja's chin as golden light flows from his touch and her spine begins to straighten, her face showing shock and wonder"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Krishna lifts &mdash; and the triple bend straightens for the first time</div>
+            </div>
+
+            <p>She looked at her own hands. She looked at Krishna. She was overwhelmed.</p>
+
+            <p>She did not want him to leave.</p>
+
+            <p>Krishna told her gently that he would come back. He had a task to finish first.</p>
+
+            <p>He walked on toward Kamsa.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Later, after the wrestling match, after Kamsa fell, after the city had exhaled &mdash; Krishna kept his word. He came to Kubja&rsquo;s house. He sat with her. In a city full of noblemen and warriors and devotees all competing for a moment of his attention, he chose to go to the house of the woman who had given him sandalwood paste on the road.</p>
+
+            <p>The Bhagavata Purana does not explain this at great length. It simply records it as fact: Krishna went to Kubja&rsquo;s house and spent time with her.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Intimate interior scene — blue-skinned Krishna seated cross-legged on a simple woven mat in a modest home, now fully upright and beautiful Kubja seated across from him serving him food from clay pots, her face radiant and at peace, the room simple but clean with an oil lamp casting warm golden light, flowers and a small sandalwood incense stick burning nearby, through the doorway a glimpse of Mathura's evening sky, Indian miniature painting style with Mughal-influenced border details, mood of quiet divine visit and profound intimacy between the god and the once-bent woman. Aspect ratio 1:1 square. -->
+                <img
+                    src="images/img2.png"
+                    alt="Krishna seated cross-legged in Kubja's modest home as she serves him food from clay pots, an oil lamp casting warm golden light between them"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">In a city competing for his attention, Krishna chose to go to her house</div>
+            </div>
+
+            <p>That is perhaps the whole point.</p>
+
+            <p>She gave what she had, without calculating its worth. She did not ask whether it was enough. And it was enough &mdash; not because the gift was magnificent, but because the giving was whole.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Kubja gave what she had, not what she wished she had. She did not wait to be rich, or beautiful, or important. She just gave. And she was transformed &mdash; not because the gift was grand, but because it was given fully. The question for us is: what are you holding back because you think it is not good enough to offer?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Just moments before meeting Kubja, on the same road into Mathura, Krishna and Balarama passed a washerman (rajaka) carrying fine clothes. Krishna asked for some cloth. The washerman refused &mdash; mockingly, with contempt. He was killed by Krishna on the spot. Two people. The same request. One gave freely and was lifted up. The other refused and was destroyed. That contrast &mdash; the gatekeeper and the giver, in the same chapter, within minutes of each other &mdash; is one of the most quietly devastating teachings in the Bhagavata Purana.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Kubja (also Trivakra) &mdash; hunchbacked keeper of sandalwood paste in Kamsa&rsquo;s service. Krishna &mdash; on his way into Mathura to face Kamsa. Balarama &mdash; Krishna&rsquo;s elder brother, present with him.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Devotion &amp; Grace &mdash; a wholehearted offering, however small, is enough</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Bhagavata Purana, Skandha 10, Chapter 42 (Krishna&rsquo;s meeting with Kubja; the washerman/rajaka who refused is in Chapter 41); Chapter 48, verses approximately 1&ndash;11 (Krishna&rsquo;s visit to her home).</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

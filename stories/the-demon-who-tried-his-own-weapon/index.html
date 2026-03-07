@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Demon Who Got the Most Dangerous Boon &mdash; Then Used It on Himself</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A muscular dark-skinned demon warrior with wild matted hair and blood-red eyes, sitting before a blazing sacrificial fire at a snow-covered Himalayan mountain shrine, cutting a strip of flesh from his own forearm with a curved blade and offering it into the flames, his face showing fierce determination and pain, wearing rough animal-skin garments and bone ornaments, the sacred fire burning bright orange against the cold blue mountain backdrop, snow-capped peaks of Kedarnath in the background, dark storm clouds gathering overhead, Indian mythological painting style inspired by Raja Ravi Varma with dramatic chiaroscuro lighting, rich oil-painting texture, warm firelight illuminating the demon's face from below contrasting with cold blue mountain light from above, mood of terrifying devotion and dangerous ambition, 4K detail, cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Vrikasura sitting before a sacrificial fire at Kedarnath, cutting flesh from his own body as an offering to Shiva"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Bhagavata Purana &middot; Skandha 10, Chapter 88</div>
+            <h1 class="hero-title">The Demon Who Got the Most Dangerous Boon &mdash; Then Used It on Himself</h1>
+            <div class="hero-meta">
+                <span>Vrikasura &amp; Lord Shiva</span>
+                <span>Verses 14&ndash;37</span>
+                <span>Pride &amp; Self-Destruction</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>There was once a demon named Vrika, the son of Shakuni. He was not the strongest demon. He was not the wisest. But he was hungry for power &mdash; and that hunger made him dangerous.</p>
+
+            <p>One day, Vrika met the wandering sage Narada on the road and asked him a simple question: which god is the easiest to please?</p>
+
+            <p>Narada, who always spoke the truth, told him plainly that Lord Shiva was the quickest to be satisfied. Shiva did not need long rituals or years of prayer. He saw even the smallest good quality in a devotee and was moved by it. But Narada also warned him &mdash; Shiva had given boons to demons like Ravana and Bana before, and those boons had led them to ruin.</p>
+
+            <p>Vrika did not care about the warning. He only heard what he wanted to hear.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>He went straight to Kedarnath, high in the Himalayas, and began his worship. But this was no ordinary prayer. Vrika lit a sacred fire and, day after day, cut pieces of flesh from his own body and offered them into the flames. For six days, he burned his own flesh as an offering to Shiva.</p>
+
+            <p>On the seventh day, Shiva still had not appeared. So Vrika decided to end it. He soaked his hair with water, raised a hatchet, and prepared to cut off his own head.</p>
+
+            <p>At that moment, Shiva rose from the sacrificial fire. He caught Vrika&rsquo;s arms and stopped him. The Lord healed the demon&rsquo;s wounded body with the touch of his hands and told Vrika to ask for any boon he wished.</p>
+
+            <p>Vrika asked for the most terrible thing he could think of.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Vrikasura</span>
+                &ldquo;May death come to whoever&rsquo;s head I touch with my hand.&rdquo;
+            </div>
+
+            <p>Shiva granted the boon. The Bhagavata Purana says he did so with an ironic smile &mdash; like someone giving milk to a poisonous snake.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: Lord Shiva with matted locks and crescent moon on his head, standing with a calm but sad expression, his right hand raised in a blessing gesture, facing a muscular demon warrior (Vrikasura) who kneels before a dying sacrificial fire, the demon's arms bandaged and bloodied from self-mutilation, snow-covered Kedarnath temple pillars visible behind them, Shiva's skin ash-white with a serpent around his neck and tiger skin around his waist, the demon looking up with greedy eager eyes as he receives the boon, cold Himalayan wind blowing through the scene, ancient Indian temple mural art style with Tanjore painting gold leaf details on Shiva's ornaments, soft diffused daylight through mountain clouds, mood of divine generosity meeting dangerous greed. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Shiva granting the boon to Vrikasura at Kedarnath, the demon kneeling with bloodied arms before the sacred fire"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Shiva grants the boon &mdash; like giving milk to a poisonous snake</div>
+            </div>
+
+            <p>And then Vrika did the unthinkable.</p>
+
+            <p>The moment he received the power, he turned around and tried to place his hand on Shiva&rsquo;s own head. The god who had just healed his body, who had just given him everything he asked for &mdash; Vrika wanted to kill him. Some say he wanted to take Shiva&rsquo;s wife, Parvati. Whatever the reason, his arrogance was complete. He believed no one &mdash; not even the god who blessed him &mdash; was above his power now.</p>
+
+            <p>Shiva ran.</p>
+
+            <p>The scripture says the Lord fled to the ends of the earth, across the sky, to the very corners of the universe. And Vrika chased him, drunk on his new power, his hand raised and ready.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Finally, Lord Vishnu saw what was happening. He appeared before Vrika &mdash; not in his grand four-armed form, but disguised as a young brahmachari student. He wore a simple belt, a deerskin, carried a wooden rod and prayer beads. He looked humble and harmless.</p>
+
+            <p>The disguised Vishnu greeted Vrika warmly and asked why he looked so tired. Vrika, seeing no threat in this simple student, told him the whole story &mdash; the boon, the chase, all of it.</p>
+
+            <p>Vishnu listened. Then, very calmly, he planted a seed of doubt.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Vishnu (disguised as a brahmachari)</span>
+                &ldquo;Shiva is the lord of ghosts and spirits. Daksha once cursed him. If I were you, I would not trust his words. Why don&rsquo;t you test the boon on yourself &mdash; touch your own head &mdash; and see if it even works?&rdquo;
+            </div>
+
+            <p>It was so simple. So quiet. No battle. No great weapon. Just a few clever words aimed at the one place Vrika had no armor &mdash; his pride.</p>
+
+            <p>Because a man drunk on power cannot imagine being wrong. And a man who cannot imagine being wrong will believe anything that flatters his doubt in others.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up dramatic scene of the demon Vrikasura in the moment of placing his own right hand on top of his own head, his face frozen in sudden realization and horror as cracks of bright white light begin to spread across his skull, his eyes wide with shock, his mouth open in a silent scream, standing in a forest clearing, in the background the young brahmachari (Vishnu in disguise) watching calmly with a subtle knowing expression, wearing simple deerskin and carrying prayer beads, dramatic low-angle shot looking up at the demon, Indian mythological oil painting style with dramatic Baroque-influenced lighting, sharp contrast between the bright destructive light from the demon's shattering head and the dark shadowed forest around him, mood of terrible irony and instant justice. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Vrikasura placing his own hand on his head in horror as cracks of light spread across his skull, while the disguised brahmachari Vishnu watches calmly in the background"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">The hand that was meant for Shiva found its true target</div>
+            </div>
+
+            <p>Vrika placed his hand on his own head.</p>
+
+            <p>His skull shattered instantly, as if struck by a thunderbolt. He fell dead on the spot.</p>
+
+            <p>The scripture says that the gods in heaven rained down flowers and cried out in celebration. The threat was over. And it had ended not with a war, but with the demon&rsquo;s own hand.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Vrika&rsquo;s power did not destroy him. His arrogance did. The moment he believed he was above the very god who blessed him, he lost the ability to think clearly &mdash; and a few simple words were enough to end him. Pride does not make you strong. It makes you easy to fool. The question is: what power in your own life has made you stop listening to reason?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Narada told Vrika that Shiva was the easiest god to please. But the same chapter of the Bhagavata Purana asks a deeper question: why do Shiva&rsquo;s devotees often end up poor and struggling, while Vishnu&rsquo;s devotees gain lasting peace? The answer Shiva himself gives &mdash; about why he sometimes takes away wealth from those he loves &mdash; is one of the most surprising teachings in all the Puranas.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Vrikasura (also called Vrika) &mdash; a demon, son of Shakuni. Narada &mdash; the wandering sage. Lord Shiva &mdash; who grants the boon. Lord Vishnu &mdash; who appears disguised as a brahmachari student.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Pride &amp; Self-Destruction &mdash; unchecked arrogance becomes the weapon that destroys you</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Bhagavata Purana (Srimad Bhagavatam), Skandha 10, Chapter 88 (&ldquo;Lord Shiva Saved from Vrikasura&rdquo;), verses 14&ndash;37. Narada directs Vrika to Shiva (v.14&ndash;16), Vrika&rsquo;s worship at Kedarnath (v.17&ndash;19), the boon request and granting (v.21&ndash;22), Vrika chases Shiva (v.23&ndash;24), Vishnu&rsquo;s intervention as a brahmachari (v.27&ndash;28), the trick (v.32&ndash;34), and Vrika&rsquo;s death (v.35&ndash;37).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode is found in the Bhagavata Purana, Skandha 10, Chapter 88. Available in multiple published translations including the Bhaktivedanta Swami Prabhupada edition (BBT), Bibek Debroy&rsquo;s translation, and the Gita Press Gorakhpur edition. The &ldquo;But Wait&rdquo; teaser refers to verses 8&ndash;13 of the same chapter, where the Bhagavata discusses why Shiva&rsquo;s material boons can lead devotees to ruin. Note: the popular folk version where Vishnu appears as Mohini (the enchantress) is not found in this chapter of the Bhagavata Purana. In the original text, Vishnu appears as a brahmachari student.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

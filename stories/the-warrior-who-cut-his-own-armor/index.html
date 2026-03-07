@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Warrior Who Cut His Own Armor Off His Body &mdash; Smiling</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="Karna standing in golden morning light, peeling divine armor from his own body with a blade, blood on his hands, a calm smile on his face"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- FEATURE IMAGE PROMPT: A powerful broad-shouldered Indian warrior (Karna) standing tall in the early morning light on the banks of a river after his morning bath, he has a radiant golden armor (kavach) that appears fused with his skin covering his chest and torso like a second layer of living gold, golden earrings (kundal) hanging from his ears glowing with inner light, he holds a sharp blade in his right hand and is beginning to cut the armor away from his chest with his left hand pulling at the edge, thin lines of blood visible where gold meets skin, his face shows a calm peaceful smile despite the act of self-mutilation, standing before him is an old brahmin figure (Indra in disguise) with white beard and simple robes holding out both hands to receive the gift, the river bank setting has wet sand and gentle morning mist, a faint golden sun disc visible in the sky representing Surya watching from above, Indian mythological painting style inspired by Raja Ravi Varma with rich oil-painting textures, warm golden-hour lighting from the east casting long shadows, dramatic and sacrificial mood, intricate detail on the armor showing divine patterns and sacred geometry etched in gold, 4K cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Vana Parva &middot; Kundalaharana Parva, Chapters ~300&ndash;310</div>
+            <h1 class="hero-title">The Warrior Who Cut His Own Armor Off His Body &mdash; Smiling</h1>
+            <div class="hero-meta">
+                <span>Karna, Surya &amp; Indra</span>
+                <span>Mahabharata</span>
+                <span>Sacrifice / Dharma of Giving</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Karna was born different from every other warrior who ever lived. When his mother Kunti gave birth to him &mdash; before she was married, through the grace of the sun god Surya &mdash; the baby came into the world wearing something no human child had ever worn: divine armor fused to his body and golden earrings set in his ears. The kavach and kundal were not ornaments. They were part of him, grown from his flesh, made of amrita &mdash; the nectar of immortality. As long as Karna wore them, no weapon in all the three worlds could kill him.</p>
+
+            <p>Kunti, unwed and afraid, placed the baby in a basket and set him adrift on a river. He was found and raised by a charioteer named Adhiratha and his wife Radha. Karna grew up not knowing he was the son of a god. But everyone who saw him knew one thing: this man could not be defeated. The armor on his body shone like the sun itself.</p>
+
+            <p>And Karna had one quality that was as unbreakable as his armor: he never refused anyone who came to him asking for something. Every day, after his morning worship of the sun, Karna would stand on the riverbank and swear that any brahmin who asked him for anything at that hour would not go away empty-handed. This was known across all the kingdoms. Karna&rsquo;s generosity was as famous as his skill with the bow.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Now, the great war between the Pandavas and Kauravas was drawing near. Indra, the king of the gods and father of Arjuna, knew that as long as Karna had his natural armor, Arjuna could never defeat him in battle. So Indra made a plan. He would go to Karna disguised as a brahmin and ask for the kavach and kundal as a gift.</p>
+
+            <p>But Surya, the sun god &mdash; Karna&rsquo;s real father &mdash; loved his son. He came to Karna in a dream and warned him. According to the Mahabharata, Surya told Karna that Indra would come in the form of a brahmin and beg for his armor and earrings. Surya told him not to give them away. He explained that without the kavach and kundal, Karna would become vulnerable in battle. Surya urged his son to refuse Indra and instead offer him any other wealth &mdash; jewels, gold, kingdoms &mdash; anything but the armor.</p>
+
+            <p>Karna listened to his father with respect. But his answer was firm.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Karna</span>
+                &ldquo;O lord of light, I know what you say is true. But if Indra himself comes to my door in the form of a brahmin, and I turn him away &mdash; my fame as a giver will be destroyed. For a man like me, fame that lives after death is greater than life in a body. The body is temporary. But the glory of giving lasts forever. I will give him what he asks.&rdquo;
+            </div>
+
+            <p>The Mahabharata records that Surya tried again and again to change his son&rsquo;s mind. He warned Karna that without the armor, death was certain. But Karna would not budge. He told Surya that if he turned away a brahmin who came asking, he would be no different from a coward. His dharma was to give. Surya, seeing that his son&rsquo;s resolve could not be shaken, finally told Karna to at least ask Indra for something in return &mdash; the Shakti weapon, a divine javelin that never missed its target.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Surya the sun god appearing in Karna's dream, warning him about Indra's plan"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: A dream sequence scene showing Karna lying asleep on a simple bed in a modest room at night, above him floats a radiant golden figure of Surya the sun god, a powerfully built deity with a glowing golden-red complexion wearing a crown of sun rays and ornate golden robes, Surya's expression is worried and protective as he leans down toward his sleeping son with one hand extended in a gesture of warning, Karna's sleeping face is peaceful and strong-jawed with the golden kavach armor visible on his chest even as he sleeps and the golden kundal earrings catching the divine light, the room is dark with cool blue-grey shadows but Surya's presence fills the upper half of the frame with warm amber-gold radiance, wisps of dream-like mist connecting father and son, Indian mythological painting style with Tanjore gold leaf accents and rich warm palette, overhead composition looking slightly down at the sleeping warrior with the god hovering above, mood of a father's desperate love and a warning that will go unheeded. Aspect ratio 1:1, square format. -->
+                <div class="caption">Surya appears in his son&rsquo;s dream &mdash; a father&rsquo;s warning that will go unheeded</div>
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>The morning came. Karna finished his bath in the river and stood with his hands joined in prayer to the sun, water still dripping from his body. And then, just as Surya had warned, an old brahmin appeared before him.</p>
+
+            <p>It was Indra. He was disguised in simple clothes, carrying a water pot, looking like any wandering priest. He approached Karna and said he had come to ask for a gift.</p>
+
+            <p>Karna smiled. He told the brahmin to ask for anything &mdash; gold, cattle, land, whatever he wished.</p>
+
+            <p>The brahmin said he wanted only one thing: the kavach and kundal.</p>
+
+            <p>Karna looked at him. According to the Mahabharata, Karna smiled and told Indra that he recognized him. He knew this was no ordinary brahmin. He knew this was the king of the gods, come to make his son Arjuna safe by stripping Karna of his protection.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Karna</span>
+                &ldquo;I know you, Shakra. You are not a brahmin. But it does not matter. You have come to me at the hour when I refuse no one. I will not let it be said that Karna turned away a man who asked. Take what you have come for.&rdquo;
+            </div>
+
+            <p>And then Karna did something that made even the gods in heaven watch in silence. He took a blade. The kavach was not something he could simply remove like clothing &mdash; it was part of his flesh, grown from his body since birth. Karna cut the armor away from his own skin. The Mahabharata says blood flowed as he peeled the golden kavach off his body. He pulled the kundal from his ears. And through all of it, his face showed no pain. He smiled as he placed the dripping, shining armor and the earrings into Indra&rsquo;s hands.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Close-up of Karna's hands placing the blood-streaked golden armor into the outstretched hands of Indra disguised as a brahmin"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: Extreme close-up of two pairs of hands in the center of the frame, Karna's strong warrior hands streaked with blood carefully placing a glowing piece of golden divine armor (kavach) into the outstretched weathered hands of an old brahmin (Indra in disguise), the armor piece is magnificent with intricate divine patterns etched into living gold and traces of blood and torn skin along its inner edges showing it was just cut from a living body, a pair of luminous golden earrings (kundal) already rest in the brahmin's palm, the background is a soft blurred river bank with morning mist, warm golden light from the rising sun illuminates the exchange from the left side, droplets of water and blood visible on Karna's forearms, Indian mythological painting style with hyper-detailed Renaissance-like attention to hands and textures, intimate tight framing focused entirely on the hands and the sacred terrible exchange, mood of quiet horror and transcendent sacrifice. Aspect ratio 1:1, square format. -->
+                <div class="caption">The most generous &mdash; and most terrible &mdash; gift ever given</div>
+            </div>
+
+            <p>The gods watching from heaven showered flowers upon Karna. Indra, standing there holding the still-warm armor of a man who had just made himself mortal by choice, was shaken. The Mahabharata says Indra was filled with wonder at Karna&rsquo;s generosity. He could not simply walk away after such a gift.</p>
+
+            <p>Indra offered to give Karna something in return. Karna &mdash; acting exactly as Surya had counselled him in the dream &mdash; asked for the Shakti, Indra&rsquo;s infallible divine javelin. This was not a spontaneous gesture on Indra&rsquo;s part; Karna had gone into the exchange knowing he would ask for it. He named his price, and Indra agreed &mdash; but with one condition: the Shakti could be used only once. After a single throw, it would return to Indra.</p>
+
+            <p>Karna accepted. He planned to save that single use for Arjuna on the battlefield.</p>
+
+            <p>But fate had other plans. During the war, Krishna maneuvered events so that Ghatotkacha &mdash; Bhima&rsquo;s half-rakshasa son &mdash; attacked the Kaurava army at night with terrifying power. Karna was forced to use his one Shakti weapon on Ghatotkacha to save his entire side from destruction. The weapon killed Ghatotkacha. And Karna&rsquo;s last divine protection was gone.</p>
+
+            <p>He went into his final battle against Arjuna with no divine armor, no divine weapon, and no miracle to save him. He had given it all away &mdash; with full knowledge of what it would cost.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Karna did not give blindly. He knew exactly who was asking, exactly what it would cost, and exactly what would happen to him without his armor. He gave anyway &mdash; because his dharma of giving was more important to him than his own survival. The hardest kind of sacrifice is not the one made in ignorance. It is the one made with open eyes. The question is: when you can see the cost clearly, do you still have the courage to give?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Karna went into the final battle stripped of his armor, stripped of his Shakti, and carrying a curse that would make his chariot wheel sink into the earth at the worst possible moment. The way Karna actually died &mdash; with his wheel stuck, his bow broken, and Arjuna&rsquo;s arrow aimed at his throat &mdash; is one of the most debated and heartbreaking moments in the entire Mahabharata. That story is told in the Karna Parva, and the question it raises about dharma has no easy answer.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Karna &mdash; son of Surya and Kunti, born with divine armor and earrings, the greatest giver in the Mahabharata. Surya &mdash; the sun god, Karna&rsquo;s birth father, who warned him in a dream. Indra &mdash; king of the gods and father of Arjuna, who came disguised as a brahmin to take Karna&rsquo;s armor. Ghatotkacha &mdash; Bhima&rsquo;s son, on whom Karna was forced to use the Shakti weapon.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Dharma of Giving / Sacrifice with Eyes Open &mdash; the courage to give away the thing that keeps you alive, knowing fully what it will cost, because your principle is worth more than your survival</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Vana Parva (Book of the Forest), Kundalaharana Parva, Chapters ~300&ndash;310 in the Kisari Mohan Ganguli translation. Surya&rsquo;s dream warning to Karna appears in the chapters immediately preceding the exchange. The actual giving of the kavach and kundal to Indra is the climactic episode of the Kundalaharana Parva. Note: Chapter 294 contains the Savitri-Satyavan story, not the Karna episode. The Shakti weapon&rsquo;s use on Ghatotkacha is narrated in the Drona Parva (Book 7), Ghatotkacha-vadha sub-parva. Karna&rsquo;s death is in the Karna Parva (Book 8).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This episode can be verified in the Kisari Mohan Ganguli English translation of the Mahabharata, Vana Parva, Kundalaharana Parva, Chapters ~300&ndash;310 (numbering varies across editions). Chapter 294 in the Ganguli edition is the Savitri-Satyavan episode &mdash; the Karna-Indra exchange begins around Chapter 300. Also found in the BORI Critical Edition of the Mahabharata, Aranyaka Parva. Retold in Bibek Debroy&rsquo;s unabridged English translation (Penguin, Volume 3). The Surya-Karna dream conversation and the daan to Indra are consistent across the Ganguli, Debroy, and BORI editions. The Shakti weapon&rsquo;s single-use condition and its deployment against Ghatotkacha are narrated in the Drona Parva across all major editions.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

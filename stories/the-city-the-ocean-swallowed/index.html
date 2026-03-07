@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The City the Ocean Swallowed &mdash; What Really Happened to Krishna&rsquo;s Dwaraka</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a1628 0%, #162a4a 50%, #1a3355 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(10, 22, 40, 0.3) 40%,
+                rgba(10, 22, 40, 0.85) 75%,
+                rgba(10, 22, 40, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(10, 22, 40, 0.2);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3355 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MYSTERY SECTION (replaces moral for this story type) === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #0a1628 0%, #162a4a 60%, #1a3355 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\2693';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        .moral p + p {
+            margin-top: 16px;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A magnificent ancient Indian golden city partially submerged in dark ocean water at twilight, massive temple spires and palace domes sinking beneath churning waves, the upper portions of ornate golden buildings still visible above the waterline, scattered debris and floating garlands on the dark blue-green sea surface, a stormy sky with deep indigo and violet clouds overhead, a single beam of fading golden sunlight breaking through the clouds and illuminating the tallest temple tower as it tilts into the water, birds flying away from the sinking city in the distance, Indian mythological painting style inspired by Raja Ravi Varma crossed with romantic maritime painting, rich oil-painting texture with visible brushstrokes, dramatic twilight lighting with the contrast of warm gold architecture against cold dark ocean, mood of majestic finality and ancient loss, 4K detail, cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="The golden city of Dwaraka sinking beneath the ocean waves at twilight, temple spires disappearing into dark water"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Mausala Parva &amp; Bhagavata Purana &middot; Skandha 11</div>
+            <h1 class="hero-title">The City the Ocean Swallowed &mdash; What Really Happened to Krishna&rsquo;s Dwaraka</h1>
+            <div class="hero-meta">
+                <span>The End of the Yadavas</span>
+                <span>Mausala Parva, Chapters 1&ndash;7</span>
+                <span>Fate &amp; Inevitability</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>How does a city built by a god disappear from the face of the earth? How does an entire clan &mdash; blessed by Krishna himself &mdash; destroy itself in a single afternoon? And how does the same piece of iron that was ground to dust and thrown into the sea come back, years later, as the arrow that kills Krishna? This is not a fable. According to the Mahabharata, this is exactly what happened.</p>
+
+            <p>It began with a joke. A very stupid joke.</p>
+
+            <p>Years after the great war at Kurukshetra, some young men of the Yadava clan &mdash; Krishna&rsquo;s own family &mdash; decided to play a prank on a group of visiting sages. They dressed up Samba, Krishna&rsquo;s son, as a pregnant woman and brought him before the rishis. They asked, with mocking laughter, what kind of child this &ldquo;woman&rdquo; would give birth to.</p>
+
+            <p>The sages were not amused. They were Vishvamitra, Kanva, Narada, and others &mdash; men whose words carried the weight of fate itself. They saw through the disguise instantly.</p>
+
+            <div class="dialogue">
+                <span class="speaker">The Sages</span>
+                &ldquo;This one will give birth to an iron pestle &mdash; and it will destroy the entire Yadava race.&rdquo;
+            </div>
+
+            <p>The next day, an iron pestle came out of Samba&rsquo;s body. The Yadava elders were terrified. King Ugrasena ordered the pestle to be ground into fine powder and thrown into the sea near the coast of Prabhasa. They thought that would end it. One small piece remained that could not be ground down, so it too was thrown into the water.</p>
+
+            <p>But the iron powder did not disappear. Over time, it settled along the shoreline. And from that iron-laced sand, a kind of sharp, tough reed &mdash; called eraka grass &mdash; grew along the beaches of Prabhasa.</p>
+
+            <p>The leftover piece of iron was swallowed by a fish. A fisherman later caught the fish and found the iron lump inside. It was taken by a hunter named Jara, who fixed it as the tip of one of his arrows.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Krishna knew. The Bhagavata Purana makes it clear &mdash; Krishna knew exactly what was coming. He did not stop it. According to the text, the curse was part of his own plan to end the Yadava dynasty before he left the world, because if they continued without him, their power would become a danger to the earth.</p>
+
+            <p>Strange signs began appearing in Dwaraka. Rats multiplied in the city. The sacred fires in temples burned in strange directions. The day and the night seemed confused. The Mausala Parva lists these omens in detail. Krishna told the Yadavas to go on a pilgrimage to Prabhasa, on the seacoast.</p>
+
+            <p>There, on the beach, they began to drink. The Mahabharata says they drank heavily &mdash; wine made from rice. And as they drank, old arguments surfaced. Satyaki and Kritavarma began to quarrel about what each had done during the Kurukshetra war. Satyaki mocked Kritavarma for the night massacre of the sleeping Pandava camp. Kritavarma threw back Satyaki&rsquo;s killing of unarmed warriors.</p>
+
+            <p>Words turned to blows. Satyaki struck Kritavarma&rsquo;s head. And then, all at once, the entire Yadava army turned on each other.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A chaotic and violent scene on a flat sandy beach at the edge of a dark ocean, dozens of Indian warrior men in golden armor and silk garments fighting each other with long sharp reeds pulled from the shoreline, blood on the sand, overturned bronze drinking vessels and spilled wine on the ground, the warriors' faces twisted with rage and confusion, some fallen bodies on the beach, in the far background the silhouette of a dark-skinned man in yellow robes (Krishna) standing still and watching with a calm sorrowful expression, grey overcast sky, waves crashing on the shore, seabirds scattering, Indian mythological painting style with muted earthy tones contrasting with the violence, diffused overcast lighting casting no shadows, mood of chaos and tragic inevitability, 4K detail, wide cinematic composition. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="The Yadavas fighting and killing each other with sharp reeds on the beach at Prabhasa, while Krishna watches from a distance"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">The Yadavas destroy each other at Prabhasa &mdash; with reeds born from the same iron they threw into the sea</div>
+            </div>
+
+            <p>When they ran out of weapons, they grabbed the reeds growing along the shore &mdash; the eraka grass that had grown from the iron powder. In their hands, these reeds became hard as iron, as deadly as maces. The Mausala Parva says every reed they touched became a weapon of destruction. Brother killed brother. Father killed son.</p>
+
+            <p>Krishna&rsquo;s own son Pradyumna was killed. His grandson Aniruddha fell. Satyaki, Kritavarma, Samba &mdash; all dead. Almost the entire Yadava clan wiped itself out on that one beach, in one afternoon.</p>
+
+            <p>Krishna himself picked up the reeds and fought when some attacked him. The Mahabharata says he killed many in that battle. Balarama, his brother, did not fight. He walked to the edge of the sea, sat down in meditation, and left his body &mdash; the Mausala Parva says a great white serpent (Shesha) was seen leaving from his mouth, going toward the ocean.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>After the slaughter, Krishna walked alone into the forest near Prabhasa. He sat beneath a tree, one foot resting over his other knee, the sole exposed. His foot was dark. From a distance, it looked like the ear of a deer.</p>
+
+            <p>The hunter Jara saw it through the trees. He released his arrow &mdash; the arrow tipped with the last piece of iron from the pestle, the one piece that could not be ground down, the one that had been swallowed by a fish and recovered.</p>
+
+            <p>The arrow struck Krishna&rsquo;s foot.</p>
+
+            <p>When Jara ran forward and realized what he had done, he fell at Krishna&rsquo;s feet in horror. The Bhagavata Purana (Skandha 11, Chapter 30) records that Krishna comforted him and told him not to grieve, that this was already decided.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up intimate scene in a quiet forest clearing, a dark blue-skinned divine figure (Krishna) sitting peacefully against a large peepal tree trunk, wearing a simple yellow dhoti, one leg crossed over the other with the sole of his foot exposed, a small arrow lodged in the sole of his left foot, a thin line of blood running down, his face serene and eyes half-closed with a gentle almost-smiling expression, a rough-clothed hunter (Jara) kneeling before him with hands clasped and face full of anguish and tears, a simple hunting bow dropped on the forest floor beside him, dappled golden afternoon sunlight filtering through the tree canopy above, fallen leaves on the ground, Indian mythological painting style inspired by classic Bhagavata illustrations, warm golden-green forest light, mood of profound peace meeting profound sorrow, extreme emotional intimacy, 4K detail, medium close-up composition. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Krishna sitting peacefully under a tree with an arrow in his foot, while the hunter Jara kneels before him in anguish"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">The arrow that could not be destroyed found the one place it was meant to reach</div>
+            </div>
+
+            <p>Krishna departed from the world.</p>
+
+            <p>When Arjuna arrived at Dwaraka &mdash; sent by the Pandavas after they received the news &mdash; he found a city already beginning to die. The Mausala Parva says that as Arjuna led the remaining women and children out of the city, the ocean began to swallow Dwaraka behind them, street by street. Whatever ground Arjuna&rsquo;s people left behind, the sea covered immediately.</p>
+
+            <p>The golden city of Krishna &mdash; the city said to have been built by Vishwakarma himself on land reclaimed from the sea &mdash; returned to the sea.</p>
+
+        </article>
+
+        <!-- ============ THE MYSTERY ============ -->
+        <div class="moral">
+            <div class="moral-label">The Mystery</div>
+            <p>The iron could not be escaped. Ground to powder, it became reeds. Thrown into the sea, it came back in a fish. Fixed to an arrow, it found the one target that mattered. The entire arc &mdash; from a prank played on sages to the flooding of a city &mdash; was, according to the scriptures, set in motion by a single act of disrespect. And Krishna, who could have stopped any of it, chose not to.</p>
+            <p>In 2001, the National Institute of Ocean Technology (NIOT) and the Archaeological Survey of India conducted underwater surveys off the coast of modern Dwarka in Gujarat. They found submerged stone structures, walls, and what appear to be ruins of an ancient settlement beneath the Arabian Sea. Dating and identification remain debated among archaeologists, and no confirmed link to the mythological city has been established. But researchers have noted it as a remarkable coincidence: suggestive evidence, not proof &mdash; structures beneath the water, in the general region where the Mahabharata placed them.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>When Arjuna was leading the survivors out of Dwaraka, bandits attacked the caravan on the road. Arjuna &mdash; the greatest archer who ever lived, the wielder of the Gandiva &mdash; tried to fight them off. And he could not. His arrows had lost their power. His arms had lost their strength. The Gandiva, which had never failed him, felt like a dead weight. The Mausala Parva records this moment: the instant Krishna left the world, Arjuna&rsquo;s divine power left him too. That story &mdash; of the greatest warrior discovering he was nothing without his friend &mdash; is one of the most heartbreaking passages in the entire Mahabharata.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Krishna &mdash; the lord of Dwaraka. Samba &mdash; Krishna&rsquo;s son, dressed as a woman in the prank. Balarama &mdash; Krishna&rsquo;s elder brother. Satyaki and Kritavarma &mdash; Yadava warriors. Jara &mdash; the hunter. Arjuna &mdash; who comes to evacuate the city. The sages Vishvamitra, Kanva, Narada, and others.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Fate &amp; Inevitability &mdash; some consequences cannot be outrun, only accepted</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Mausala Parva (Book 16), Chapters 1&ndash;7. The curse of the sages (Ch 1), the omens in Dwaraka (Ch 2), the slaughter at Prabhasa (Ch 3&ndash;4), Balarama&rsquo;s departure (Ch 4), Krishna&rsquo;s death (Ch 5), Arjuna&rsquo;s arrival and the submersion of Dwaraka (Ch 7). Also told in the Bhagavata Purana, Skandha 11 &mdash; the curse of the sages (Ch 1), the destruction at Prabhasa and Krishna&rsquo;s departure (Ch 30&ndash;31).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Mausala Parva is one of the shortest books of the Mahabharata, available in the BORI Critical Edition and Bibek Debroy&rsquo;s English translation (Volume 12). The Bhagavata Purana account is in Skandha 11, available in the Gita Press Gorakhpur edition and Prabhupada&rsquo;s Srimad Bhagavatam translation. The underwater archaeological findings near Dwarka, Gujarat, are documented in S.R. Rao&rsquo;s research and subsequent NIOT/ASI surveys. The &ldquo;But Wait&rdquo; teaser refers to Mausala Parva, Ch 7, where Arjuna&rsquo;s power fails him &mdash; a well-attested episode also discussed in the Ashvamedhika Parva.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

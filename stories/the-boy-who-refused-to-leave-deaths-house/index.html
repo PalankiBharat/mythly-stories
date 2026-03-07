@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boy Who Refused to Leave Death&rsquo;s House &mdash; Until He Got His Answer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="Young Nachiketa sitting alone at the threshold of Yama's dark palace, waiting patiently for the god of death to return"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- FEATURE IMAGE PROMPT: A young Indian boy of about ten or twelve years old (Nachiketa) sitting cross-legged on the stone threshold of a vast dark palace, the palace of Yama the god of death, the boy is thin with a bare upper body and a simple white dhoti, his posture is upright and patient, his expression calm and unwavering showing quiet determination, the palace doorway behind him is enormous with dark stone pillars carved with skulls and serpents, the atmosphere is eerie with faint blue-grey mist swirling around the base of the pillars, beyond the doorway is an endless dark corridor, the boy sits alone in the center of the frame looking small against the massive architecture, dim cold blue-silver light from an unseen source illuminating the boy from the front while the palace recedes into shadow behind him, Indian mythological painting style inspired by Raja Ravi Varma with dark fantasy undertones, muted palette of deep indigo and slate grey with the boy's white dhoti as the brightest element, mood of solitude courage and mystery, 4K detail cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Katha Upanishad &middot; Vallis 1&ndash;3</div>
+            <h1 class="hero-title">The Boy Who Refused to Leave Death&rsquo;s House &mdash; Until He Got His Answer</h1>
+            <div class="hero-meta">
+                <span>Nachiketa &amp; Yama</span>
+                <span>Katha Upanishad</span>
+                <span>Seeking Truth Above All</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>What happens when we die? This is the oldest question human beings have ever asked. And the first person in the scriptures to get a straight answer from Death himself was not a king, not a sage, not a warrior. It was a boy.</p>
+
+            <p>His name was Nachiketa. His father was Vajashravasa, a man who decided to perform a great sacrifice called the Vishwajit &mdash; a ritual where you must give away everything you own. Vajashravasa gathered his cattle and began giving them away to the priests. But Nachiketa watched carefully, and what he saw troubled him. The cows his father was giving away were old. They had stopped giving milk. They could no longer eat properly or drink water or bear calves. These were useless animals, given away to look generous while keeping the real wealth.</p>
+
+            <p>The Upanishad says that faith entered the boy. Nachiketa understood something: a sacrifice done with dishonesty does not bring good results. It brings only joyless worlds. He went to his father and asked a strange question.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Nachiketa</span>
+                &ldquo;Father, to whom will you give me?&rdquo;
+            </div>
+
+            <p>He asked this again, and again, a second and a third time. His father, already irritated by the implied criticism, finally snapped.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Vajashravasa</span>
+                &ldquo;I give you to Death!&rdquo;
+            </div>
+
+            <p>It was said in anger. But Nachiketa took it as truth. He thought to himself &mdash; the Upanishad records his reflection &mdash; that among the many sons and students of his father, he was neither the worst nor the best. What purpose of Yama would his father serve by sending him? But a promise was a promise. And so the boy went to the house of Yama, the god of death.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>When Nachiketa arrived, Yama was not home. The boy waited at the doorstep for three days and three nights, without food, without water, without shelter. He simply sat and waited.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Yama returning to find young Nachiketa waiting at his doorstep after three days without food or water"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: Yama the god of death returning to his palace, a powerfully built dark-green-complexioned deity wearing a golden crown and dark robes holding a staff (danda), looking with surprise and concern at a thin young Indian boy (Nachiketa) sitting cross-legged on the stone floor of his entrance hall, the boy has been waiting three days and looks weary but his eyes are bright and alert and his posture is straight, an attendant of Yama whispers urgently into Yama's ear gesturing toward the boy, the palace interior has dark stone walls with flickering oil lamps casting warm orange pools of light in the otherwise cold blue-grey space, Indian mythological painting style with Tanjore gold leaf accents, dramatic side lighting from the lamps creating strong shadows, mood of awe and discomfort as the god realizes a Brahmin guest has been kept waiting without hospitality. Aspect ratio 1:1, square format. -->
+                <div class="caption">Yama returns to find his guest has waited three days &mdash; without food, without shelter</div>
+            </div>
+
+            <p>When Yama returned and learned that a Brahmin guest had waited at his door for three nights with no food or hospitality, he was alarmed. In the Vedic world, letting a Brahmin guest go hungry in your home was a serious wrong. Yama&rsquo;s attendants told him this, and the god of death himself felt he needed to make amends.</p>
+
+            <p>Yama addressed Nachiketa with respect and offered him three boons &mdash; one for each night he had waited.</p>
+
+            <p>For the first boon, Nachiketa asked that his father&rsquo;s anger would pass and that Vajashravasa would be at peace with him when he returned. Yama granted this.</p>
+
+            <p>For the second boon, Nachiketa asked Yama to teach him the sacred fire ritual that leads to heaven &mdash; the fire that Nachiketa had heard about, which those in heaven know, the fire that is the means to reach the infinite world and is its foundation. Yama was pleased with this request. He taught the boy the details of the fire ritual &mdash; which bricks to lay, how many, and in what manner. Nachiketa repeated it all back perfectly. Yama was so impressed that he declared the fire ritual would be named after the boy: the Nachiketa fire.</p>
+
+            <p>Then came the third boon.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Nachiketa</span>
+                &ldquo;There is this doubt about a man who has died. Some say he exists. Others say he does not. I wish to know this, taught by you. This is the third of my boons.&rdquo;
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Yama did not want to answer this. He said that even the gods had doubts about this in the old days. He said the matter was subtle and not easy to understand. He asked Nachiketa to choose another boon &mdash; anything else.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Yama</span>
+                &ldquo;Choose sons and grandsons who will live a hundred years. Choose herds of cattle, elephants, gold, and horses. Choose a vast stretch of the earth and live as many years as you wish. Or if you can think of any boon equal to this, choose that &mdash; wealth and long life. Be a king over a wide realm. I will make you fit to enjoy all desires.&rdquo;
+            </div>
+
+            <p>Yama offered him anything a human being could want. Beautiful women with chariots and instruments &mdash; the kind not obtainable by mortals, Yama said. He told Nachiketa he could have all of these. Just do not ask about death.</p>
+
+            <p>Nachiketa&rsquo;s answer is one of the most famous passages in all of Indian philosophy.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Nachiketa</span>
+                &ldquo;These things last only till tomorrow, O Death. They wear out the strength of all the senses. Even the longest life is short. Keep your horses, your dance, and your song. Man is not to be satisfied with wealth. Shall we enjoy wealth when we have seen you? Shall we live as long as you rule? The boon I choose is that one alone.&rdquo;
+            </div>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Close-up of Nachiketa's calm, determined face as golden visions of Yama's temptations glow behind him, untouched"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: Close-up portrait of young Nachiketa's face looking directly at the viewer with calm steady eyes that are far too wise for a child, his expression is peaceful but immovable showing no temptation or fear, behind him blurred in the background are glittering visions of gold coins and jewels and horses and palatial rooms that Yama has offered him, these temptations glow warm gold and amber but Nachiketa's face is lit by a cooler clearer white light suggesting knowledge and truth, the boy has a simple sacred thread across his bare chest and a small tuft of hair (shikha) tied at the back of his head, Indian mythological portrait style inspired by classical Ajanta cave painting aesthetics with rich earth pigments, intimate close framing on the face, mood of unshakable resolve and spiritual clarity beyond his years. Aspect ratio 1:1, square format. -->
+                <div class="caption">Nachiketa unmoved &mdash; wealth, long life, and every pleasure of the world refused in a single breath</div>
+            </div>
+
+            <p>He said that a man who grows old on this earth, once he has come face to face with the ageless &mdash; once he has met Death in person and understood what it means &mdash; how could he then find joy in a long life? He asked Yama to tell him what lies in the great beyond. Nachiketa said he would choose no other boon but this one, this mystery that is deeply hidden.</p>
+
+            <p>Yama now knew. This was no ordinary boy. This was a student truly worthy of the teaching.</p>
+
+            <p>And so Yama taught him. He taught Nachiketa about the Atman &mdash; the self that is hidden in every living being. The Atman is not born, and it does not die. It did not come from anywhere, and nothing came from it. It is unborn, eternal, everlasting, and ancient. It is not killed when the body is killed.</p>
+
+            <p>Yama told the boy that the self is smaller than the smallest and greater than the greatest. It sits in the heart of every creature. One who is free from desire and free from grief sees the glory of the Atman. The wise one is not born, nor does he die. He has not come from anywhere, nor has he become anyone. He is unborn, constant, eternal, primeval. He is not slain when the body is slain.</p>
+
+            <p>Nachiketa received the teaching. He learned the whole method of knowledge from the god of death &mdash; the knowledge of the Atman, the self that remains when everything else falls away. The Upanishad says that Nachiketa, having gained this knowledge taught by Death, having learned the complete discipline of yoga, attained Brahman &mdash; the ultimate reality. He became free from old age and death.</p>
+
+            <p>And so it shall be for anyone, the Upanishad says, who knows this teaching about the self.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Yama offered Nachiketa everything the world calls success &mdash; wealth, power, pleasure, long life. The boy refused all of it because he understood something most people never do: all those things end. The only question worth asking is the one that does not go away when everything else does. The question for you is this &mdash; do you have the courage to ignore every shiny distraction and keep asking your real question? The one you have been avoiding?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Nachiketa was not the only person in Hindu scripture to visit Yama&rsquo;s realm and return. Savitri, the princess of Madra, actually followed Yama on foot after he took her husband&rsquo;s soul &mdash; and she argued with him so wisely that Death himself had to give back what he had taken. That story comes from the Mahabharata, and the way she won is something no one expects.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Nachiketa &mdash; a young Brahmin boy whose refusal to accept anything less than the deepest truth made even Death teach him. Vajashravasa (also called Aruni/Auddalaki Aruni in some traditions) &mdash; Nachiketa&rsquo;s father, who performed the Vishwajit sacrifice but gave away only worthless cattle. Yama &mdash; the god of death and dharma, who tested Nachiketa with every temptation and then became his teacher.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Seeking Truth Above All &mdash; the courage to reject every worldly temptation in order to find the answer to the only question that truly matters</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Katha Upanishad (Kathopanishad), embedded within the Krishna Yajurveda. Part 1 (Adhyaya 1), Vallis (chapters) 1&ndash;3. Valli 1 contains the narrative of Vajashravasa&rsquo;s sacrifice, Nachiketa&rsquo;s journey to Yama&rsquo;s house, and the three boons. Valli 2&ndash;3 contain Yama&rsquo;s teaching on the Atman. The dialogue on the Atman&rsquo;s nature (&ldquo;na jayate mriyate va&rdquo;) appears in Valli 2, verses 18&ndash;22, with close parallels to Bhagavad Gita 2.19&ndash;20.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Katha Upanishad is one of the principal Upanishads commented upon by Adi Shankaracharya (Shankara Bhashya). The narrative and dialogue can be verified in the translations by Swami Gambhirananda (Advaita Ashrama edition), Patrick Olivelle (&ldquo;The Early Upanishads,&rdquo; Oxford University Press, 1998), and the widely available translation by Swami Paramananda. Nachiketa&rsquo;s dialogue rejecting Yama&rsquo;s temptations is from Valli 1, verses 26&ndash;29. The teaching that the Atman &ldquo;is not born, nor does it die&rdquo; is from Valli 2, verse 18. The father&rsquo;s name Vajashravasa is stated in the opening verse of the Upanishad.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

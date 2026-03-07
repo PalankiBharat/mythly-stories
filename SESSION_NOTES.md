@@ -62,6 +62,7 @@ Images have `onerror` fallbacks that show placeholder text if missing.
 
 ---
 
+
 ## Tools & Infrastructure
 
 ### Dev Server

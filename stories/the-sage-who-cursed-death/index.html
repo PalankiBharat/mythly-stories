@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Innocent Sage Who Cursed the God of Death</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): Sage Mandavya seated in deep tapas at the entrance of his ashram at dusk, arms raised toward the sky, a faint broken stake-tip embedded in his chest, ancient Indian miniature painting style, warm saffron and ochre tones, the silhouette of Yama the god of death visible as a dark looming presence in the distant background -->
+        <img
+            src="images/featured.png"
+            alt="Sage Mandavya seated in deep tapas at his ashram entrance, arms raised, with Yama as a looming shadow in the background"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Adi Parva</div>
+            <h1 class="hero-title">The Innocent Sage Who Cursed the God of Death</h1>
+            <div class="hero-meta">
+                <span>Mandavya Upakhyana</span>
+                <span>Chapters 107&ndash;108</span>
+                <span>Justice &amp; Mercy</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>What happens when even the god of justice makes an unfair judgment? This is the story of a sage so powerful that he cursed Yama &mdash; the god of death himself &mdash; and changed the course of history forever.</p>
+
+            <p>Long ago, there lived a great sage named Mandavya. He spent years at the entrance of his ashram in deep meditation, arms raised in tapas, his body and mind so absorbed in practice that the world around him had ceased to exist.</p>
+
+            <p>One day, a group of thieves came running past his ashram, chased by the king&rsquo;s soldiers. The thieves hid their stolen goods inside the ashram and fled. When the soldiers arrived, they found the stolen goods and saw the sage standing silently at the gate. They asked him where the thieves went. But Mandavya was absorbed in tapas. He did not speak.</p>
+
+            <p>The soldiers assumed he was protecting the thieves. They arrested him and brought him before the king, who ordered a terrible punishment &mdash; Mandavya was impaled on a sharp stake.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>But through the power of his years of tapas, Mandavya did not die. He remained on that stake, alive, continuing his meditation. Other sages came and grieved for him. Eventually the king realized his terrible mistake, begged forgiveness, and had the stake removed &mdash; but the tip broke off inside Mandavya&rsquo;s body. From that day, he was called &ldquo;Ani-Mandavya&rdquo; &mdash; Mandavya-with-the-stake-tip.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: Sage Mandavya impaled on a tall wooden stake in a royal courtyard, seated cross-legged in perfect meditation, calm and unbroken, while soldiers and grieving sages stand around him in horror, torchlight casting long shadows, ancient Indian miniature painting style, deep saffron and midnight tones -->
+                <img
+                    src="images/img1.png"
+                    alt="Sage Mandavya impaled on a stake in the royal courtyard, continuing his meditation while soldiers and grieving sages surround him"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Mandavya on the stake &mdash; alive through the power of his tapas, undisturbed in his meditation</div>
+            </div>
+
+            <p>Mandavya went straight to Yama, the god of death and justice, and demanded: &ldquo;What sin of mine earned this suffering?&rdquo;</p>
+
+            <div class="dialogue">
+                <span class="speaker">Yama</span>
+                &ldquo;In your boyhood, you once caught small birds and pierced them with a blade of grass. This is the fruit of that action.&rdquo;
+            </div>
+
+            <p>Mandavya was stunned. A child&rsquo;s thoughtless act &mdash; piercing small birds with a blade of grass &mdash; had earned him this brutal punishment? He thought of what the Shastras taught: actions done by a child below the age of twelve carry no sin.</p>
+
+            <p>He looked at Yama &mdash; the god of dharma, the guardian of justice &mdash; and pointed out the injustice plainly: the punishment had far exceeded the sin. To assign such extreme suffering for a childhood act was itself a violation of dharma.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Then Mandavya cursed Yama:</p>
+
+            <div class="dialogue">
+                <span class="speaker">Mandavya</span>
+                &ldquo;You have given a punishment that exceeds all proportion. For this failure of dharma, you shall be born among mortals &mdash; born as the son of a servant woman.&rdquo;
+            </div>
+
+            <p>And so it happened. Because of this curse, Yama was born on earth as Vidura &mdash; the wise counselor of the Kuru court, son of a handmaiden, always just, always truthful, yet never given the place his wisdom deserved.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Sage Mandavya standing in the court of Yama the god of death, pointing directly at Yama in righteous accusation, Yama seated upon his great dark throne with his buffalo and the staff of death behind him, the atmosphere heavy with cosmic tension, ancient Indian miniature painting style, deep blues and golds, dramatic candlelight -->
+                <img
+                    src="images/img2.png"
+                    alt="Sage Mandavya pointing in accusation at Yama seated on his throne in the celestial court of death"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Mandavya confronts Yama &mdash; the sage who dared to hold the god of justice accountable</div>
+            </div>
+
+            <p>Mandavya, for his part, declared a new law for all time: that no sin shall be assigned to any act committed before the age of fourteen.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Justice without mercy is not justice at all. When the punishment does not fit the act &mdash; when we judge others without considering their age, their intent, their circumstances &mdash; we become the very injustice we claim to fight. Even the god of dharma was not above being held to the standard of dharma.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Vidura grew up to become the wisest man in the Kuru kingdom. He tried again and again to stop the Mahabharata war. He warned Dhritarashtra. He counseled the Pandavas. He did everything right. And yet, because of the circumstances of his birth, he was never allowed to sit on the throne. The wisest man in the room, ignored by everyone. That story is found throughout the Sabha Parva and Udyoga Parva of the Mahabharata.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Mandavya (later Ani-Mandavya) &mdash; great sage; Yama / Dharma &mdash; god of death and justice; Vidura &mdash; born as the mortal form of Yama following the curse</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Justice and Mercy &mdash; True justice must consider intent, circumstance, and proportion</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Adi Parva, Sections CVII&ndash;CVIII (Chapters 107&ndash;108), Ganguli translation. Also known as the Mandavya Upakhyana.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

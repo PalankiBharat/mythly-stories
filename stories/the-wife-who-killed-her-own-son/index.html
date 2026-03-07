@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wife Who Killed Her Own Son &mdash; And Only She Could</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A radiant warrior queen with golden-brown skin standing on the back of a giant divine eagle (Garuda) in mid-flight, she wears a deep red silk sari with gold border and ornate gold armor on her chest and arms, her black hair flowing in the wind, she draws a large bow with fierce determination on her face, aiming downward at an unseen enemy below, behind her stands a four-armed blue-skinned god (Krishna) watching her with a calm knowing expression, wearing a golden crown with peacock feather and yellow silk dhoti, the sky is dark orange and red like a burning dawn, the fortified city of Pragjyotishpura visible far below with high walls and watchtowers, clouds of war-smoke rising from the battlefield, Indian mythological painting style inspired by Raja Ravi Varma with rich oil-painting texture, dramatic warm lighting from the burning horizon illuminating the queen's face, gold jewelry catching the light, mood of fierce feminine power and divine purpose, intricate details on armor and fabric folds, 4K cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Satyabhama standing on Garuda drawing a bow, with Krishna behind her, the burning city of Pragjyotishpura below"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Harivamsha &amp; Bhagavata Purana &middot; Skandha 10, Chapter 59</div>
+            <h1 class="hero-title">The Wife Who Killed Her Own Son &mdash; And Only She Could</h1>
+            <div class="hero-meta">
+                <span>Satyabhama &amp; Krishna</span>
+                <span>The Fall of Narakasura</span>
+                <span>Hidden Identity &amp; Divine Purpose</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Here is a question most people never think to ask: what happens when a god&rsquo;s own son becomes a monster? And what happens when the only person who can stop him is someone who does not even know who she really is?</p>
+
+            <p>Long ago, when Lord Vishnu had taken the form of a great boar &mdash; the Varaha avatar &mdash; to lift the Earth out of the cosmic ocean, the Earth goddess Bhumi had a son by him. That son was named Naraka. He was born from the union of a god and the Earth herself. He should have been great. But power without wisdom turns even a god&rsquo;s child into a demon.</p>
+
+            <p>Naraka grew up to become the ruler of Pragjyotishpura, a mighty fortress city. Over time, his arrogance swallowed everything good in him. He stole the magnificent earrings of Aditi, the mother of the gods. He seized Varuna&rsquo;s royal umbrella and the peak of Mount Mandara. Worst of all, he kidnapped sixteen thousand women &mdash; princesses and daughters of kings, gods, and sages &mdash; and kept them locked away in his palace.</p>
+
+            <p>Indra, the king of the gods, could not defeat him. So he went to Krishna in Dwaraka and told him everything &mdash; the stolen earrings, the captured women, all of it.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Krishna decided to go to war. He mounted his great eagle, Garuda, and flew toward Pragjyotishpura. But he did not go alone. His wife Satyabhama came with him. The Bhagavata Purana says she accompanied Krishna on this journey. At the time, no one &mdash; perhaps not even Satyabhama herself &mdash; fully understood why her presence on that battlefield would matter so much.</p>
+
+            <p>Pragjyotishpura was not easy to reach. The city was surrounded by mountains, weapons, fire, water, wind, and a net of magical nooses laid by the demon Mura. Krishna cut through every defense. When the five-headed demon Mura rushed at him from the waters, Krishna sliced off his heads with his Sudarshana disc. Then he destroyed Mura&rsquo;s seven sons who attacked next.</p>
+
+            <p>Finally, Narakasura himself came out to fight. He was furious. According to the Bhagavata Purana, he attacked Krishna with his shakti weapon &mdash; a powerful lance. The weapon struck Krishna on the chest.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A fierce battle scene showing a dark-skinned muscular demon king (Narakasura) with a golden crown and heavy iron armor, standing on a war chariot pulled by monstrous elephants, hurling a glowing blazing lance (shakti weapon) through the air toward a blue-skinned four-armed god (Krishna) seated on a massive golden-feathered eagle (Garuda), the lance leaving a trail of fire through the dark smoky sky, the fortified walls of Pragjyotishpura visible behind the demon with watchtowers and war banners, fallen demon soldiers scattered on the ground below, Indian mythological painting style with Tanjore painting gold leaf details on armor and weapons, dramatic side-lighting from explosions on the battlefield casting orange light on both figures, mood of violent cosmic confrontation, highly detailed armor engravings and weapon glow effects. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Narakasura hurling his shakti lance at Krishna on Garuda during the battle at Pragjyotishpura"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Narakasura hurls his shakti weapon at Krishna on the battlefield of Pragjyotishpura</div>
+            </div>
+
+            <p>Now here is where the story splits between two ancient tellings, and both are important.</p>
+
+            <p>In the Bhagavata Purana, Krishna himself destroyed Narakasura. He used his Sudarshana disc to cut off the demon&rsquo;s head, his arms, and his thighs &mdash; just as Indra once used his thunderbolt against mountains. The text is clear: Krishna ended Naraka.</p>
+
+            <p>But in the Harivamsha &mdash; an ancient appendix to the Mahabharata and one of the oldest Puranic texts &mdash; there is a deeper layer. According to this tradition, Narakasura carried a special protection: he could only be killed by his own mother, Bhumi, the Earth goddess. No weapon from any other hand could end him. And here is the secret that makes this story unforgettable: Satyabhama was an incarnation of Bhumi herself.</p>
+
+            <p>According to the Harivamsha version, when Narakasura&rsquo;s weapon struck Krishna during battle, Krishna appeared to lose consciousness on Garuda&rsquo;s back. Satyabhama, seeing her husband fall, was filled with rage. She picked up a bow and began fighting Narakasura herself. And it was her arrow that struck the killing blow.</p>
+
+            <p>Think about what happened. The Earth goddess, reborn as a mortal queen, killed her own son from a previous age &mdash; a son she may not have even remembered bearing. The one person in all the universe who could break through his protection did so, not because she knew the prophecy, but because she loved her husband and refused to let evil stand.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up emotional scene of an older woman with an earthy complexion and green and brown robes (Bhumi, the Earth goddess) kneeling on a battlefield, cradling the severed golden crown of her fallen son in her hands, tears on her weathered face, looking upward at a standing blue-skinned god (Krishna) with four arms who looks down at her with compassion, one of his hands raised in a gesture of reassurance, the ground around them is scorched and broken from battle, faint first light of dawn breaking through dark clouds in the background, the stolen earrings of Aditi and Varuna's umbrella lying on the ground nearby as returned treasures, Indian mythological oil painting style inspired by Raja Ravi Varma, soft golden dawn light from the right illuminating Bhumi's face and the tears, cool blue shadows on the battlefield, mood of grief mixed with divine mercy and justice, extreme detail on facial expressions and fabric textures. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Bhumi the Earth goddess kneeling before Krishna after the death of her son Narakasura, holding his crown, with stolen treasures returned on the ground"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Bhumi kneels before Krishna, mourning the son she lost to arrogance</div>
+            </div>
+
+            <p>After Narakasura fell, the Bhagavata Purana tells us that Bhumi &mdash; the Earth goddess herself &mdash; appeared before Krishna. She carried Aditi&rsquo;s stolen earrings, Varuna&rsquo;s umbrella, and the peak of Mandara. She returned them all. Then she placed her dead son&rsquo;s own child &mdash; the grandson, Bhagadatta &mdash; at Krishna&rsquo;s feet and prayed for his protection.</p>
+
+            <p>The scripture says Bhumi praised Krishna with folded hands, calling him the supreme being beyond all material qualities. She asked that her grandson be spared. Krishna, who had just destroyed her son, showed her mercy. He gave Bhagadatta safety and the throne of Pragjyotishpura.</p>
+
+            <p>Then Krishna entered the palace. Inside, he found the sixteen thousand women, still held prisoner. When they saw Krishna, the Bhagavata Purana says each of them chose him as their husband in their hearts. Krishna accepted them all. He sent them to Dwaraka with guards and gifts, and he married every single one of them &mdash; not out of desire, but to restore their honor in a world that would have rejected them otherwise.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Sometimes the right person for a task is the last person anyone would expect &mdash; including themselves. Satyabhama did not know she was the Earth goddess reborn. She did not fight because of a prophecy. She fought because she loved and because she was brave. The universe has a way of placing you exactly where you need to be, even when you do not understand why. The question is: when your moment comes, will you pick up the bow &mdash; or will you wait for someone else?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Krishna freed sixteen thousand one hundred women that day and married them all. But how did one man keep sixteen thousand households? The Bhagavata Purana, in Skandha 10 Chapter 69, describes something astonishing: the sage Narada visited Dwaraka and found Krishna simultaneously present in every single palace, doing different things in each one &mdash; playing with children in one, performing a fire ritual in another, eating dinner in a third. Even Narada, who had seen everything, was stunned. That is a story for another day.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Krishna &mdash; the eighth avatar of Vishnu, ruler of Dwaraka. Satyabhama &mdash; Krishna&rsquo;s wife, incarnation of Bhumi (Earth goddess). Narakasura (Bhauma) &mdash; demon king of Pragjyotishpura, son of Varaha (Vishnu&rsquo;s boar avatar) and Bhumi. Bhumi/Prithvi &mdash; the Earth goddess, Narakasura&rsquo;s mother. Aditi &mdash; mother of the gods, whose earrings were stolen. Indra &mdash; king of the gods. Mura &mdash; the five-headed demon guardian.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Hidden Identity &amp; The Right Person for the Right Task &mdash; destiny places the right person at the right moment, even when they do not know it themselves</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Primary: Bhagavata Purana (Srimad Bhagavatam), Skandha 10, Chapter 59 (&ldquo;The Killing of the Demon Naraka&rdquo;). Krishna&rsquo;s battle with Mura (verses 2&ndash;17), battle with Narakasura (verses 18&ndash;22), Bhumi&rsquo;s surrender and prayer (verses 23&ndash;36), the freeing and marriage of the 16,000 women (verses 33&ndash;43; note: Vishnu Purana and Harivamsha give the variant count of 16,100). The specific tradition of Satyabhama dealing the killing blow is found in the Harivamsha (Vishnu Parva, Ch 63 in the critical edition / Ch 64 in the Dutt translation), an ancient appendix to the Mahabharata, and is widely preserved in South Indian Puranic traditions.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Bhagavata Purana account (Skandha 10, Ch 59) is available in the Bhaktivedanta Swami Prabhupada edition (BBT), Bibek Debroy&rsquo;s translation, and the Gita Press Gorakhpur edition. In the Bhagavata text itself, Krishna kills Narakasura directly with the Sudarshana disc. The alternate tradition where Satyabhama delivers the final blow comes from the Harivamsha (Vishnu Parva) and is widely attested in commentarial and regional Puranic literature, including South Indian traditions. Both versions are presented here with clear attribution. The &ldquo;But Wait&rdquo; teaser references Bhagavata Purana Skandha 10, Chapter 69 (Narada&rsquo;s visit to Dwaraka), a well-documented episode. Note: the tradition linking Narakasura&rsquo;s death to Diwali/Naraka Chaturdashi is a living cultural tradition but is not explicitly stated in these Puranic texts.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

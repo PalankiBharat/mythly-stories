@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Handful of Rice That Bought a Palace &mdash; Why Krishna Wept for a Poor Man</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A thin, poor Indian brahmin man with matted hair and a worn, patched white dhoti, standing nervously at the grand golden gates of a vast royal palace in Dwaraka, clutching a small tied cloth bundle close to his chest with both hands, his bare feet dusty from a long journey, his face showing a mixture of shame, hesitation, and quiet hope — behind him stretches a long dusty road, before him the palace gleams with gold pillars and silk banners, guards in armor standing at the gates looking at him with suspicion, the contrast between his poverty and the palace's wealth is stark and painful, Indian mythological oil painting style inspired by Raja Ravi Varma, warm late afternoon golden light casting long shadows, mood of humble devotion meeting overwhelming grandeur. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Sudama, a thin poor brahmin, standing nervously at the golden gates of Krishna's palace in Dwaraka, clutching a small cloth bundle to his chest"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Bhagavata Purana &middot; Skandha 10</div>
+            <h1 class="hero-title">The Handful of Rice That Bought a Palace &mdash; Why Krishna Wept for a Poor Man</h1>
+            <div class="hero-meta">
+                <span>Sudama &amp; Krishna in Dwaraka</span>
+                <span>Chapters 80&ndash;81</span>
+                <span>True Friendship &amp; Grace</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>There was a brahmin so poor that his children went to bed hungry most nights. His clothes were torn. His house was falling apart. His wife grew thinner by the day. And yet this man &mdash; Sudama, also called Kuchela &mdash; never once begged anyone for anything. He had his pride. He had his learning. And he had one secret he never talked about: long ago, at the ashram of Guru Sandipani, his closest friend had been a boy named Krishna.</p>
+
+            <p>That boy was now the king of Dwaraka.</p>
+
+            <p>Sudama&rsquo;s wife watched her children go hungry one more night. She could not bear it any longer. She went to her husband and spoke plainly. According to the Bhagavata Purana, she reminded him that his dear friend Krishna, the Lord of the universe and the refuge of the devoted, was now ruling in Dwaraka. She urged Sudama to go to him. She said that Krishna was generous to those devoted to him and would surely help their family.</p>
+
+            <p>Sudama knew she was right. But the thought of going to his rich, powerful friend with empty hands and a begging heart &mdash; it made him sick with shame.</p>
+
+            <p>Still, he agreed to go. His wife went to the neighbors and managed to borrow a handful of beaten rice &mdash; <em>prithuka</em>, flattened rice &mdash; and tied it in a torn piece of cloth. It was all they had to offer.</p>
+
+            <p>Sudama took the small bundle and began the long walk to Dwaraka.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>As he walked, his mind was troubled. How would he even get past the palace gates? What would he say? How could he ask his childhood friend for money? He decided he would not ask. He would just go, see Krishna, and come back. He could not bring himself to beg.</p>
+
+            <p>But when he reached the palace and word was sent inside, something happened that Sudama did not expect.</p>
+
+            <p>Krishna immediately stood up and came out to meet him in person.</p>
+
+            <p>The Bhagavata Purana describes this moment clearly: Krishna went forward to meet Sudama and embraced him with great pleasure. Touching the body of his dear old friend, Krishna shed tears of love. He brought Sudama inside, sat him on his own seat, and washed Sudama&rsquo;s feet with his own hands. He sprinkled that water on his own head. He offered him various tokens of respect and treated him with every comfort.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Krishna kneeling on the palace floor to wash Sudama's dusty feet while Sudama sits uncomfortably on the golden throne"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: Blue-skinned Krishna wearing royal golden crown, rich yellow silk robes, and jeweled ornaments, personally kneeling on the marble floor of a grand palace hall to wash the dusty cracked feet of the thin, poor brahmin Sudama who sits uncomfortably on a golden throne looking embarrassed, a brass vessel of water at Krishna's knees, Rukmini standing nearby holding a chamara fan watching with gentle emotion, grand palace interior with carved pillars and silk drapes, Tanjore painting aesthetic with gold leaf accents on Krishna's crown and jewelry, warm interior lamplight, mood of supreme humility from the most powerful meeting supreme poverty. Aspect ratio 1:1, square format. -->
+                <div class="caption">The king of Dwaraka washed the feet of his poorest friend with his own hands</div>
+            </div>
+
+            <p>Rukmini, Krishna&rsquo;s queen, personally fanned Sudama. The poorest brahmin in the land was being treated like a king in the grandest palace in the world.</p>
+
+            <p>Krishna held Sudama&rsquo;s hands and began to recall their days together at Guru Sandipani&rsquo;s ashram. He spoke of how they had once gone to gather firewood in the forest and been caught in a terrible storm, spending the whole night shivering until their guru found them the next morning. He spoke with love about the simple life they had shared as students.</p>
+
+            <p>Then Krishna noticed the small bundle tucked into Sudama&rsquo;s cloth.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Krishna</span>
+                &ldquo;What have you brought for me from home? Whatever is offered to me by my devoted ones with pure love &mdash; even if it is small &mdash; becomes great. And the greatest offerings without devotion do not please me.&rdquo;
+            </div>
+
+            <p>Sudama was too embarrassed to show the beaten rice. He tried to hide it. But Krishna reached over, took the bundle from his hand, opened it, and saw the handful of flattened rice inside.</p>
+
+            <p>Krishna smiled. He took a handful and ate it with joy.</p>
+
+            <p>According to the Bhagavata Purana, Krishna ate one handful. When he reached for a second, Rukmini &mdash; who is identified as the goddess Lakshmi &mdash; took hold of his hand and stopped him. That one handful, she indicated, was already enough to grant Sudama all the wealth of both this world and the next.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Sudama stayed the night. He ate fine food, slept in a soft bed, and felt the warmth of his old friend&rsquo;s love. But he never asked for anything. He could not bring himself to do it. Not a single word about his poverty. Not one request for help.</p>
+
+            <p>The next morning, he left Dwaraka and began the long walk home &mdash; empty-handed, as far as he knew.</p>
+
+            <p>As he walked, he thought to himself that even though he had received nothing, the experience of seeing Krishna again was wealth enough. He did not feel bitter. He was grateful.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Sudama approaching his village to find his hut replaced by a grand mansion, his family in fine clothes running toward him"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: Wide landscape shot — the thin brahmin Sudama walking alone on a dirt road through open countryside approaching his village, his torn white dhoti fluttering in the wind, in the distance where his old hut used to stand there is now a grand mansion with white walls and gardens, colorful flags on the roof, his wife and children in fine clothes running toward him on the road with arms outstretched, Sudama frozen mid-step with an expression of total disbelief, golden sunset light flooding the entire scene, Indian miniature painting style with detailed landscape, mood of miraculous transformation and overwhelming grace. Aspect ratio 1:1, square format. -->
+                <div class="caption">Where his broken hut once stood, a palace now shone in the evening light</div>
+            </div>
+
+            <p>But when he reached his village, he could not find his house.</p>
+
+            <p>Where his broken hut had stood, there was now a grand mansion. Gardens surrounded it. Servants moved about. And running toward him on the road were his wife and children &mdash; dressed in fine clothes, healthy, fed, and weeping with joy.</p>
+
+            <p>Sudama understood. He had not asked. But Krishna had given.</p>
+
+            <p>The Bhagavata Purana tells us that Sudama, even after receiving all this wealth, did not become attached to it. He continued to live with devotion, knowing that it was Krishna&rsquo;s grace, not his own doing. And in time, he attained liberation.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Sudama never asked. Krishna never waited to be asked. That is what true friendship looks like &mdash; and that is what true grace looks like. The people who really love you do not need you to beg. They see what you need and they give. The question is: do you have the eyes to see what the people around you need &mdash; before they have to ask?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Krishna spoke lovingly about his time at Guru Sandipani&rsquo;s ashram. But there is another story about that guru &mdash; a painful one. Sandipani&rsquo;s own son had disappeared in the ocean at Prabhasa, taken by a demon named Panchajana who dwelled in the depths. As guru dakshina, Krishna and Balarama went to the ocean, slew the demon, and recovered the boy from the realm of Yama himself. From within that demon, Krishna took the conch shell that became his famous Panchajanya. That story is also in the Bhagavata Purana, Skandha 10, Chapter 45.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Sudama (also called Kuchela) &mdash; a poor brahmin and childhood friend of Krishna. Krishna &mdash; king of Dwaraka. Sudama&rsquo;s wife &mdash; who urges him to go. Rukmini &mdash; Krishna&rsquo;s queen, identified with Lakshmi. Guru Sandipani &mdash; mentioned as their childhood teacher.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">True Friendship &amp; Giving Without Being Asked &mdash; love that does not wait for a request</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Bhagavata Purana, Skandha 10, Chapters 80&ndash;81. Chapter 80 covers Sudama&rsquo;s journey to Dwaraka and Krishna&rsquo;s reception; Chapter 81 covers the beaten rice episode and Sudama&rsquo;s return home to find his house transformed. Also referenced in Vishnu Purana and widely retold in regional traditions (the Tamil name Kuchela is from the Bhagavata Mahatmya tradition).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">This is one of the most widely documented episodes in the Bhagavata Purana. It can be verified in Bibek Debroy&rsquo;s English translation of the Bhagavata Purana (Volume 3, Skandha 10), the Gita Press Gorakhpur edition, and A.C. Bhaktivedanta Swami Prabhupada&rsquo;s &ldquo;Krishna: The Supreme Personality of Godhead&rdquo; (Chapter 80&ndash;81 retelling). Also available on sacred-texts.com in the public domain translation.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

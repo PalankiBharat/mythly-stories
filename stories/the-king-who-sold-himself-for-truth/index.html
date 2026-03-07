@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The King Who Sold Himself Into Slavery &mdash; And Still Refused to Lie</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <img
+            src="images/featured.png"
+            alt="King Harishchandra standing in tattered clothes at a cremation ground at night, holding a wooden staff, his face showing quiet dignity despite his suffering"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <!-- FEATURE IMAGE PROMPT: A once-royal Indian king (Harishchandra) now dressed in torn dirty cloth wrapped around his waist, standing upright with a long wooden staff in his right hand at a cremation ground (shmashana) at night, his body is thin and worn from hardship but his posture is straight and dignified, his face shows deep sadness but absolute resolve, no crown on his head just matted hair, behind him are funeral pyres burning with orange and amber flames sending smoke into the dark sky, scattered bones and ash on the ground around him, the cremation ground has a few stone platforms and dark leafless trees silhouetted against the smoky night sky, warm orange firelight from the pyres illuminating his face and chest from the left side while the rest fades into deep shadow, Indian mythological painting style inspired by Raja Ravi Varma with dramatic chiaroscuro lighting, mood of immense suffering held together by unbreakable inner strength, 4K detail cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Markandeya Purana &middot; Harishchandra Upakhyana</div>
+            <h1 class="hero-title">The King Who Sold Himself Into Slavery &mdash; And Still Refused to Lie</h1>
+            <div class="hero-meta">
+                <span>King Harishchandra</span>
+                <span>Markandeya Purana</span>
+                <span>Truth at Any Cost</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>How much is the truth worth? Is it worth your kingdom? Your wealth? Your family? Your own freedom? There was one king in the ancient world who answered yes to all of these &mdash; and then was asked to pay even more. His name was Harishchandra, the king of Ayodhya, from the solar dynasty of Ikshvaku. And his story begins not in any court or assembly, but in a forest.</p>
+
+            <p>Harishchandra had gone into the forest to hunt. In that same forest, the great sage Vishvamitra was deep in tapas &mdash; austerities of concentrated spiritual practice. When Harishchandra came near, Vishvamitra stopped him. According to the Markandeya Purana (Canto VII), the sage demanded a gift from the king. In the Vedic tradition, when a Brahmin sage asks a king for a charitable gift, the king cannot refuse. Harishchandra asked what the sage wanted.</p>
+
+            <p>Vishvamitra asked for his entire kingdom &mdash; the land, the treasury, everything. Harishchandra gave it. He walked out of his own palace with nothing but the clothes on his back, along with his wife Shaivya and their young son Rohitashwa.</p>
+
+            <p>But Vishvamitra was not done. He appeared before the now-homeless king again and demanded a further dakshina &mdash; the fee owed to a Brahmin after a gift. Harishchandra had already given everything. He had nothing left. He asked for time, and Vishvamitra gave him a deadline.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>To pay this debt, Harishchandra went to Kashi &mdash; the holy city of Varanasi. There, with no other way to raise the money, he did something almost unthinkable for a king. He sold his wife and son into slavery. A Brahmin bought Shaivya and Rohitashwa as household servants. And then, to pay the remaining amount, Harishchandra sold himself.</p>
+
+            <p>His buyer was a chandala &mdash; a keeper of the cremation grounds, one of the lowest positions in society. The king of Ayodhya, descended from the sun god himself, became a servant who collected taxes from people who brought their dead to be burned. That was his job now. Standing among the funeral pyres, covered in ash, collecting a fee for each body.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Harishchandra selling his wife Shaivya and young son Rohitashwa into slavery in the city of Kashi, his face full of grief as they are led away"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: A heartbreaking scene in an ancient Indian city street (Kashi/Varanasi), King Harishchandra a gaunt man in simple torn white cloth standing with his head bowed in grief as his wife Shaivya a beautiful woman in a faded sari with tears on her face is being led away by a Brahmin householder along with their young son Rohitashwa who is about eight years old looking back at his father with confused frightened eyes, Harishchandra's right hand is slightly extended toward them as if he wants to reach out but has stopped himself, the background shows the ancient ghats and stone buildings of Kashi with temple spires visible, other townspeople watching the scene with pity, warm late afternoon sunlight casting long shadows on the stone street, Indian mythological painting style inspired by Raja Ravi Varma with realistic emotional expressions, mood of devastating sacrifice and controlled grief, earth tones with muted gold and ochre palette, 4K detail. Aspect ratio 1:1, square format. -->
+                <div class="caption">A king sells his own wife and child &mdash; because a debt of truth must be paid</div>
+            </div>
+
+            <p>He lived this way, doing his duty honestly. He did not complain. He did not lie about who he was. He did not try to escape. He simply did the work given to him, because he had given his word.</p>
+
+            <p>Then came the worst night of his life.</p>
+
+            <p>A woman arrived at the cremation ground, alone, in the dark. She was carrying the body of a small boy on her lap, weeping. The child had been bitten by a snake and had died. She had no money, no cloth to wrap the body, nothing. She begged to be allowed to cremate her son.</p>
+
+            <p>Harishchandra looked at her. And then he recognized her. It was Shaivya &mdash; his own wife. The dead boy was Rohitashwa &mdash; his own son.</p>
+
+            <p>The Markandeya Purana describes this as the most painful moment of the story. Harishchandra, standing at the cremation ground where he worked as a slave, looking at his dead child in the arms of his wife who was herself a slave. Every part of him wanted to let her through, to hold his dead son, to weep.</p>
+
+            <p>But his duty required him to collect the cremation tax. That was the rule of his master. And Shaivya had no money to pay it.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Harishchandra at the cremation ground recognizing his wife Shaivya holding the dead body of their son Rohitashwa, firelight illuminating his anguished face"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: Close-up emotional scene at a cremation ground at night, Harishchandra on the left side of the frame his face lit by flickering orange firelight showing a man in absolute agony but refusing to break, tears visible in his eyes but his jaw set firm, opposite him is Shaivya his wife kneeling on the ground holding the small lifeless body of their son Rohitashwa wrapped in a torn piece of her own sari, her face is devastated looking up at her husband pleading, between them on the ground is a small clay bowl where the cremation tax should be placed and it is empty, burning funeral pyres in the soft-focus background casting warm light and sending embers floating upward into the dark sky, extreme emotional intimacy in the framing like a Renaissance pieta, Indian mythological painting style with Rembrandt-like lighting, mood of unbearable grief held together only by truth, 4K detail. Aspect ratio 1:1, square format. -->
+                <div class="caption">A husband must demand a tax from his own wife &mdash; to burn their own dead son</div>
+            </div>
+
+            <p>Harishchandra told Shaivya that he could not let her pass without paying the fee. He was a slave. He had a duty to his master. If he let her through without payment, he would be stealing &mdash; and that would be a lie against his word.</p>
+
+            <p>Shaivya, with nothing else left, tore off half of her sari to offer as the payment.</p>
+
+            <p>At that moment, the gods could bear it no longer. Dharma, Indra, Vishvamitra, Vasishtha, and other celestial beings appeared at the cremation ground. According to the Markandeya Purana, the gods declared that Harishchandra had passed the test. Vishvamitra himself acknowledged that this king had proven that truth could not be broken by any amount of suffering.</p>
+
+            <p>Rohitashwa was brought back to life. Harishchandra&rsquo;s kingdom was restored. Shaivya was freed from slavery. Everything that had been taken was returned &mdash; because the man who lost everything had never once lost his truth.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Harishchandra did not hold onto truth because it was easy or because it made his life better. For most of the story, truth made his life worse &mdash; far worse than lying ever would have. He held on because he believed that who you are is not decided by what happens to you, but by what you refuse to do no matter what happens. The question is &mdash; when keeping your word costs you everything you love, would you still keep it?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Harishchandra was not the only king from the Ikshvaku dynasty whose commitment to truth changed the course of history. His descendant Rama, generations later, would face a strangely similar test &mdash; forced to give up his kingdom and his wife, all because of a promise his father made. That story became the Ramayana. And it all started with a single word given and never taken back.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Harishchandra &mdash; king of Ayodhya from the Ikshvaku (solar) dynasty, who gave up his kingdom, family, and freedom rather than break his word. Shaivya &mdash; his queen (also known as Taramati in later popular retellings; Shaivya is the name used in the Markandeya Purana). Rohitashwa &mdash; their young son, who died from a snakebite during their suffering. Vishvamitra &mdash; the sage who tested Harishchandra by demanding everything he had, beginning with the encounter in the forest. Vasishtha &mdash; the royal priest of Harishchandra&rsquo;s court, associated with the solar dynasty.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Truth at Any Cost &mdash; the belief that integrity is not something you practice only when it is convenient, but something you hold onto precisely when it costs you the most</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Markandeya Purana, Harishchandra Upakhyana (Canto VII and following, in the Pargiter edition). The story opens with Harishchandra hunting in the forest and encountering Vishvamitra performing tapas &mdash; this is the framing given in the Markandeya Purana itself. The narrative is also referenced in the Mahabharata (Vana Parva, where it is narrated to Yudhishthira as an example of truthfulness under suffering) and retold in the Devi Bhagavata Purana. The account of Harishchandra working at the cremation ground and his wife arriving with their dead son is the central episode in all versions.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Harishchandra narrative is found in the Markandeya Purana (translated by F. Eden Pargiter, Asiatic Society of Bengal, 1904). It is also narrated in the Mahabharata, Vana Parva (Ganguli translation), where the story is told to Yudhishthira. Bibek Debroy&rsquo;s Markandeya Purana translation (Penguin, 2019) includes this episode. The forest encounter between Harishchandra and Vishvamitra as the story&rsquo;s opening is consistent with the Markandeya Purana text (Canto VII). The version in which the story begins with a wager in Indra&rsquo;s court is a later popular retelling, not the Puranic source. Note: exact chapter and verse numbers vary between editions due to differences in recensions.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

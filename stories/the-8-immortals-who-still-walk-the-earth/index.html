@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Beings from Hindu Scripture Who Are Still Alive Right Now &mdash; And the Texts Name Each One</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* Sanskrit verse block */
+        .verse-block {
+            margin: 36px 0;
+            padding: 28px 32px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 100%);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .verse-block .sanskrit {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-style: italic;
+            color: var(--gold-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .verse-block .translation {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #F5EDDA;
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        /* Chiranjeevi cards */
+        .chiranjeevi-card {
+            margin: 36px 0;
+            padding: 28px 28px 24px;
+            background: var(--parchment);
+            border-left: 4px solid var(--gold);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .chiranjeevi-card .card-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--gold);
+            opacity: 0.35;
+            float: right;
+            margin-left: 12px;
+            line-height: 1;
+        }
+
+        .chiranjeevi-card .card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .chiranjeevi-card .card-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 14px;
+        }
+
+        .chiranjeevi-card p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--ink-light);
+            margin-bottom: 0;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MYSTERY SECTION === */
+        .mystery {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mystery::before {
+            content: '\2728';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .mystery-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .mystery p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        .mystery p + p {
+            margin-top: 16px;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .mystery { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+            .chiranjeevi-card { padding: 22px 20px 20px; }
+            .verse-block { padding: 22px 20px; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): Eight immortal figures standing together on a vast cosmic platform floating in a dark starlit void, each figure distinct — a cursed warrior with a bleeding forehead wound and matted hair, a noble demon king wearing a golden crown with hands folded, an ancient sage with a long white beard holding palm-leaf manuscripts, a powerful monkey-faced warrior in a devotional pose, a dignified Lankan king in royal robes, a serene Brahmin teacher holding a bow, a fierce warrior with a battle-axe resting on his shoulder, and a young sixteen-year-old sage embracing a Shiva lingam — all standing in a semi-circle facing the viewer, the cosmic background shows swirling galaxies and the faint outline of yugas passing like seasons, golden divine light emanating from behind the group casting long shadows forward, ancient Indian mythological painting style inspired by Raja Ravi Varma with rich oil-painting textures and cosmic surreal elements, dramatic chiaroscuro lighting with warm gold from behind and cool blue-silver from above, mood of eternal waiting and timeless purpose, intricate jewelry and fabric details on each figure, 4K cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Eight immortal figures from Hindu scripture standing together on a cosmic platform — Ashwatthama, Bali, Vyasa, Hanuman, Vibhishana, Kripacharya, Parashurama, and Markandeya"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Multiple Puranas &middot; The Chiranjeevi Tradition</div>
+            <h1 class="hero-title">8 Beings from Hindu Scripture Who Are Still Alive Right Now &mdash; And the Texts Name Each One</h1>
+            <div class="hero-meta">
+                <span>The Chiranjivis</span>
+                <span>Immortals Among Us</span>
+                <span>What the Scriptures Actually Say</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Hindu scripture does not just speak of gods and demons who lived long ago. It names eight specific beings &mdash; some gods, some warriors, some sages, some cursed &mdash; who are still alive. Not metaphorically. Not symbolically. The texts say these eight are physically present in the world right now, each for a different reason, each carrying a different burden or gift. There is even a famous shloka that names seven of them.</p>
+
+            <div class="verse-block">
+                <div class="sanskrit">
+                    Ashwatthama Balir Vyaso Hanumanash cha Vibhishanah<br>
+                    Kripah Parashuramascha Saptaite Chiranjeevinah
+                </div>
+                <div class="translation">
+                    &ldquo;Ashwatthama, Bali, Vyasa, Hanuman, Vibhishana, Kripa, and Parashurama &mdash; these seven are the Chiranjivis (the long-lived ones).&rdquo;<br>
+                    This shloka is widely recited and attributed to multiple Puranic traditions. The eighth, Markandeya, is added from the Markandeya Purana and the Bhagavata Purana.
+                </div>
+            </div>
+
+            <p>They are called the Chiranjivis &mdash; a Sanskrit word meaning &ldquo;the long-lived&rdquo; or &ldquo;the immortals.&rdquo; Some received immortality as a blessing. Others received it as a curse. Here is what the scriptures say about each one.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <!-- CHIRANJEEVI 1: ASHWATTHAMA -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">01</span>
+                <div class="card-name">Ashwatthama</div>
+                <div class="card-title">The Cursed Warrior</div>
+                <p>Ashwatthama was the son of Dronacharya, the great teacher of the Pandavas and Kauravas. After the Mahabharata war, consumed by rage over his father&rsquo;s death, Ashwatthama crept into the Pandava camp at night and killed the five sons of Draupadi &mdash; the Draupadeyas. When the Pandavas discovered this, Ashwatthama launched the Brahmastra &mdash; aimed at the unborn child in Uttara&rsquo;s womb. Krishna saved the child (Parikshit) and cursed Ashwatthama. According to the Mahabharata (Sauptika Parva, Chapters 13&ndash;16), Krishna took the jewel from Ashwatthama&rsquo;s forehead, leaving a wound that would never heal. He was cursed to wander the earth for thousands of years, alone, carrying the pain of his crime, with that wound bleeding and festering, finding no welcome anywhere.</p>
+            </div>
+
+            <!-- CHIRANJEEVI 2: BALI -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">02</span>
+                <div class="card-name">King Mahabali</div>
+                <div class="card-title">The Generous Demon King</div>
+                <p>Bali was an Asura king, the grandson of Prahlada, who through his devotion and power conquered all three worlds. The gods went to Vishnu for help. Vishnu took the form of Vamana, a small Brahmin boy, and asked Bali for just three steps of land. When Bali agreed, Vamana grew to cosmic size, covering the earth in one step and the heavens in the second. With no space left, Bali offered his own head for the third step. According to the Bhagavata Purana (Skandha 8, Chapters 19&ndash;22), Vishnu was so pleased by Bali&rsquo;s generosity that he pushed him down to Sutala (the netherworld) but granted him the boon of becoming the Indra &mdash; king of the gods &mdash; in a future Manvantara. Bali rules Sutala to this day, waiting for that promised time.</p>
+            </div>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A colossal cosmic figure of Vamana-Trivikrama with one foot on the earth showing rivers, mountains, and kingdoms below, and the other foot raised toward the heavens where stars and celestial beings scatter, below him a noble Asura king wearing a golden crown and rich robes kneels with his head bowed and hands pressed together in offering, the Asura king's face shows no fear but deep calm surrender and devotion, the cosmic figure has blue skin with golden ornaments and a sacred thread, a tiny Brahmin's water pot still in his left hand contrasting with his universe-spanning size, the background shows the three worlds — earth below green and lush, middle space with clouds and flying chariots, heavens above with golden palaces of the gods, ancient Indian painting style combining Tanjore gold-leaf technique with Pahari miniature landscape detail, dramatic divine light radiating from the cosmic figure's body illuminating everything in warm gold, mood of supreme power meeting supreme humility, 4K detail. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Vamana in cosmic Trivikrama form spanning the three worlds, while King Bali kneels below offering his head for the third step"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">King Bali offers his head for the third step &mdash; and earns a promise that outlasts the age</div>
+            </div>
+
+            <!-- CHIRANJEEVI 3: VYASA -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">03</span>
+                <div class="card-name">Vyasa</div>
+                <div class="card-title">The Compiler of the Vedas</div>
+                <p>Vyasa &mdash; also called Krishna Dvaipayana &mdash; is the sage who divided the single Veda into four parts: Rig, Yajur, Sama, and Atharva. He composed the Mahabharata and the eighteen Mahapuranas. According to the Vishnu Purana (Book 3, Chapters 3&ndash;4), in every Dvapara Yuga, a Vyasa appears to reorganize the Vedas for that age. The current Vyasa, son of Satyavati and sage Parashara, is said to still be alive. The Bhagavata Purana (Skandha 1, Chapters 4&ndash;7) describes how even after composing all these texts, Vyasa felt unsatisfied until Narada advised him to write the Bhagavata Purana. Tradition holds that Vyasa remains present, ensuring the knowledge of the Vedas persists through the current age.</p>
+            </div>
+
+            <!-- CHIRANJEEVI 4: HANUMAN -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">04</span>
+                <div class="card-name">Hanuman</div>
+                <div class="card-title">The Eternal Devotee</div>
+                <p>Hanuman, the son of Vayu (the wind god) and the greatest devotee of Rama, was granted a specific boon. According to the Valmiki Ramayana (Uttara Kanda, Sarga 40), when Rama was about to depart the earth, Hanuman asked to remain alive for as long as Rama&rsquo;s story is told in the world. Rama granted this. The Mahabharata also shows Hanuman still alive during the Dvapara Yuga &mdash; Bhima meets him in the forest (Vana Parva, Chapters 146&ndash;150). Tradition from the Kalki Purana says Hanuman will serve Kalki, the final avatar. He is said to be present wherever the Ramayana is recited.</p>
+            </div>
+
+            <!-- CHIRANJEEVI 5: VIBHISHANA -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">05</span>
+                <div class="card-name">Vibhishana</div>
+                <div class="card-title">The Righteous King of Lanka</div>
+                <p>Vibhishana was Ravana&rsquo;s younger brother. When Ravana refused to return Sita, Vibhishana left Lanka and joined Rama&rsquo;s side &mdash; choosing dharma over family loyalty. After the war, Rama crowned him as king of Lanka. According to the broader Puranic tradition, it was Brahma who had already granted Vibhishana the boon of immortality as a reward for his righteousness &mdash; Rama&rsquo;s crowning confirmed his kingship, but the gift of undying life came from Brahma. Vibhishana is said to still reign in Lanka, upholding dharma through the current age.</p>
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <!-- CHIRANJEEVI 6: KRIPACHARYA -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">06</span>
+                <div class="card-name">Kripacharya</div>
+                <div class="card-title">The Teacher Who Survived Every Battle</div>
+                <p>Kripacharya (Kripa) was one of the teachers of the Kuru princes, alongside Drona. He fought on the Kaurava side in the Mahabharata war but was one of only three Kaurava warriors who survived all eighteen days of battle. The Mahabharata (Ashvamedhika Parva) mentions Kripa continuing as a teacher after the war. According to the Vishnu Purana (Book 3, Chapter 2) and the tradition of the Saptarishi cycles, Kripa is said to serve as one of the Saptarishis in a future Manvantara. He is considered a Chiranjeevi who carries forward the knowledge of warfare and dharma from one age to the next.</p>
+            </div>
+
+            <!-- CHIRANJEEVI 7: PARASHURAMA -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">07</span>
+                <div class="card-name">Parashurama</div>
+                <div class="card-title">The Warrior Who Never Stopped Fighting</div>
+                <p>Parashurama, the son of sage Jamadagni and Renuka, is the sixth avatar of Vishnu. He is famous for having destroyed the Kshatriya warriors twenty-one times to avenge his father&rsquo;s death. Despite being an avatar of a previous age, he appears in both the Ramayana and the Mahabharata &mdash; meeting Rama in the Valmiki Ramayana (Bala Kanda, Sargas 74&ndash;76) and serving as the teacher of both Bhishma and Karna in the Mahabharata. According to the Kalki Purana (Chapters 3&ndash;4), Parashurama lives on Mahendra Parvata (Mahendra Mountain) and will be the one to train Kalki, the final avatar, in the art of war. He bridges the ages.</p>
+            </div>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up portrait of a young sage who appears to be sixteen years old, with a serene calm face and eyes closed in deep meditation, his arms wrapped tightly around a dark stone Shiva lingam, behind him stands the towering dark figure of Yama the god of death with a buffalo mount barely visible in shadow, holding a rope (pasha) that hangs slack and useless, Yama's face shows shock and hesitation as a blinding column of light erupts from within the Shiva lingam and the form of Shiva emerges from it — Shiva with matted locks, third eye blazing, one hand raised in a stopping gesture toward Yama, the young sage's face is perfectly peaceful against all this cosmic violence around him, temple interior setting with stone pillars and oil lamps flickering, ancient South Indian temple mural art style with Chola bronze sculpture influences, dramatic lighting with the divine light from the lingam as the primary source casting sharp shadows, deep contrast between the boy's peace and the cosmic confrontation above him, 4K detail. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Young Markandeya embracing the Shiva lingam as Yama approaches and Shiva emerges to protect his devotee"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Markandeya holds the Shiva lingam as death itself is turned away</div>
+            </div>
+
+            <!-- CHIRANJEEVI 8: MARKANDEYA -->
+            <div class="chiranjeevi-card">
+                <span class="card-number">08</span>
+                <div class="card-name">Markandeya</div>
+                <div class="card-title">The Boy Who Defeated Death</div>
+                <p>Markandeya&rsquo;s parents, Mrikandu and Marudmati, were granted a choice by Shiva: a foolish son who would live long, or a wise and devoted son who would die at sixteen. They chose the devoted son. As Markandeya&rsquo;s sixteenth birthday arrived, Yama &mdash; the god of death &mdash; came for him. But Markandeya clung to the Shiva lingam. When Yama cast his rope, it fell around the lingam as well. Shiva appeared in fury, kicked Yama, and declared Markandeya would live forever. This story is told in the Shiva Purana (Shatrudra Samhita, Chapter 38) and referenced in the Bhagavata Purana (Skandha 12, Chapters 8&ndash;10), where Markandeya witnesses the cosmic dissolution of the universe &mdash; seeing the entire world dissolve into an ocean, and then seeing the child form of Narayana floating on a banyan leaf. He is the sage who has seen the end of a world and lived to tell the story.</p>
+            </div>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Eight beings. Different ages. Different reasons. One cursed. One awaiting a future throne. One preserving knowledge. One guarding a story. One ruling a kingdom in dharma. One carrying forward the art of teaching. One waiting on a mountain to train the last avatar. One who looked death in the face at sixteen and simply held on.</p>
+
+            <p>The scriptures do not treat these as legends that have ended. According to the texts, every one of them is still here.</p>
+
+        </article>
+
+        <!-- ============ THE MYSTERY ============ -->
+        <div class="mystery">
+            <div class="mystery-label">The Mystery</div>
+            <p>What does it mean that Hindu scripture does not place its greatest figures safely in the past? These are not stories about people who lived and died. The texts specifically say &mdash; across multiple Puranas, composed centuries apart &mdash; that these eight are alive right now.</p>
+            <p>Ashwatthama wanders in pain. Hanuman listens wherever the Ramayana is spoken. Parashurama waits on a mountain. Vyasa watches over the knowledge he organized. Seven of them are listed together in a single shloka that has been recited for centuries as a morning prayer &mdash; because tradition says that speaking their names at dawn gives you long life and strength.</p>
+            <p>Whether you take this literally or symbolically, one thing is clear: in the Hindu understanding of time, certain stories never end. Some people are still inside their stories. And some stories are still waiting for their next chapter.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Of these eight, at least two are directly connected to the Kalki prophecy. The Kalki Purana says Parashurama will train Kalki in warfare, and tradition holds that Hanuman will serve the final avatar. If the scriptures are taken at face value, the immortals are not just waiting &mdash; they are waiting for each other. The moment when their separate stories finally cross again has a name in scripture. It is called the end of Kali Yuga.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card full-width">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Ashwatthama &mdash; cursed son of Dronacharya. King Mahabali (Bali) &mdash; the Asura king pushed to Sutala by Vamana. Vyasa (Krishna Dvaipayana) &mdash; compiler of the Vedas and author of the Mahabharata. Hanuman &mdash; son of Vayu, devotee of Rama. Vibhishana &mdash; brother of Ravana, king of Lanka. Kripacharya &mdash; teacher of the Kuru princes. Parashurama &mdash; sixth avatar of Vishnu, son of Jamadagni. Markandeya &mdash; the sage who conquered death at age sixteen.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Theme</div>
+                <div class="meta-value">Immortality, Purpose, Eternal Duty, Karma, Time</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Type</div>
+                <div class="meta-value">Mysterious / Factual &mdash; What the scriptures actually say</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Sources</div>
+                <div class="meta-value">
+                    <strong>Ashwatthama:</strong> Mahabharata, Sauptika Parva, Ch 13&ndash;16 (curse by Krishna, jewel taken from forehead).<br>
+                    <strong>Bali:</strong> Bhagavata Purana, Skandha 8, Ch 19&ndash;22 (Vamana episode, boon of future Indra-hood).<br>
+                    <strong>Vyasa:</strong> Vishnu Purana, Book 3, Ch 3&ndash;4 (Vyasa in each Dvapara Yuga); Bhagavata Purana, Skandha 1, Ch 4&ndash;7 (composition of the Bhagavata).<br>
+                    <strong>Hanuman:</strong> Valmiki Ramayana, Uttara Kanda, Sarga 40 (boon to live as long as Rama&rsquo;s name endures); Mahabharata, Vana Parva, Ch 146&ndash;150 (meeting with Bhima).<br>
+                    <strong>Vibhishana:</strong> Valmiki Ramayana, Yuddha Kanda, Sarga 116 (crowned king of Lanka by Rama); immortality boon from Brahma per the broader Puranic tradition.<br>
+                    <strong>Kripacharya:</strong> Mahabharata (survived the war); Vishnu Purana, Book 3, Ch 2 (future Saptarishi tradition).<br>
+                    <strong>Parashurama:</strong> Valmiki Ramayana, Bala Kanda, Sargas 74&ndash;76 (encounter with Rama); Mahabharata (teacher of Bhishma and Karna); Kalki Purana, Ch 3&ndash;4 (trainer of Kalki).<br>
+                    <strong>Markandeya:</strong> Shiva Purana, Shatrudra Samhita, Ch 38 (Shiva saves Markandeya from Yama); Bhagavata Purana, Skandha 12, Ch 8&ndash;10 (witnesses cosmic dissolution).<br>
+                    <strong>The Chiranjeevi shloka:</strong> Widely recited across Puranic traditions; commonly attributed to the Brahmanda Purana and other texts, though the exact textual origin varies by tradition.
+                </div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">Each Chiranjeevi&rsquo;s story can be verified independently. Ashwatthama&rsquo;s curse: BORI Critical Edition of the Mahabharata, Sauptika Parva (Bibek Debroy translation, Vol. 8). Bali and Vamana: Bhagavata Purana Skandha 8 (Gita Press edition; Bhaktivedanta Swami Prabhupada translation). Vyasa&rsquo;s role in each Dvapara: Vishnu Purana, H.H. Wilson translation, Book 3. Hanuman&rsquo;s boon: Valmiki Ramayana, Gita Press edition, Uttara Kanda. Vibhishana&rsquo;s kingship: Valmiki Ramayana, Yuddha Kanda, Sarga 116 (Gita Press; Robert Goldman&rsquo;s Princeton translation); immortality boon from Brahma is attested in the broader Puranic tradition. Parashurama as Kalki&rsquo;s teacher: Kalki Purana, B.K. Chaturvedi translation (Diamond Books). Markandeya and Yama: Shiva Purana (Motilal Banarsidass edition). The Chiranjeevi shloka is a well-known devotional verse recited in daily practice; its exact Puranic origin is debated among scholars, but the individual stories of each named figure are firmly established across multiple independent scriptures. Note: The Valmiki Ramayana&rsquo;s Uttara Kanda is considered a later addition by some scholars, though the Hanuman Chiranjeevi tradition is corroborated by his appearance in the Mahabharata, set in a later age.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

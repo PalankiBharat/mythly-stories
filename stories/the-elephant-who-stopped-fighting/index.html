@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Elephant Who Stopped Fighting &mdash; And That Is When God Came Running</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A massive grey elephant standing chest-deep in a dark lake, his trunk raised high toward the sky holding a single lotus flower, his body exhausted and leaning, his eyes looking upward with deep surrender and devotion, one of his hind legs gripped by a large dark crocodile beneath the murky green water — the water churns around them from a long struggle, the background shows a lush tropical mountain forest with tall ancient trees and mist, golden divine light breaking through dark storm clouds above as if the heavens are responding to the elephant's call, Indian mythological painting style inspired by Raja Ravi Varma with rich oil-painting textures, dramatic contrast between the dark threatening water and the golden light from above, mood of desperate surrender meeting divine grace. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Gajendra the elephant king standing in a dark lake, trunk raised holding a lotus, a crocodile gripping his leg, divine light breaking through clouds above"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Bhagavata Purana &middot; Skandha 8</div>
+            <h1 class="hero-title">The Elephant Who Stopped Fighting &mdash; And That Is When God Came Running</h1>
+            <div class="hero-meta">
+                <span>Gajendra Moksha</span>
+                <span>Chapters 2&ndash;4</span>
+                <span>Surrender &amp; Grace</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>When does God come to save you? Not when you are strong. Not when you are fighting. Not when you still believe you can handle it yourself. He comes at the exact moment you stop trying &mdash; and simply call out. This is the story of how an elephant learned that lesson in the hardest way possible.</p>
+
+            <p>Long ago, according to the Bhagavata Purana, there was a great mountain called Trikuta, surrounded by an ocean of milk. On this mountain lived a mighty elephant king named Gajendra. He was the leader of a large herd &mdash; strong, proud, and fearless. When he walked through the forest, even lions moved out of his way. He was surrounded by his wives and his herd at all times. He knew no weakness.</p>
+
+            <p>One hot day, Gajendra led his herd down the mountain to a beautiful lake. The water was cool and clear, filled with lotus flowers. Gajendra waded in happily, drinking and spraying water over himself and his family. He was enjoying himself without a care in the world.</p>
+
+            <p>Then, from the depths of the lake, a powerful crocodile seized his leg.</p>
+
+            <p>Gajendra pulled. The crocodile held on. Gajendra was the mightiest elephant alive &mdash; but the crocodile was in its own element. In the water, the crocodile grew stronger. On land, the elephant grew weaker. The Bhagavata Purana says this struggle went on for a thousand years.</p>
+
+            <p>At first, Gajendra&rsquo;s herd tried to help. His wives stood on the shore and cried out. The other elephants pulled at him from the bank. But as time passed and nothing changed, one by one, they found they could do nothing. The water was not their element &mdash; in it they were as helpless as he was. One by one, they could only move away, powerless, not heartless.</p>
+
+            <p>Gajendra was alone.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>His strength was gone. His body was failing. The crocodile had not loosened its grip even slightly. And now, for the first time in his life, the great elephant king understood something he had never understood before: his own strength could not save him. His herd could not save him. Nothing in this world could save him.</p>
+
+            <p>And so Gajendra did something he had never done. He stopped fighting. He raised his trunk out of the water, held up a lotus flower, and called out &mdash; not to any particular god, not by any name he knew. According to the Bhagavata Purana, Gajendra offered a prayer to the supreme being who is the source and support of all that exists. He prayed to the one who is beyond name and form, the ultimate refuge of those who have no other refuge.</p>
+
+            <p>This prayer, known as the Gajendra Stuti, is recorded in Skandha 8, Chapter 3 of the Bhagavata Purana. In it, Gajendra does not ask for victory over the crocodile. He does not ask for his old strength back. He asks for liberation itself &mdash; freedom from the cycle of birth and death. He surrenders completely.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <img
+                    src="images/img1.png"
+                    alt="Gajendra alone in the lake, exhausted, his herd visible in the far distance walking away, his trunk weakly raised"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <!-- IMAGE PROMPT 1: Close-up dramatic shot of a large grey elephant chest-deep in dark green lake water, his body visibly exhausted with sagging skin and tired half-closed eyes, his trunk weakly raised above the water holding a wilting lotus, the surface of the water disturbed around his trapped leg, in the far background on the misty shore a group of elephants are walking away into the forest with their backs turned — abandoning him, the sky is overcast and grey, ancient trees line the lake shore, Indian mythological oil painting style with rich detailed textures, muted sorrowful lighting with grey tones and soft mist, mood of complete isolation and the exhaustion of a king who has lost everything. Aspect ratio 1:1, square format. -->
+                <div class="caption">One by one, his entire herd found they could not help him</div>
+            </div>
+
+            <p>The moment that prayer left Gajendra&rsquo;s heart, something happened far away.</p>
+
+            <p>The Bhagavata Purana describes that Vishnu, who was in Vaikuntha, heard the cry of surrender. He immediately rose and mounted Garuda. The text says he came swiftly. He arrived at the lake, saw the exhausted elephant with his trunk raised and the crocodile still gripping his leg, and he acted at once.</p>
+
+            <p>Vishnu pulled Gajendra out of the water and with his Sudarshana Chakra, killed the crocodile.</p>
+
+            <p>But here is what makes this story extraordinary. The crocodile was not just a crocodile. According to the Bhagavata Purana (Skandha 8, Chapter 4), the crocodile had once been a Gandharva king named Huhu. He had been cursed by the sage Devala to become a crocodile. And Gajendra was not just an elephant. He had once been a Pandya king named Indradyumna, a great devotee of Vishnu, who had been cursed by the sage Agastya to be reborn as an elephant because he had not risen to greet the sage when the sage visited him, being absorbed in worship.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <img
+                    src="images/img2.png"
+                    alt="Vishnu arriving on Garuda above the lake, reaching down toward the struggling elephant below"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <!-- IMAGE PROMPT 2: Lord Vishnu with dark blue skin, four arms holding conch shell, discus (Sudarshana Chakra), mace and lotus, wearing golden crown and yellow silk dhoti with rich jewelry, riding on the mighty eagle Garuda who has golden wings spread wide, descending rapidly from golden parting clouds toward a dark lake below where a grey elephant stands with trunk raised holding a lotus flower — the elephant looking up with eyes full of devotion and relief, a large dark crocodile visible gripping the elephant's leg in the churning water, dramatic divine golden light radiating from Vishnu illuminating the dark scene below, Indian mythological painting style inspired by traditional Tanjore art with gold leaf details, dramatic top-down angle showing the divine descent, mood of urgent divine rescue and overwhelming grace arriving at the last possible moment. Aspect ratio 1:1, square format. -->
+                <div class="caption">Vishnu descended from Vaikuntha the moment Gajendra surrendered</div>
+            </div>
+
+            <p>When Vishnu killed the crocodile, the Gandharva Huhu was freed from his curse and regained his original form. He bowed to Vishnu and returned to his heavenly realm. And Gajendra &mdash; the elephant who had once been King Indradyumna &mdash; was granted moksha by the touch of the Lord. He was freed not just from the crocodile, but from the entire cycle of birth and death.</p>
+
+            <p>Vishnu did not come when Gajendra was strong. He did not come when the herd was still around. He came at the one moment when the elephant had nothing left &mdash; no strength, no pride, no hope, no one by his side &mdash; and simply called out.</p>
+
+            <p>That is when God runs.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>As long as Gajendra believed he could save himself, no help came. The moment he let go of his pride, his strength, and his struggle &mdash; and simply surrendered &mdash; God came running. Most of us spend our whole lives fighting our own crocodiles, refusing to let go. The question is: what are you still gripping that you need to release &mdash; before grace can reach you?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Gajendra&rsquo;s previous birth as King Indradyumna has its own story. According to the Bhagavata Purana (Skandha 8, Chapter 4), Indradyumna was a great king of the Pandya country who had renounced his kingdom to worship Vishnu in the forest. It was during this deep meditation that sage Agastya arrived and Indradyumna, absorbed in worship, did not stand up to greet him. The angry sage cursed him to become an elephant &mdash; a creature of dull understanding. But it was this very curse that eventually led Indradyumna, as Gajendra, to the moment of total surrender that gave him moksha. Sometimes the worst thing that happens to you is the very path to your freedom.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Gajendra &mdash; the elephant king, formerly King Indradyumna of the Pandya country. Vishnu &mdash; the supreme preserver, who comes riding Garuda to rescue Gajendra. Lakshmi &mdash; implied as present in Vaikuntha. Huhu &mdash; the Gandharva king cursed to become a crocodile by sage Devala. Indradyumna &mdash; Gajendra&rsquo;s previous birth, a devotee-king cursed by sage Agastya. Garuda &mdash; Vishnu&rsquo;s eagle mount.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Surrender &amp; Grace &mdash; the moment you stop fighting and truly call out is the moment salvation arrives</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Bhagavata Purana, Skandha 8, Chapters 2&ndash;4. Chapter 2 describes Trikuta mountain and Gajendra&rsquo;s life; Chapter 3 contains the Gajendra Stuti (the elephant&rsquo;s prayer of surrender); Chapter 4 describes Vishnu&rsquo;s arrival, the killing of the crocodile, and the backstories of both Gajendra (as Indradyumna cursed by Agastya) and the crocodile (as Huhu cursed by Devala).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Gajendra Moksha episode is one of the most celebrated narratives in the Bhagavata Purana and can be verified in multiple editions: Bibek Debroy&rsquo;s English translation of the Bhagavata Purana (Skandha 8), the Gita Press Gorakhpur edition, and A.C. Bhaktivedanta Swami Prabhupada&rsquo;s Srimad Bhagavatam translation and commentary (Canto 8, Chapters 2&ndash;4). The Gajendra Stuti (Chapter 3) is widely recited as a standalone prayer in Hindu worship. The backstory of Indradyumna&rsquo;s curse by Agastya is in Chapter 4, verses 6&ndash;13 (approximate reference).</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

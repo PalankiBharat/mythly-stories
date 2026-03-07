@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Goddess Whose Husband Was Burned to Ash &mdash; and She Still Did Not Give Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A beautiful dark-skinned goddess (Rati) kneeling on cracked earth, her face torn between grief and fierce determination, cradling a small pile of grey ash in her cupped palms — all that remains of Kamadeva, her husband — her eyes full of tears but her jaw set with resolve, wearing deep rose-pink and gold silk with elaborate gold jewelry, her loose dark hair falling forward, behind her a faint silhouette of smoke rising into a twilight sky still showing a burning streak from Shiva's third eye fire, Indian mythological oil painting style inspired by Raja Ravi Varma, warm amber and rose tones, mood of profound love and loss, 4K cinematic detail, shallow depth of field on her face and hands. Aspect ratio 3:4 portrait. -->
+        <img
+            src="images/featured.png"
+            alt="Rati, goddess of love, kneeling on cracked earth cradling the ash of her husband Kamadeva in her cupped palms, grief and resolve in her face"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Shiva Purana &middot; Parvati Khanda</div>
+            <h1 class="hero-title">The Goddess Whose Husband Was Burned to Ash &mdash; and She Still Did Not Give Up</h1>
+            <div class="hero-meta">
+                <span>Rati &amp; Kamadeva</span>
+                <span>Chapters 13&ndash;19 &amp; Bhagavata Purana 10.55</span>
+                <span>Devotion &amp; Endurance</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>The gods were desperate.</p>
+
+            <p>A demon named Tarakasura had been granted a terrible boon &mdash; only the son of Shiva could kill him. But Shiva, lost in grief after the death of his first wife Sati, had retreated into meditation so deep that nothing in the world could reach him. Years passed. Centuries. The demon grew stronger. The gods suffered.</p>
+
+            <p>Their only hope was Parvati, daughter of the mountain king Himavan, who loved Shiva with her whole being and had come to practice tapas beside him. But Shiva&rsquo;s eyes were closed.</p>
+
+            <p>The gods knew they needed help. They turned to Kamadeva &mdash; the god of love, the archer who never missed &mdash; and begged him to shoot a flower arrow at Shiva&rsquo;s heart. If the arrow struck, Shiva would open his eyes. He would see Parvati. And perhaps, in time, love would awaken.</p>
+
+            <p>Kamadeva knew the risk. He looked at his wife, Rati, the goddess of love and longing. She looked back at him without flinching.</p>
+
+            <p>He went.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>He drew his bow strung with bees. He nocked the flower arrow. He aimed at Shiva.</p>
+
+            <p>He released.</p>
+
+            <p>The arrow struck.</p>
+
+            <p>For one moment &mdash; just one moment &mdash; Shiva stirred. His eyes began to open.</p>
+
+            <p>And then he felt it. The intrusion. The trick. The god of love had dared to pierce his meditation.</p>
+
+            <p>Shiva&rsquo;s third eye opened.</p>
+
+            <p>A beam of fire shot from it.</p>
+
+            <p>Kamadeva was burned to ash in an instant.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: Dramatic moment — Kamadeva, a beautiful golden-skinned god with a flower bow and bee-strung bowstring, releasing a five-flower arrow at the meditating Shiva, as Shiva's vertical third eye suddenly blazes open with a searing white and orange beam of fire, Kamadeva caught in the beam beginning to dissolve into ash from the feet up, his expression showing acceptance rather than fear, Shiva's face showing controlled fury, set in a mountain ashram with pine trees and stone, Tanjore painting aesthetic with gold leaf accents, high contrast dramatic lighting, rich jewel tones. Aspect ratio 1:1 square. -->
+                <img
+                    src="images/img1.png"
+                    alt="Kamadeva releasing his flower arrow at Shiva as Shiva's third eye blazes open with a beam of fire, Kamadeva beginning to dissolve into ash"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Shiva&rsquo;s third eye opens &mdash; and Kamadeva is turned to ash</div>
+            </div>
+
+            <p>Rati heard.</p>
+
+            <p>She ran to the place where he had stood. There was nothing left. Only ash on the ground, and the faint smell of burnt flowers.</p>
+
+            <p>What she did next was not rage. It was not collapse. It was not silence. She wept &mdash; with the full grief of a goddess who had lost the person she loved most in the world. And when she had wept, she prayed.</p>
+
+            <p>She knelt before Shiva and spoke plainly: she had not sent her husband to his death. She had watched him go. She had known the risk. And she did not blame Shiva. She only asked &mdash; was there any path forward? Was love truly gone from the world?</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>Shiva, who had by now opened his eyes and seen Parvati, and who carried within him the memory of his own grief for Sati, heard something in Rati&rsquo;s voice that he recognized.</p>
+
+            <p>He made her a promise.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Shiva</span>
+                &ldquo;Kamadeva will not remain ash. In a future age, when Krishna walks the earth, Kama will be reborn as his son &mdash; Pradyumna. Beautiful, brave, a great warrior. And you, Rati &mdash; you will find him. You will know him. You will be together again.&rdquo;
+            </div>
+
+            <p>Rati held that promise in her heart across ages.</p>
+
+            <p>In the Dvapara Yuga, when Krishna and Rukmini had a son named Pradyumna, the demon Sambara kidnapped the infant and threw him into the sea. But Pradyumna did not die &mdash; a great fish swallowed him and was caught by fishermen in Sambara&rsquo;s kitchen. When the fish was cut open, a beautiful child was found inside. The kitchen-maid who found him was a woman named Mayavati.</p>
+
+            <p>Mayavati recognized him immediately.</p>
+
+            <p>Mayavati was Rati. She had waited.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Intimate scene — a young woman (Mayavati/Rati) with a kitchen servant's simple white saree and no ornaments, kneeling beside a handsome teenage boy (Pradyumna) just emerged wet from inside a large silver fish on a stone kitchen floor, the boy looking bewildered and newly born into the world, the woman's face showing dawning recognition and barely-contained joy, tears on her cheeks and a wondering smile, warm oil lamp light in a stone kitchen, rich golden tones and shadow, Indian mythological painting with realistic facial expressions and fabric detail, mood of impossible reunion after impossible wait. Aspect ratio 1:1 square. -->
+                <img
+                    src="images/img2.png"
+                    alt="Mayavati, who is Rati reborn, kneeling beside the young Pradyumna just emerged from a silver fish in a stone kitchen, her face showing dawning recognition and joy"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Mayavati recognizes Pradyumna &mdash; the wait across ages was over</div>
+            </div>
+
+            <p>She raised him in secret, taught him, protected him. When Pradyumna grew into a young man, the divine sage Narada revealed the truth &mdash; that Pradyumna was Kamadeva reborn, that Mayavati was Rati, that the wait was over. Pradyumna slew Sambara and returned with Mayavati to Dvaraka.</p>
+
+            <p>The gods of love had found each other again &mdash; across death, across ages, across everything.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Rati did not stop at grief. She held a promise and kept going &mdash; across lifetimes, in the form of a kitchen servant, waiting for the moment the story she&rsquo;d been promised would finally arrive. The question is: what promise are you holding onto? And have you given up on it too soon?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Parvati also waited. After Kamadeva&rsquo;s arrow struck Shiva for one fleeting moment before it was destroyed, Shiva did open his eyes &mdash; and he saw Parvati. But he did not fall in love easily. Parvati then undertook years of brutal tapas to win him &mdash; standing in fire in summer, sitting in snow in winter, eating only fallen leaves, then eating nothing at all. The story of Parvati&rsquo;s tapas is in the same Parvati Khanda of the Shiva Purana, and it is one of the most extraordinary acts of determination in all of Hindu scripture.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Rati &mdash; goddess of love and longing; wife of Kamadeva; reborn as Mayavati. Kamadeva &mdash; god of love; burned to ash by Shiva; reborn as Pradyumna. Shiva &mdash; the great ascetic; burns Kama; grants the boon of rebirth. Parvati &mdash; for whose sake Kama was sent; Shiva&rsquo;s intended. Tarakasura &mdash; the demon whose defeat required Shiva&rsquo;s son. Pradyumna &mdash; son of Krishna and Rukmini; reborn Kamadeva. Sambara &mdash; demon who kidnaps Pradyumna.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Devotion &amp; Endurance &mdash; love that survives death, grief, and the long wait across ages</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Shiva Purana, Rudra Samhita, Parvati Khanda, Chapters approximately 13&ndash;19 (Kama&rsquo;s mission, destruction, and Rati&rsquo;s boon). Bhagavata Purana, Skandha 10, Chapter 55 (Pradyumna&rsquo;s story and the Rati&ndash;Mayavati reunion).</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

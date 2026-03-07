@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Woman Who Followed Death &mdash; and Out-Argued Him Five Times</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- FEATURE IMAGE PROMPT (featured.png): A determined young Indian woman (Savitri) walking barefoot on a dark forest path at twilight, her face showing calm resolve and fierce intelligence, wearing a simple white cotton saree with no ornaments — signs of her three-day fast — her hair tied back simply, walking steadily behind a towering dark figure (Yama, the god of death) who is seen from behind carrying a glowing translucent soul-form (thumb-sized Purusha) in a noose, Yama is dark-skinned with a crown and red robes riding a dark buffalo barely visible in the shadows ahead of her, the forest around them is ancient sal trees with twisted roots and falling leaves, dim silver moonlight filtering through the canopy creating dappled light on the path, Indian mythological oil painting style inspired by Raja Ravi Varma, muted earth tones with silver and deep blue accents, mood of quiet defiance and unshakable purpose, cinematic composition with Savitri in sharp focus in the mid-ground, 4K detail. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Savitri walking with calm determination behind Yama, the god of death, on a dark forest path at twilight"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Mahabharata &middot; Vana Parva &middot; Savitri Upakhyana</div>
+            <h1 class="hero-title">The Woman Who Followed Death &mdash; and Out-Argued Him Five Times</h1>
+            <div class="hero-meta">
+                <span>Savitri &amp; Satyavan</span>
+                <span>Chapters 293&ndash;299 (Ganguli)</span>
+                <span>Intelligence &amp; Devotion</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Everyone told her not to choose him. The sage Narada himself warned her. Satyavan, the prince she loved, was destined to die exactly one year from that day. Choose another husband, they said. Any other man. But Savitri, the princess of Madra, had already made her choice.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Savitri</span>
+                &ldquo;Whether his life is long or short, whether he has virtues or not &mdash; I have chosen my husband once. I will not choose a second time.&rdquo;
+            </div>
+
+            <p>Her father, King Ashvapati, heard the firmness in her voice and gave his blessing. Savitri married Satyavan and went to live with him and his blind, exiled father Dyumatsena in a simple forest ashram. She set aside her royal clothes, wore bark garments, and served her in-laws with care.</p>
+
+            <p>She told no one about the prophecy. She carried it alone.</p>
+
+            <p>As the final day drew near, Savitri began a three-day fast &mdash; a vow called triratra. She ate nothing. She stood in prayer. Her father-in-law, worried, asked her to break her fast. She politely refused, saying she had taken a vow and would eat only after it was complete.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>On the morning of the last day, Satyavan picked up his axe and went into the forest to gather wood. Savitri asked to come with him. He smiled and agreed.</p>
+
+            <p>Deep in the forest, while chopping a tree, Satyavan suddenly felt a terrible pain in his head. He stumbled to Savitri, said his head felt like it was pierced with needles, and lay down with his head in her lap.</p>
+
+            <p>Then she saw him.</p>
+
+            <p>Yama &mdash; the god of death himself. Not a messenger, not an assistant. Yama had come personally, dark-skinned, wearing red garments, with a noose in his hand. He drew out from Satyavan&rsquo;s body a tiny being, the size of a thumb &mdash; the soul &mdash; and bound it in his noose. Satyavan&rsquo;s body went still.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: Yama, the god of death, a powerfully built dark-complexioned figure wearing a golden crown and deep red robes, standing over the fallen body of Satyavan who lies with his head in Savitri's lap under a sal tree, Yama is drawing out a tiny luminous thumb-sized figure (the soul) with a noose held in his left hand, his expression is solemn and duty-bound not cruel, Savitri is looking up at Yama with wide eyes but no fear — only recognition and resolve, the forest floor is covered with wood chips and a fallen axe, dappled afternoon sunlight through sal tree canopy, Indian mythological painting style with Tanjore gold leaf accents, dramatic chiaroscuro lighting with the soul-figure glowing warm gold against the dark forest, mood of dread and determination. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Yama drawing Satyavan's thumb-sized soul with his noose while Savitri holds her husband's fallen body in her lap under a sal tree"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Yama draws Satyavan&rsquo;s soul &mdash; and Savitri watches, unafraid</div>
+            </div>
+
+            <p>Yama turned south and began to walk away. And Savitri stood up and followed him.</p>
+
+            <p>Yama told her to go back. He said her duties to her husband&rsquo;s body were done, and she should return. But Savitri kept walking.</p>
+
+            <p>She did not beg. She did not weep. She began to speak &mdash; about dharma, about the duty of the righteous, about what it means to walk in the company of the good. Her words were so wise, so well-spoken, that Yama was pleased.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Yama</span>
+                &ldquo;Your words are full of wisdom and bring comfort. Ask me any boon &mdash; except the life of Satyavan.&rdquo;
+            </div>
+
+            <p>Savitri asked for the first boon: that her blind father-in-law Dyumatsena have his eyesight restored. Yama granted it and told her to turn back. She kept walking.</p>
+
+            <p>She spoke again &mdash; about how the good never walk without purpose, about how meeting a righteous soul is never without fruit. Again Yama was moved by her wisdom.</p>
+
+            <p>He offered a second boon &mdash; anything except Satyavan&rsquo;s life. Savitri asked that Dyumatsena have his lost kingdom restored. Granted. Yama told her to turn back. She kept walking.</p>
+
+            <p>A third time she spoke &mdash; about truth, about how the conduct of the good is the highest dharma in all the worlds. Yama offered a third boon. Again, anything except Satyavan&rsquo;s life.</p>
+
+            <p>Savitri asked for a hundred sons for her own father, King Ashvapati. Yama granted it and urged her again to go back. She kept walking.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>A fourth time she spoke &mdash; about the noble, about how those who devote themselves to dharma are trusted even by the gods. Yama was deeply impressed. He offered a fourth boon. Again, anything except Satyavan&rsquo;s life.</p>
+
+            <p>Savitri asked for a hundred sons born through Satyavan &mdash; her own sons, from her own husband. Yama smiled and granted it, bidding her turn back. She kept walking.</p>
+
+            <p>And now Yama, more and more moved by this extraordinary woman, offered a fifth boon.</p>
+
+            <p>He spoke the words &mdash; and this time, in his admiration, he did not add the restriction.</p>
+
+            <p>Savitri heard it. She noticed immediately.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Savitri</span>
+                &ldquo;Then grant me this: let Satyavan live, so that I may have those hundred sons you have promised me.&rdquo;
+            </div>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up of Savitri's face in the dark forest, her expression showing a quiet, knowing half-smile of someone who has just won an impossible argument, her eyes steady and bright with intelligence, tear tracks dried on her cheeks but no tears now, simple bark-cloth garments and no jewelry, her dark hair loose and windswept, behind her slightly out of focus is the tall dark silhouette of Yama pausing mid-stride and turning to look back at her with an expression of surprised realization, warm golden light from the soul-figure in his noose casting light on both their faces, Indian mythological portrait painting style inspired by Raja Ravi Varma, intimate close framing on Savitri's face with shallow depth of field, mood of quiet triumph and fierce love. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Close-up of Savitri's face showing quiet triumph as Yama pauses behind her, realizing he has offered the fifth boon without his customary restriction"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">The fifth boon &mdash; and the moment Savitri&rsquo;s sharp mind caught what Yama had left unsaid</div>
+            </div>
+
+            <p>Yama stopped. He had offered the boon without condition. He had given his word. And Savitri &mdash; who had been listening with complete attention through every exchange &mdash; had caught the one unguarded moment in the god of death&rsquo;s speech.</p>
+
+            <p>Yama was bound by his own word. He could not take back what he had freely offered. The god of dharma recognised that a mortal woman, armed with nothing but patience, wisdom, and a mind that missed nothing, had held him to his own standard. He released Satyavan&rsquo;s soul from his noose.</p>
+
+            <p>Savitri walked back through the forest and found Satyavan&rsquo;s body under the tree. As she reached him, he opened his eyes, as if waking from sleep.</p>
+
+            <div class="dialogue">
+                <span class="speaker">Satyavan</span>
+                &ldquo;I have slept for a long time. Why did you not wake me?&rdquo;
+            </div>
+
+            <p>Savitri held him and said nothing about what she had done. They walked home together through the dark forest. At the ashram, Dyumatsena could see again. In time, his kingdom was restored. Ashvapati received his hundred sons. And Savitri &mdash; the woman who chose with full knowledge, prepared without complaint, and caught the one word death forgot to say &mdash; lived with Satyavan in happiness.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>Savitri did not deny the truth. She did not run from it. She looked at the worst possible outcome, chose anyway, and then prepared. She did not fight death with anger or tears &mdash; she fought him with intelligence and dharma. She listened so completely that she heard the one thing he forgot to say. The question is: when you know something hard is coming, do you avoid it? Or do you walk straight toward it, paying attention to every word?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>Savitri&rsquo;s father, King Ashvapati, had his own extraordinary story. He performed eighteen years of daily worship to the goddess Savitri (a form of Saraswati) just to get a child. It was this goddess who appeared and blessed him with a daughter &mdash; whom he named Savitri after her. That story of a father&rsquo;s eighteen-year prayer is told in the same Savitri Upakhyana, in the chapters just before this one.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Savitri &mdash; princess of Madra, wife of Satyavan, whose intelligence defeated death. Satyavan &mdash; exiled prince, son of Dyumatsena, Savitri&rsquo;s chosen husband. Yama &mdash; the god of death and dharma, who came personally to take Satyavan&rsquo;s soul. Dyumatsena &mdash; Satyavan&rsquo;s blind, exiled father. Narada &mdash; the sage who warned Savitri of Satyavan&rsquo;s fate. Ashvapati &mdash; king of Madra, Savitri&rsquo;s father.</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Intelligence &amp; Devotion &mdash; choosing with full knowledge, preparing without complaint, and fighting the impossible with wisdom rather than force</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Mahabharata, Vana Parva, Savitri Upakhyana, Chapters approximately 293&ndash;299 (Ganguli edition). Also known as the Pativrata Mahatmya. The story is narrated by the sage Markandeya to Yudhishthira. BORI Critical Edition: Aranyaka Parva, chapters 277&ndash;283 (approximate).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Mahabharata describes five boons, not three. Boon 1: Dyumatsena&rsquo;s eyesight restored. Boon 2: Dyumatsena&rsquo;s kingdom restored. Boon 3: A hundred sons for Ashvapati (Savitri&rsquo;s own father). Boon 4: A hundred sons born through Satyavan. Boon 5: Yama, deeply moved by Savitri&rsquo;s wisdom, offered this boon without adding the customary restriction &ldquo;except Satyavan&rsquo;s life.&rdquo; Savitri immediately noticed the omission and asked directly for Satyavan&rsquo;s life. Yama, bound by his own freely given word, conceded. Available in K.M. Ganguli&rsquo;s English translation of Vana Parva (publicly available) and Bibek Debroy&rsquo;s translation (Volume 3).</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

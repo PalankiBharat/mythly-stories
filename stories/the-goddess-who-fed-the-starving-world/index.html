@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Goddess Who Fed the Starving World With Her Own Tears</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MORAL SECTION === */
+        .moral {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moral::before {
+            content: '\1F4A1';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .moral-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .moral p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .moral { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A radiant goddess with green-tinted skin and a serene expression, wearing a green silk sari and a crown of fresh leaves and flowers, holding bundles of vegetables and roots in her many arms, standing in the middle of a vast cracked and dried-out landscape, with faint green shoots sprouting from the earth at her feet, tears streaming gently from her eyes that turn into rivers of water as they touch the ground, ancient Indian temple mural painting style inspired by Tanjore art, warm golden border details, soft green and earth-toned color palette with a golden divine halo behind her head, gentle warm light from above, mood of compassion and quiet power, intricate jewelry with emeralds, 4K detail. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Goddess Shakambhari standing in a barren landscape, holding vegetables and herbs, with tears becoming rivers at her feet"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Devi Mahatmya &middot; Markandeya Purana</div>
+            <h1 class="hero-title">The Goddess Who Fed the Starving World With Her Own Tears</h1>
+            <div class="hero-meta">
+                <span>Shakambhari Devi</span>
+                <span>Devi Mahatmya, Chapter 11</span>
+                <span>Compassion &amp; Sustenance</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>What would happen if every prayer, every sacred text, every holy word disappeared from the world all at once? This is the story of a demon who stole the Vedas themselves &mdash; and the goddess who saved the world not with weapons, but with food and tears.</p>
+
+            <p>In the Devi Mahatmya, after the great goddess defeated the demons Shumbha and Nishumbha, the gods praised her with hymns. Pleased with their devotion, the Devi promised them that whenever the world faced danger, she would appear again to protect it. Among her promises, she described a future form that would be unlike any other.</p>
+
+            <p>She told the gods that a terrible time would come when a demon named Durgama would gain great power. Through long and hard tapas, Durgama would receive a boon &mdash; control over the four Vedas. With the Vedas taken away from the world, all sacred rituals would stop. Without rituals, the rains would stop. Without rain, the earth would dry up. A drought lasting a hundred years would destroy the land.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>People would starve. Rivers would go dry. Crops would turn to dust. Animals would die. The sages, who needed the Vedas to perform their prayers, would have nothing left. The whole world would cry out in pain.</p>
+
+            <p>At that time, the Devi said, she would take birth in a form that the world had never seen before. She would appear with a hundred eyes. And from those hundred eyes, she would weep &mdash; not out of weakness, but out of deep compassion for every living being that suffered.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: A vast cracked and barren landscape stretching to the horizon, dried riverbeds and dead trees under a harsh white sky, emaciated sages sitting in a group with folded hands looking upward in desperate prayer, dust swirling around them, their matted hair and simple bark garments showing signs of long suffering, ancient Indian miniature painting style, muted earth tones of brown, ochre, and pale yellow, harsh overhead light casting minimal shadows, mood of desperation and drought, fine brushwork detail. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Barren drought-stricken landscape with emaciated sages praying desperately under a harsh sky"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">The hundred-year drought &mdash; the world without the Vedas, without rain, without hope</div>
+            </div>
+
+            <p>Her tears would become streams and rivers. The water would soak the earth. And then, from her own body, she would produce vegetables, roots, and herbs &mdash; food to nourish every creature that was starving. She would feed the entire world with what grew from her own being.</p>
+
+            <p>For this reason, the Devi said, she would be known as Shakambhari &mdash; &ldquo;She who bears and nourishes with vegetables.&rdquo; The name comes from &ldquo;shaka&rdquo; meaning vegetables and herbs, and &ldquo;ambhari&rdquo; meaning she who bears or nourishes.</p>
+
+            <div class="dialogue">
+                <span class="speaker">The Devi</span>
+                &ldquo;At that time, I shall slay the great asura named Durgama, and I shall be known by the name Shakambhari.&rdquo;
+            </div>
+
+            <p>And so it came to pass, according to the scripture. When Durgama&rsquo;s tyranny brought the world to the edge of death, the goddess appeared exactly as she had promised. She destroyed the demon Durgama in battle and restored the Vedas to the world. The rains returned. The earth grew green again.</p>
+
+            <p>But what people remembered most was not the battle. It was the image of the goddess weeping for the world &mdash; a hundred eyes shedding tears of compassion, feeding the hungry, giving water to the thirsty, bringing life back to a world that had given up hope.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: Close-up portrait of a goddess with a hundred eyes arranged across her face and forehead, each eye shedding a single tear, the tears flowing down like thin streams of glowing water, her expression is calm and deeply compassionate, she wears a crown made of fresh green leaves and grain stalks, her skin has a soft green-golden hue, vegetables and leafy herbs cradled gently in her lower arms, background is soft golden light, Tanjore painting style with gold leaf details and rich jewel-toned colors, emerald and gold jewelry adorning her neck and ears, serene and maternal mood, extreme detail on the eyes and tear drops. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="Close-up of Goddess Shakambhari with a hundred compassionate eyes shedding tears, wearing a crown of leaves and holding herbs"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Shakambhari &mdash; the hundred-eyed goddess whose tears became rivers and whose body became food</div>
+            </div>
+
+            <p>Even today, the goddess Shakambhari is worshipped in parts of India &mdash; at Shakambhari Peeth near Saharanpur in Uttar Pradesh, and in Rajasthan &mdash; as the goddess of food, nourishment, and compassion. She is a reminder that the most powerful act of the divine is not always destruction of evil. Sometimes, it is simply feeding those who are hungry.</p>
+
+        </article>
+
+        <!-- ============ MORAL ============ -->
+        <div class="moral">
+            <div class="moral-label">The Lesson</div>
+            <p>The goddess did not just destroy the demon. She wept for the suffering of the world, and she fed it. True strength is not only the power to fight &mdash; it is the willingness to nourish, to care, to give from yourself so that others may live. When was the last time you noticed someone going hungry &mdash; and did something about it?</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>In the same set of promises in the Devi Mahatmya, the goddess also told the gods she would appear as Bhramari &mdash; &ldquo;the goddess of bees&rdquo; &mdash; to destroy a demon named Aruna by summoning swarms of black bees from her own body. That strange and little-known form of the Devi is described just a few verses after the Shakambhari promise, in the same chapter of the Devi Mahatmya.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Shakambhari Devi &mdash; the hundred-eyed goddess of nourishment; Durgama &mdash; the demon who stole the Vedas; the gods and sages who prayed for rescue</div>
+            </div>
+            <div class="meta-card">
+                <div class="meta-label">Virtue / Theme</div>
+                <div class="meta-value">Compassion and Sustenance &mdash; the divine power of nourishing and caring for those who suffer</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Devi Mahatmya (Chapters 11/Chapter 93 of Markandeya Purana), approximately verses 42&ndash;51, where the Devi promises her future appearance as Shakambhari. The expanded narrative of Durgama appears in the Devi Bhagavata Purana, Skandha 7. Also referenced in the Murti Rahasya appendix to the Devi Mahatmya.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The Shakambhari promise is found in the final chapter of the Devi Mahatmya (part of Markandeya Purana, Chapters 81&ndash;93). The goddess&rsquo;s description of her Shakambhari form, the hundred-year drought, the hundred eyes, and the slaying of Durgama are all within this passage. Translations by Swami Jagadiswarananda (Ramakrishna Math) and Devadatta Kali (&ldquo;In Praise of the Goddess&rdquo;) both cover this section. The expanded Durgama narrative in Devi Bhagavata Purana is available in the Motilal Banarsidass edition.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>

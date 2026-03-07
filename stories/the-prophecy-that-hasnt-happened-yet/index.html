@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Avatar Has a Name, a Village, and a White Horse &mdash; And the Scripture Describes It All</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --gold: #C4963C;
+            --gold-light: #E8C875;
+            --saffron: #D4742C;
+            --earth: #8B6914;
+            --cream: #FDF6E3;
+            --parchment: #F5EDDA;
+            --ink: #2C1810;
+            --ink-light: #4A3728;
+            --border-ornate: #C4963C44;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Lora', 'Georgia', serif;
+            line-height: 1.85;
+            font-size: 18px;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0f08 0%, #2C1810 50%, #3d2114 100%);
+        }
+
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(44, 24, 16, 0.3) 40%,
+                rgba(44, 24, 16, 0.85) 75%,
+                rgba(44, 24, 16, 0.98) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 32px 48px;
+        }
+
+        .hero-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.15;
+            color: #FEFCF5;
+            margin-bottom: 20px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #C4963Ccc;
+        }
+
+        .hero-meta span::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            margin: 48px 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 12px;
+            opacity: 0.6;
+        }
+
+        /* Story paragraphs */
+        .story p {
+            margin-bottom: 24px;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .story p:first-of-type::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 10px;
+            margin-top: 6px;
+            color: var(--gold);
+            font-weight: 900;
+        }
+
+        /* Dialogue */
+        .dialogue {
+            margin: 32px 0;
+            padding: 24px 28px;
+            border-left: 3px solid var(--gold);
+            background: linear-gradient(135deg, var(--parchment) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .dialogue .speaker {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 8px;
+            font-style: normal;
+        }
+
+        /* === SCENE IMAGES === */
+        .scene-image {
+            margin: 48px -40px;
+            position: relative;
+        }
+
+        .scene-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(44, 24, 16, 0.15);
+        }
+
+        .scene-image .caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            text-align: center;
+            margin-top: 12px;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* Image placeholder when file is missing */
+        .scene-image .img-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2C1810 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .scene-image .img-placeholder.portrait {
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .scene-image .img-placeholder.square {
+            aspect-ratio: 1/1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* === MYSTERY SECTION (replaces moral for factual stories) === */
+        .mystery {
+            margin: 56px 0;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, #2C1810 0%, #3d2114 60%, #4a2e1a 100%);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mystery::before {
+            content: '\2728';
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 120px;
+            opacity: 0.05;
+        }
+
+        .mystery-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+        }
+
+        .mystery p {
+            color: #F5EDDA;
+            font-size: 19px;
+            line-height: 1.75;
+            font-style: italic;
+        }
+
+        .mystery p + p {
+            margin-top: 16px;
+        }
+
+        /* === TEASER === */
+        .teaser {
+            margin: 48px 0;
+            padding: 32px;
+            border: 1px dashed var(--border-ornate);
+            border-radius: 12px;
+            background: var(--parchment);
+        }
+
+        .teaser-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--saffron);
+            margin-bottom: 12px;
+        }
+
+        .teaser p {
+            color: var(--ink-light);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* === METADATA SECTION === */
+        .metadata {
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-ornate);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .meta-card {
+            padding: 20px;
+            background: var(--parchment);
+            border-radius: 8px;
+        }
+
+        .meta-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meta-value {
+            font-size: 15px;
+            color: var(--ink-light);
+            line-height: 1.6;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: var(--ink-light);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .footer .lotus {
+            font-size: 28px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .content { padding: 40px 20px 60px; }
+            .scene-image { margin: 36px -8px; }
+            .metadata { grid-template-columns: 1fr; }
+            .mystery { padding: 28px 24px; }
+            .dialogue { padding: 20px 22px; }
+            .hero { min-height: 60vh; }
+        }
+
+        @media print {
+            .hero { min-height: auto; padding: 40px; }
+            .hero-image { display: none; }
+            .hero-overlay { display: none; }
+            .hero-content { color: black; }
+            .hero-title { color: black; }
+            body { font-size: 12pt; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+        <!-- IMAGE PROMPT (featured.png): A divine warrior with radiant blue-white skin riding a powerful white horse with wings, holding a blazing sword that burns like a comet in his right hand, wearing golden armor with intricate Vedic engravings and a jeweled crown, his face stern and calm with piercing eyes that glow faintly, the horse rearing up on a desolate battlefield at twilight, the sky behind split in half — one side dark crimson with smoke and ruin, the other side breaking into golden dawn light, ancient crumbling temples and barren earth below, a few withered trees in the scorched landscape, Indian mythological painting style inspired by Raja Ravi Varma with rich oil-painting texture combined with cosmic sci-fi undertones, dramatic rim lighting from the golden dawn behind the figure, warm divine glow on the armor contrasting with the cold red destruction behind, mood of finality and cosmic justice arriving, 4K detail, cinematic composition. Aspect ratio 3:4, portrait orientation. -->
+        <img
+            src="images/featured.png"
+            alt="Kalki Avatar on a white horse with a blazing sword, riding across a desolate twilight battlefield as golden dawn breaks behind him"
+            class="hero-image"
+            onerror="this.style.display='none'"
+        >
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-source">Kalki Purana &middot; Chapters 1&ndash;3</div>
+            <h1 class="hero-title">The Last Avatar Has a Name, a Village, and a White Horse &mdash; And the Scripture Describes It All</h1>
+            <div class="hero-meta">
+                <span>Kalki Avatar Prophecy</span>
+                <span>The End of Kali Yuga</span>
+                <span>What the Text Actually Says</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============ STORY ============ -->
+    <main class="content">
+
+        <div class="ornament">&middot; &middot; &middot;</div>
+
+        <article class="story">
+
+            <p>Most people know that Kalki is the final avatar of Vishnu. They know he will come at the end of Kali Yuga to destroy evil and restart the cycle of time. But almost nobody has actually read what the Kalki Purana says. And the details it gives are far more specific &mdash; and far stranger &mdash; than you might expect.</p>
+
+            <p>This is not a vague prophecy. The scripture names the village. It names the parents. It names the horse. It describes the weapons and the wars. Here is what the text actually says.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>According to the Kalki Purana (Chapter 1), as Kali Yuga reaches its final stage, the world falls apart completely. Dharma vanishes. Kings become thieves. Brahmins sell religion for money. People eat anything, marry anyone, and abandon all duty. Life spans shrink. The strong rob the weak openly. No one remembers the gods.</p>
+
+            <p>At this point, the gods go to Vishnu and beg him to act. Vishnu agrees. He tells them he will be born in a specific place: the village of Shambhala. Not a kingdom. Not a great city. A village.</p>
+
+            <p>The Kalki Purana (Chapter 2) names his father as Vishnuyasha &mdash; a Brahmin of the village of Shambhala. His mother is named Sumati. The text says Vishnuyasha is a devout man who worships Vishnu faithfully. Kalki will be born as his son.</p>
+
+            <p>This is a striking detail. The final avatar of Vishnu &mdash; the one who will end the age of darkness &mdash; is not born as a prince or a king. He is born into a Brahmin family, in a village most people have never heard of.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>The Kalki Purana describes what happens after his birth. As a young man, Kalki receives his education from Parashurama &mdash; the sixth avatar of Vishnu, who according to scripture is still alive from a previous age. Parashurama teaches him warfare and the use of weapons. This is described in chapters 3 and onwards of the Kalki Purana.</p>
+
+            <p>Then Shiva gives him a white horse named Devadatta. The Bhagavata Purana (Skandha 12, Chapter 2, verse 19) also mentions this &mdash; it says Kalki will ride the swift horse Devadatta, given to him by the gods, and travel the earth destroying the wicked.</p>
+
+            <p>Lord Shiva also gives him a blazing divine sword named Ratnamaru. Vishnu gives him a divine parrot named Shuka who knows past, present, and future. These are the tools of the final avatar: a white horse, a sword of divine fire, and a parrot that can see across time.</p>
+
+            <!-- SCENE IMAGE 1 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 1: An aged warrior-sage with matted grey dreadlocks and a battle-scarred body, wearing simple bark garments and a sacred thread, standing on a rocky Himalayan plateau teaching a young man in white robes how to wield a gleaming celestial sword, the young student has a calm intense face and stands in a martial stance, behind them a massive white horse with an intelligent gaze waits patiently, mountain peaks and ancient cedar forests in the background, early morning mist rising from the valleys below, a colorful divine parrot perched on a wooden post nearby, Indian mythological painting style with Pahari miniature painting influences and warm earthy tones, soft golden morning light streaming in from the east casting long shadows, mood of sacred preparation and ancient knowledge being passed down, fine textile and jewelry details, 4K resolution. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img1.png"
+                    alt="Parashurama teaching the young Kalki swordsmanship on a Himalayan plateau, with the white horse Devadatta waiting nearby"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img1.png</div>'"
+                >
+                <div class="caption">Parashurama &mdash; an avatar from a previous age &mdash; trains the avatar of the next one</div>
+            </div>
+
+            <p>The Kalki Purana then describes his battles. He wages war against rulers who have become corrupt and against mleccha kings who have overtaken the earth. He defeats them across many lands. The Bhagavata Purana (Skandha 12, Chapter 2, verses 19&ndash;20) describes this in brief: Kalki wanders the earth on his horse Devadatta, with the speed of the wind, destroying thieves and robbers who have dressed themselves as kings.</p>
+
+            <p>After his wars, the Kalki Purana says something that surprises many people. Kalki does not rule the world himself. He restores dharma, re-establishes proper conduct, and then &mdash; according to the Bhagavata Purana (Skandha 12, Chapter 2, verses 23&ndash;24) &mdash; Satya Yuga begins again. The golden age returns. People&rsquo;s minds become clear like waking from a long sleep. Children are born with good natures. The cycle starts fresh.</p>
+
+            <p>The Vishnu Purana (Book 4, Chapter 24) adds another detail. It says that when Kalki has finished his work, the beings born in that time will follow the ways of Satya Yuga naturally, as if dharma were planted in their hearts by default. The world does not slowly improve. It resets.</p>
+
+            <div class="ornament">&middot; &middot; &middot;</div>
+
+            <p>But perhaps the most overlooked detail in the prophecy is this: the Bhagavata Purana says that at the junction of two Yugas, the Lord will be born. It does not say everyone will recognize him. It does not say the world will welcome him. It simply says he will come, do what he must, and the age will turn.</p>
+
+            <!-- SCENE IMAGE 2 -->
+            <div class="scene-image">
+                <!-- IMAGE PROMPT 2: A wide panoramic view of a small ancient Indian village at dawn, simple thatched and clay houses with smoke rising from morning cooking fires, a Brahmin man in white dhoti performing Vishnu puja at a small courtyard shrine with tulsi plant, his wife standing in the doorway with a gentle face, the sky above the village is extraordinary — half of it is dark purple-black with storm clouds and a faint red glow suggesting destruction in the distance, while the other half breaks into brilliant gold and white sunrise rays, a single white lotus blooming in a muddy pond in the foreground, the village name "Shambhala" carved faintly into a weathered stone marker at the village entrance, Indian miniature painting style with Mughal-era landscape detail and fine brushwork, diffused atmospheric lighting with the dramatic sky contrast as the central visual tension, mood of quiet holiness existing inside a world falling apart. Aspect ratio 1:1, square format. -->
+                <img
+                    src="images/img2.png"
+                    alt="The village of Shambhala at dawn, a Brahmin performing puja at his courtyard shrine while the sky shows darkness on one side and golden sunrise on the other"
+                    onerror="this.outerHTML='<div class=\'img-placeholder square\'>Add img2.png</div>'"
+                >
+                <div class="caption">Shambhala &mdash; the village named in scripture where the final avatar is born</div>
+            </div>
+
+            <p>The Kalki Purana is a smaller, less-studied Purana. Scholars debate exactly when it was composed. But the core details &mdash; the name Kalki, the village Shambhala, the horse, the destruction of corrupt rulers, and the return of Satya Yuga &mdash; these appear not only in the Kalki Purana but also in the Bhagavata Purana (Skandha 12, Chapter 2), the Vishnu Purana (Book 4, Chapter 24), and the Mahabharata (Vana Parva, Chapter 190).</p>
+
+            <p>Four separate scriptures. The same prophecy. The same name. The same village. The same white horse.</p>
+
+        </article>
+
+        <!-- ============ THE MYSTERY ============ -->
+        <div class="mystery">
+            <div class="mystery-label">The Mystery</div>
+            <p>What makes this prophecy unusual among world scriptures is its level of detail. This is not a vague promise that a savior will come &ldquo;someday.&rdquo; The texts name the village, the parents, the teacher, the horse, and the weapon. They describe what happens before, during, and after.</p>
+            <p>And yet nobody knows where Shambhala is. Some say it is in northern India. Some say Tibet. Some say it exists outside of geography entirely. The scripture gives us everything &mdash; except a map.</p>
+        </div>
+
+        <!-- ============ TEASER ============ -->
+        <div class="teaser">
+            <div class="teaser-label">But wait&hellip;</div>
+            <p>The Bhagavata Purana (Skandha 12, Chapter 2) does not only describe the arrival of Kalki. Just before the prophecy, it gives one of the most detailed descriptions of how civilization collapses in the final stages of Kali Yuga &mdash; shrinking lifespans, the death of modesty, rulers who are just bandits, cities that move near rivers because people cannot find water. Some of those descriptions sound deeply familiar today. That chapter is a story of its own.</p>
+        </div>
+
+        <!-- ============ METADATA ============ -->
+        <div class="metadata">
+            <div class="meta-card full-width">
+                <div class="meta-label">Characters</div>
+                <div class="meta-value">Kalki &mdash; the prophesied tenth avatar of Vishnu. Vishnuyasha &mdash; his father, a Brahmin of Shambhala. Sumati &mdash; his mother. Parashurama &mdash; the sixth avatar of Vishnu, his teacher. Devadatta &mdash; the white horse given by Shiva.</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Source</div>
+                <div class="meta-value">Kalki Purana, Chapters 1&ndash;3 (birth, family, training, and early details). Bhagavata Purana (Srimad Bhagavatam), Skandha 12, Chapter 2, verses 18&ndash;24 (Kalki&rsquo;s arrival and the transition to Satya Yuga). Vishnu Purana, Book 4, Chapter 24 (the end of Kali Yuga and Kalki&rsquo;s role). Mahabharata, Vana Parva, Chapter 190 (the Kalki prophecy in the context of the Yuga cycle).</div>
+            </div>
+            <div class="meta-card full-width">
+                <div class="meta-label">Verification</div>
+                <div class="meta-value">The core Kalki prophecy details &mdash; birth in Shambhala, father Vishnuyasha, the white horse Devadatta, and the restoration of Satya Yuga &mdash; can be verified across multiple independent scriptures: Bhagavata Purana Skandha 12.2 (available in Bhaktivedanta Swami Prabhupada&rsquo;s translation, Bibek Debroy&rsquo;s translation, and Gita Press editions), Vishnu Purana Book 4 Chapter 24 (H.H. Wilson&rsquo;s translation), and Mahabharata Vana Parva 190 (BORI Critical Edition; Bibek Debroy&rsquo;s translation Vol. 3). The Kalki Purana itself is classified as an Upapurana and is available in English translations by B.K. Chaturvedi (Diamond Books). Note: Specific details about the parrot Shuka and certain battle narratives are found in the Kalki Purana text but are not corroborated in the Mahapuranas, and the Kalki Purana&rsquo;s dating and classification as scripture varies among scholars.</div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <span class="lotus">&#x1F33A;</span>
+        Mythly Stories &middot; Tales from the Ancient World
+    </footer>
+
+</body>
+</html>
