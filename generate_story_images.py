@@ -22,7 +22,7 @@ from pathlib import Path
 
 # ─────────────────────────────────────────────────────────────
 # 🔑  OPENROUTER API KEY
-OPENROUTER_API_KEY = "YOUR_API_KEY_HERE"
+OPENROUTER_API_KEY = "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"
 # ─────────────────────────────────────────────────────────────
 
 MODEL      = "google/gemini-3.1-flash-image-preview"
