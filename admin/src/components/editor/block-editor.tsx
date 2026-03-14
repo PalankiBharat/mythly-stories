@@ -171,7 +171,7 @@ function SortableBlock({ id, type, onRemove, onMoveUp, onMoveDown, isFirst, isLa
       </div>
 
       {/* Content */}
-      <div className="flex-1 py-3 pr-3 pl-3">
+      <div className="flex-1 py-4 pr-4 pl-3">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
             <div className={`w-5 h-5 rounded-md flex items-center justify-center ${config.badge}`}>
@@ -260,7 +260,7 @@ export function BlockEditor({ imageSlots }: BlockEditorProps) {
             <Input
               {...register(`blocks.${index}.speaker`)}
               placeholder="Character name..."
-              className="bg-white h-8 text-sm"
+              className="bg-white h-10 text-sm"
             />
           </div>
           <InlineEditor
@@ -312,7 +312,7 @@ export function BlockEditor({ imageSlots }: BlockEditorProps) {
               <Input
                 {...register(`blocks.${index}.alt`)}
                 placeholder="Describe the image..."
-                className="bg-white h-8 text-sm"
+                className="bg-white h-10 text-sm"
               />
             </div>
             <div>
@@ -339,7 +339,7 @@ export function BlockEditor({ imageSlots }: BlockEditorProps) {
             <Input
               {...register(`blocks.${index}.caption`)}
               placeholder="Optional caption text..."
-              className="bg-white h-8 text-sm"
+              className="bg-white h-10 text-sm"
             />
           </div>
         </div>

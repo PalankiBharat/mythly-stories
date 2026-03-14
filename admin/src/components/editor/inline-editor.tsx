@@ -61,7 +61,7 @@ export function InlineEditor({ name, label }: Props) {
     },
     editorProps: {
       attributes: {
-        class: 'tiptap outline-none min-h-[80px] px-3 py-2.5 text-sm leading-relaxed text-stone-800',
+        class: 'tiptap outline-none min-h-[140px] px-4 py-3 text-base leading-relaxed text-stone-800',
       },
     },
   });

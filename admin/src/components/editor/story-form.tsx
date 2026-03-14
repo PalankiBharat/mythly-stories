@@ -260,12 +260,12 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
           {/* CONTENT TAB */}
           <TabsContent value="content" className="space-y-6 mt-0">
             {/* Title & Slug card */}
-            <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm space-y-4">
+            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm space-y-5">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-stone-500">
                 Identity
               </h3>
-              <div className="space-y-3">
-                <div className="space-y-1.5">
+              <div className="space-y-4">
+                <div className="space-y-2">
                   <Label htmlFor="title" className="text-sm font-medium">
                     Title <span className="text-rose-500">*</span>
                   </Label>
@@ -273,7 +273,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                     id="title"
                     {...register('title')}
                     placeholder="The Monkey and the Crocodile"
-                    className="h-10 text-base font-medium"
+                    className="h-12 text-lg font-medium"
                   />
                   {errors.title && (
                     <p className="flex items-center gap-1 text-xs text-rose-500">
@@ -283,7 +283,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                   )}
                 </div>
 
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <Label htmlFor="subtitle" className="text-sm font-medium">
                     Subtitle
                   </Label>
@@ -291,12 +291,12 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                     id="subtitle"
                     {...register('subtitle')}
                     placeholder="A tale of wit and friendship..."
-                    className="h-9 text-sm"
+                    className="h-10 text-sm"
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="space-y-1.5">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
                     <Label htmlFor="slug" className="text-sm font-medium flex items-center gap-1">
                       <Hash size={12} aria-hidden="true" />
                       Slug <span className="text-rose-500">*</span>
@@ -305,7 +305,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       id="slug"
                       {...register('slug')}
                       placeholder="the-monkey-and-the-crocodile"
-                      className="h-9 font-mono text-sm text-stone-600"
+                      className="h-10 font-mono text-sm text-stone-600"
                       onChange={(e) => {
                         slugTouched.current = true;
                         setValue('slug', e.target.value);
@@ -318,7 +318,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       </p>
                     )}
                   </div>
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
                     <Label htmlFor="source" className="text-sm font-medium">
                       Source <span className="text-rose-500">*</span>
                     </Label>
@@ -326,7 +326,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       id="source"
                       {...register('source')}
                       placeholder="Panchatantra"
-                      className="h-9 text-sm"
+                      className="h-10 text-sm"
                     />
                     {errors.source && (
                       <p className="flex items-center gap-1 text-xs text-rose-500">
@@ -340,7 +340,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
             </div>
 
             {/* Hero tags card */}
-            <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm space-y-3">
+            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs font-semibold uppercase tracking-wider text-stone-500">
                   Hero Tags
@@ -383,13 +383,13 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       }
                     }}
                     placeholder="Type a tag and press Enter..."
-                    className="h-9 text-sm max-w-xs"
+                    className="h-10 text-sm max-w-xs"
                   />
                   <Button
                     type="button"
                     variant="outline"
                     size="sm"
-                    className="h-9"
+                    className="h-10 px-4"
                     onClick={() => {
                       addTag(tagInput);
                       setTagInput('');
@@ -408,18 +408,18 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
             </div>
 
             {/* Featured image card */}
-            <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm space-y-3">
+            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm space-y-4">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-stone-500">
                 Featured Image
               </h3>
 
-              <div className="flex gap-4 items-start">
+              <div className="flex gap-6 items-start">
                 {/* Preview */}
                 <div
-                  className="flex-shrink-0 rounded-lg overflow-hidden border-2 border-dashed border-stone-200 bg-stone-50 flex items-center justify-center"
+                  className="flex-shrink-0 rounded-xl overflow-hidden border-2 border-dashed border-stone-200 bg-stone-50 flex items-center justify-center"
                   style={{
-                    width: featuredImageRatio === '16:9' ? 160 : featuredImageRatio === '1:1' ? 96 : 80,
-                    height: featuredImageRatio === '16:9' ? 90 : featuredImageRatio === '1:1' ? 96 : 107,
+                    width: featuredImageRatio === '16:9' ? 240 : featuredImageRatio === '1:1' ? 160 : 130,
+                    height: featuredImageRatio === '16:9' ? 135 : featuredImageRatio === '1:1' ? 160 : 173,
                   }}
                 >
                   {featuredPreview ? (
@@ -429,20 +429,20 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <Upload size={20} className="text-stone-300" aria-hidden="true" />
+                    <Upload size={28} className="text-stone-300" aria-hidden="true" />
                   )}
                 </div>
 
                 {/* Controls */}
-                <div className="flex-1 space-y-2.5">
+                <div className="flex-1 space-y-3">
                   <div>
-                    <label className="block text-xs font-medium text-stone-600 mb-1.5">
+                    <label className="block text-sm font-medium text-stone-600 mb-2">
                       Upload image <span className="text-rose-500">*</span>
                     </label>
                     <input
                       type="file"
                       accept="image/jpeg,image/png,image/webp"
-                      className="text-xs text-stone-500 file:mr-2 file:h-8 file:rounded-md file:border-0 file:bg-amber-100 file:px-3 file:text-xs file:font-medium file:text-amber-700 hover:file:bg-amber-200 cursor-pointer"
+                      className="text-sm text-stone-500 file:mr-3 file:h-9 file:rounded-md file:border-0 file:bg-amber-100 file:px-4 file:text-sm file:font-medium file:text-amber-700 hover:file:bg-amber-200 cursor-pointer"
                       onChange={(e) => {
                         const file = e.target.files?.[0];
                         if (!file) return;
@@ -454,14 +454,14 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       }}
                     />
                   </div>
-                  <div className="space-y-1.5">
-                    <Label className="text-xs font-medium text-stone-600">
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-stone-700">
                       Alt text <span className="text-rose-500">*</span>
                     </Label>
                     <Input
                       {...register('featuredImageAlt')}
                       placeholder="Describe the image for accessibility..."
-                      className="h-8 text-sm"
+                      className="h-10 text-sm"
                     />
                     {errors.featuredImageAlt && (
                       <p className="flex items-center gap-1 text-xs text-rose-500">
@@ -470,15 +470,15 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                       </p>
                     )}
                   </div>
-                  <div className="space-y-1.5">
-                    <Label className="text-xs font-medium text-stone-600">Aspect ratio</Label>
+                  <div className="space-y-2">
+                    <Label className="text-sm font-medium text-stone-700">Aspect ratio</Label>
                     <Select
                       value={featuredImageRatio}
                       onValueChange={(v) =>
                         setValue('featuredImageRatio', v as '1:1' | '3:4' | '16:9')
                       }
                     >
-                      <SelectTrigger className="h-8 w-32 text-sm">
+                      <SelectTrigger className="h-10 w-40 text-sm">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -499,7 +499,7 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
             </div>
 
             {/* Blocks card */}
-            <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm space-y-3">
+            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm space-y-4">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-stone-500">
                 Story Blocks
               </h3>
@@ -515,19 +515,19 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
 
           {/* METADATA TAB */}
           <TabsContent value="metadata" className="space-y-4 mt-0">
-            <div className="rounded-xl border border-stone-200 bg-white p-5 shadow-sm space-y-4">
+            <div className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm space-y-5">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-stone-500">
                 Story Metadata
               </h3>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <Label className="text-sm font-medium">
                   Characters <span className="text-rose-500">*</span>
                 </Label>
                 <Input
                   {...register('metaCharacters')}
                   placeholder="Monkey, Crocodile, Crocodile's Wife"
-                  className="h-9 text-sm"
+                  className="h-10 text-sm"
                 />
                 {errors.metaCharacters && (
                   <p className="flex items-center gap-1 text-xs text-rose-500">
@@ -537,14 +537,14 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                 )}
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <Label className="text-sm font-medium">
                   Theme <span className="text-rose-500">*</span>
                 </Label>
                 <Input
                   {...register('metaTheme')}
                   placeholder="Friendship and quick thinking"
-                  className="h-9 text-sm"
+                  className="h-10 text-sm"
                 />
                 {errors.metaTheme && (
                   <p className="flex items-center gap-1 text-xs text-rose-500">
@@ -554,14 +554,14 @@ export function StoryForm({ story, isLoading, onSubmit }: Props) {
                 )}
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <Label className="text-sm font-medium">
                   Source (detailed) <span className="text-rose-500">*</span>
                 </Label>
                 <Input
                   {...register('metaSource')}
                   placeholder="Panchatantra — Book 4, Chapter 2"
-                  className="h-9 text-sm"
+                  className="h-10 text-sm"
                 />
                 {errors.metaSource && (
                   <p className="flex items-center gap-1 text-xs text-rose-500">

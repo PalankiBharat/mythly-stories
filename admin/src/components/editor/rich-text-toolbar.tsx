@@ -100,9 +100,9 @@ export function RichTextToolbar({ editor }: Props) {
   const isSanskrit = editor.isActive('sanskrit');
 
   return (
-    <div className="relative flex flex-wrap items-center gap-0.5 px-2 py-1.5 border-b border-stone-200 bg-stone-50 rounded-t-lg">
+    <div className="relative flex flex-wrap items-center gap-1 px-3 py-2 border-b border-stone-200 bg-stone-50 rounded-t-lg">
       {/* B / I / U */}
-      <div className="flex gap-0.5 border border-stone-200 rounded-md p-0.5 bg-white">
+      <div className="flex gap-0.5 border border-stone-200 rounded-md p-1 bg-white">
         <ToolBtn
           active={editor.isActive('bold')}
           onClick={() => editor.chain().focus().toggleBold().run()}
@@ -133,7 +133,7 @@ export function RichTextToolbar({ editor }: Props) {
         type="button"
         aria-label="External link"
         onClick={openLinkPopover}
-        className={`flex items-center gap-1 h-7 px-2 rounded text-xs font-medium transition-colors ${
+        className={`flex items-center gap-1.5 h-8 px-3 rounded text-xs font-medium transition-colors ${
           isLink
             ? 'bg-green-700 text-white hover:bg-green-800'
             : 'bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:border-stone-300'
@@ -159,7 +159,7 @@ export function RichTextToolbar({ editor }: Props) {
         type="button"
         aria-label="Story link"
         onClick={openStoryLinkPopover}
-        className={`flex items-center gap-1 h-7 px-2 rounded text-xs font-medium transition-colors ${
+        className={`flex items-center gap-1.5 h-8 px-3 rounded text-xs font-medium transition-colors ${
           isStoryLink
             ? 'bg-amber-600 text-white hover:bg-amber-700'
             : 'bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:border-stone-300'
@@ -185,7 +185,7 @@ export function RichTextToolbar({ editor }: Props) {
         type="button"
         aria-label="Sanskrit"
         onClick={openSanskritPopover}
-        className={`flex items-center gap-1 h-7 px-2 rounded text-xs font-medium transition-colors ${
+        className={`flex items-center gap-1.5 h-8 px-3 rounded text-xs font-medium transition-colors ${
           isSanskrit
             ? 'bg-purple-700 text-white hover:bg-purple-800'
             : 'bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:border-stone-300'
@@ -269,7 +269,7 @@ function ToolBtn({
       aria-label={label}
       aria-pressed={active}
       onClick={onClick}
-      className={`h-7 w-7 p-0 ${active ? 'bg-stone-800 text-white hover:bg-stone-700' : 'text-stone-500 hover:text-stone-900'}`}
+      className={`h-8 w-8 p-0 ${active ? 'bg-stone-800 text-white hover:bg-stone-700' : 'text-stone-500 hover:text-stone-900'}`}
     >
       {children}
     </Button>

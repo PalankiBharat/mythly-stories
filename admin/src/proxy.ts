@@ -17,5 +17,5 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/stories/:path*', '/login'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };
